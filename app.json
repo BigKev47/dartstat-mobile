@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "dartstat-frontend",
+    "description": "This project is really great.",
+    "slug": "dartstat-frontend",
+    "privacy": "public",
+    "sdkVersion": "25.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/dartstaticon.png",
+    "splash": {
+      "image": "./assets/images/dartstat.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#5D4037"
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
