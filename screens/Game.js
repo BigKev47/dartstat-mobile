@@ -3,7 +3,7 @@ import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
 
 import { NumberGrid } from '../components/NumberGrid.js';
 import {createDart, allUsers, createGame} from "../graphql";
-import {graphql, compose} from "@expo/react-apollo";
+import {graphql, compose, withApollo} from "@expo/react-apollo";
 
 
 
@@ -34,6 +34,7 @@ export class Game extends React.Component {
         this.dartHandler = this.dartHandler.bind(this);
         this.turnSwitcher = this.turnSwitcher.bind(this);
         this.roundHandler = this.roundHandler.bind(this);
+        this.newGame = this.newGame.bind(this);
     };
 //TODO: Refactor gameplay and incorporate round scores and game winning/losing conditions
     player = () => {
@@ -42,7 +43,7 @@ export class Game extends React.Component {
         }else{
             return 1
         }
-    }
+    };
     switchEntryScreen = (input) => {
         if (!this.state.issection) {
             this.setState({
@@ -56,7 +57,7 @@ export class Game extends React.Component {
             //this.setState({roundscore: this.state.roundscore + dartscore});
             //this.scoreHandler(dart, player);
         }
-    }
+    };
 
     turnSwitcher = () => {
         this.setState(
@@ -66,7 +67,7 @@ export class Game extends React.Component {
         if (!this.state.homeTurn) {
             this.state.round++
         }
-    }
+    };
 
     roundHandler = (dart, player) => {
         let tempScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
@@ -86,7 +87,7 @@ export class Game extends React.Component {
                 this.setState((!this.state.homeTurn) ? {awayScore: newScore} : {homeScore: newScore} )
                 this.turnSwitcher()}
             }
-    }
+    };
 
     dartHandler = (dart, player) => {
 
@@ -99,7 +100,7 @@ export class Game extends React.Component {
         createDart({
             variables: {
                 //TODO get player login worked out and remove this hard-code
-                playerId: "cjf673owt4whi0104fng14osm",
+                playerId: this.state.players[player],
                 gameId: this.state.gameId,
                 numberHit: parseInt(dart.numberHit),
                 sectionHit: parseInt(dart.sectionHit)
@@ -111,22 +112,29 @@ export class Game extends React.Component {
             () => {
                 this.roundHandler(dart, player)
             });
-    }
+    };
 
-    newGame = async () => {
+    newGame = async ({loading, error}) => {
+        const { createGame } = this.props;
         try {
-            const {createGame} = this.props;
-            createGame({
+            await createGame({
                 variables: {
                     gameType: "501",
-                    playersIds: this.state.players
+                    // playersIds: this.state.players
                 }
             });
-            this.setState({gameId: this.props.createGame.id})
+            console.log("gameID:"+ this.props.data.id);
+            this.setState({gameId: this.props.data.id});
+
         }
-    }
+        catch (error) {
+            console.log(error);
+        }
+    };
 
     render() {
+        const { createGame } = this.props;
+        const {gameId} = this.state;
         const numbers = ["Miss", "20", "19", "18", "17", "16", "15", "14", "13", "12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "Bull"];
         const sections = [
             {section: 'Outer Single', mult: 1, id: 0},
@@ -135,7 +143,7 @@ export class Game extends React.Component {
             {section: 'Triple', mult: 3, id: 3}
 
             ];
-        const screen = !gameId ?
+        const screen = !this.state.gameId ?
             <View style={styles.dartlog}>
             <Button onPress={this.newGame} title={"New"} />
             </View> :
@@ -143,7 +151,7 @@ export class Game extends React.Component {
                                   sections={sections}
                                   numbers={numbers}
                                   number={this.state.currentnum}
-                                  onPress={this.switchEntryScreen}/>
+                                  onPress={this.switchEntryScreen}/>;
 
 
 
@@ -257,5 +265,8 @@ const styles = StyleSheet.create({
 
 export default compose(
     graphql(createDart, { name: 'createDart' }),
-    graphql(createGame, { name: 'createGame' })
-)(Game)
+    graphql(createGame, { name: 'createGame'
+        // ,
+        // props: ({ data }) => ({ ...data })
+    })
+)(withApollo(Game))
