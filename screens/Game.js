@@ -16,7 +16,7 @@ export class Game extends React.Component {
         super(props);
 
         this.state = {
-            players: ["cjf673owt4whi0104fng14osm"],
+            players: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"],
             currentnum: "",
             issection: false,
             roundscore: 0,
@@ -34,7 +34,7 @@ export class Game extends React.Component {
         this.dartHandler = this.dartHandler.bind(this);
         this.turnSwitcher = this.turnSwitcher.bind(this);
         this.roundHandler = this.roundHandler.bind(this);
-        this.newGame = this.newGame.bind(this);
+        this.createGame = this.createGame.bind(this);
     };
 //TODO: Refactor gameplay and incorporate round scores and game winning/losing conditions
     player = () => {
@@ -51,7 +51,7 @@ export class Game extends React.Component {
                 currentnum: input
             })
         } else {
-            let dart = input[0];
+            let dart = input;
             let player = this.player();
             this.dartHandler(dart, player);
             //this.setState({roundscore: this.state.roundscore + dartscore});
@@ -60,10 +60,12 @@ export class Game extends React.Component {
     };
 
     turnSwitcher = () => {
-        this.setState(
-            {homeTurn: !this.state.homeTurn,
-            roundscore: 0}
-        );
+        if (this.state.players.length > 1){
+            this.setState(
+                {homeTurn: !this.state.homeTurn,
+                roundscore: 0}
+        )}else{
+            this.setState({roundscore: 0})};
         if (!this.state.homeTurn) {
             this.state.round++
         }
@@ -74,7 +76,10 @@ export class Game extends React.Component {
         let outScore = tempScore - this.state.roundscore;
         if (outScore < 2) {
             if (outScore === 0 && dart.sectionHit === 2) {
-                console.log("Game Over")
+                console.log("Game Over");
+                this.setState((!this.state.homeTurn) ?
+                    {awayScore: 0, gameCompleted: true} :
+                    {homeScore: 0, gameCompleted: true} );
             } else {
                 console.log("Bust");
                 this.turnSwitcher()
@@ -84,8 +89,9 @@ export class Game extends React.Component {
                 let playerScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
                 console.log("playerScore:" + playerScore);
                 let newScore = playerScore - this.state.roundscore;
-                this.setState((!this.state.homeTurn) ? {awayScore: newScore} : {homeScore: newScore} )
-                this.turnSwitcher()}
+                this.setState((!this.state.homeTurn) ? {awayScore: newScore} : {homeScore: newScore} );
+                this.turnSwitcher()
+            }
             }
     };
 
@@ -114,17 +120,17 @@ export class Game extends React.Component {
             });
     };
 
-    newGame = async ({loading, error}) => {
+    createGame = async () => {
         const { createGame } = this.props;
         try {
-            await createGame({
+            const newGame = await createGame({
                 variables: {
                     gameType: "501",
-                    // playersIds: this.state.players
+                    playersIds: this.state.players
                 }
             });
-            console.log("gameID:"+ this.props.data.id);
-            this.setState({gameId: this.props.data.id});
+            console.log("gameID:"+ newGame.data.createGame.id);
+            this.setState({gameId: newGame.data.createGame.id});
 
         }
         catch (error) {
@@ -143,15 +149,13 @@ export class Game extends React.Component {
             {section: 'Triple', mult: 3, id: 3}
 
             ];
-        const screen = !this.state.gameId ?
-            <View style={styles.dartlog}>
-            <Button onPress={this.newGame} title={"New"} />
-            </View> :
+        const screen = !this.state.gameCompleted ?
             <NumberGrid issection={this.state.issection}
                                   sections={sections}
                                   numbers={numbers}
                                   number={this.state.currentnum}
-                                  onPress={this.switchEntryScreen}/>;
+                                  onPress={this.switchEntryScreen}/> :
+            <Text>Game Over</Text>;
 
 
 
@@ -174,7 +178,7 @@ export class Game extends React.Component {
                     </View>
                 </View>
                 <View style={styles.scoreentry}>
-                    <View style={styles.dart}></View>
+                    <View style={styles.dartlog}><Button title={"NewGame"} onPress={this.createGame}/></View>
                     <View style={styles.numberhit}>
                         { screen }
                     </View>
@@ -265,8 +269,7 @@ const styles = StyleSheet.create({
 
 export default compose(
     graphql(createDart, { name: 'createDart' }),
-    graphql(createGame, { name: 'createGame'
-        // ,
-        // props: ({ data }) => ({ ...data })
+    graphql(createGame, {
+      name: 'createGame'
     })
-)(withApollo(Game))
+)(Game);

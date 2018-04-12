@@ -52,13 +52,11 @@ export class NumberGrid extends React.Component {
     }
 
     handleSec(number, secmult, secid) {
-        let dart = {numberHit: number, sectionHit: secid};
         if (number !== "Bull"){
             number = parseInt(number)
         }else{number = 25}
-        let dartscore = number * secmult;
-        console.log(dartscore)
-        this.props.onPress([dart, dartscore]);
+        let dart = {numberHit: number, sectionHit: secid};
+        this.props.onPress(dart);
     }
 //TODO Find a way to make these grids with some sort of map/iterator function to cut down on code length
   render(){
