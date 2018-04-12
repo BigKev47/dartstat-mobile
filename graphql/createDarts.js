@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export default gql`
-    mutation createDart(
+    mutation createDarts(
     $numberHit: Int!
     $sectionHit: Int!
     $playerId: ID!

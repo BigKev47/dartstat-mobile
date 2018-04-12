@@ -3,7 +3,7 @@ import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
 
 import { NumberGrid } from '../components/NumberGrid.js';
 import {createDart, allUsers, createGame} from "../graphql";
-import {graphql, compose, withApollo} from "@expo/react-apollo";
+import {graphql, compose} from "@expo/react-apollo";
 
 
 
@@ -26,6 +26,7 @@ export class Game extends React.Component {
             round: 1,
             homeTurn: true,
             gameCompleted: false,
+            currentDarts: [],
             gameId: ""
         };
 
@@ -63,9 +64,11 @@ export class Game extends React.Component {
         if (this.state.players.length > 1){
             this.setState(
                 {homeTurn: !this.state.homeTurn,
-                roundscore: 0}
+                roundscore: 0,
+                currentDarts: []}
         )}else{
-            this.setState({roundscore: 0})};
+            this.setState({roundscore: 0,
+                            currentDarts: []})};
         if (!this.state.homeTurn) {
             this.state.round++
         }
@@ -85,7 +88,7 @@ export class Game extends React.Component {
                 this.turnSwitcher()
             }
         }else{
-            if (this.state.darts[player].length % 3 === 0) {
+            if (this.state.currentDarts.length === 3) {
                 let playerScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
                 console.log("playerScore:" + playerScore);
                 let newScore = playerScore - this.state.roundscore;
@@ -102,6 +105,9 @@ export class Game extends React.Component {
         let roundscore = this.state.roundscore + dartscore;
         console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
         darts[player].push(dart);
+        let currentDarts = this.state.currentDarts;
+        currentDarts.push(dart)
+        this.setState({ currentDarts: currentDarts });
         const { createDart } = this.props;
         createDart({
             variables: {
@@ -149,13 +155,15 @@ export class Game extends React.Component {
             {section: 'Triple', mult: 3, id: 3}
 
             ];
-        const screen = !this.state.gameCompleted ?
-            <NumberGrid issection={this.state.issection}
-                                  sections={sections}
-                                  numbers={numbers}
-                                  number={this.state.currentnum}
-                                  onPress={this.switchEntryScreen}/> :
-            <Text>Game Over</Text>;
+        const screen = !this.state.gameId ?
+            <Button title={"NewGame"} onPress={this.createGame}/>:
+            !this.state.gameCompleted ?
+                <NumberGrid issection={this.state.issection}
+                                      sections={sections}
+                                      numbers={numbers}
+                                      number={this.state.currentnum}
+                                      onPress={this.switchEntryScreen}/> :
+                <Text>Game Over</Text>;
 
 
 
@@ -178,7 +186,7 @@ export class Game extends React.Component {
                     </View>
                 </View>
                 <View style={styles.scoreentry}>
-                    <View style={styles.dartlog}><Button title={"NewGame"} onPress={this.createGame}/></View>
+                    <View style={styles.dartlog}></View>
                     <View style={styles.numberhit}>
                         { screen }
                     </View>
@@ -271,5 +279,6 @@ export default compose(
     graphql(createDart, { name: 'createDart' }),
     graphql(createGame, {
       name: 'createGame'
-    })
+    }),
+    graphql(allUsers, { name: 'allUsers'})
 )(Game);
