@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import {NumButton, SecButton} from "./Buttons";
 
