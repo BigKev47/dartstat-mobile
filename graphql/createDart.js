@@ -3,7 +3,7 @@ import gql from 'graphql-tag'
 export default gql`
     mutation createDart(
     $numberHit: Int!
-    $sectionHit: Int!
+    $sectionHit: Int
     $playerId: ID!
     $gameId: ID!
     ){

@@ -21,10 +21,7 @@ export class SecButton extends React.Component {
         return <Col style={styles.buttons}>
                 <Button style={styles.button}
                         containerStyle={[styles.buttoncontainer, styles.section]}
-                        onPress={()=>{this.props.onPress(
-                            this.props.number,
-                            this.props.mult,
-                            this.props.id)}}>{this.props.title}</Button>
+                        onPress={()=>{this.props.onPress(this.props.sectionHit)}}>{this.props.title}</Button>
                 </Col>
     }
 }

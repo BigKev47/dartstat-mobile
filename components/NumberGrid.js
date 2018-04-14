@@ -1,130 +1,104 @@
 import React from "react";
-import { StyleSheet } from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import {NumButton, SecButton} from "./Buttons";
 
 export class NumberGrid extends React.Component {
-  // numbers = ["20", "19", "18", "17", "16", "15", "14", "13", "12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "Bull"];
-  //
-  // itemsArrayToGridArray(totalColumns) {
-  //   let gridArray = [[]];
-  //
-  //   let countColumns = 1;
-  //   for (var i = 0; i < this.numbers.length; i++) {
-  //     gridArray[gridArray.length - 1].push(this.numbers[i]);
-  //     if (countColumns <= totalColumns) {
-  //       countColumns++;
-  //     }
-  //     if (countColumns > totalColumns && i !== this.numbers.length - 1) {
-  //       countColumns = 1;
-  //       gridArray.push([]);
-  //     }
-  //   }
-  //
-  //   return gridArray;
-  // }
-  //
-  //
-  // renderGrid(gridArray) {
-  //   return gridArray.map(row => (
-  //     <Row>{row.map(col => (<Text>{col}</Text>))}</Row>
-  //   ));
-  // }
-  //
-  //
-  // render() {
-  //   let gridArray = this.itemsArrayToGridArray(5);
-  //   return <Grid>{this.renderGrid(gridArray)}</Grid>;
-  // }
-    //
-
-
     constructor(props) {
         super(props);
+
+        this.state = {
+          currentNum: "",
+          currentSec: null
+        };
 
         this.handleNum = this.handleNum.bind(this);
         this.handleSec = this.handleSec.bind(this);
     }
 
-    handleNum(number) {
-        //const number = e.target.value;
-        this.props.onPress(number);
-    }
+    handleNum = (number) => {
 
-    handleSec(number, secmult, secid) {
-        if (number !== "Bull"){
-            number = parseInt(number)
-        }else{number = 25}
-        let dart = {numberHit: number, sectionHit: secid};
-        this.props.onPress(dart);
-    }
+        if (number === "Bull") {
+          this.setState({currentNum: 25})
+        } else {
+          if (number === "Miss") {
+            this.props.onPress({numberHit: 0, sectionHit: null});
+            this.setState({currentNum: ""})
+          } else {
+            this.setState({currentNum: parseInt(number)})
+          }
+        }
+
+    };
+
+    handleSec = async (sectionHit) => {
+        let numberHit = this.state.currentNum;
+        let dart = {numberHit: numberHit, sectionHit: sectionHit};
+        try {
+          await this.props.onPress(dart);
+          this.setState( {currentNum: "", currentSec: null});
+        }
+        catch(error) {console.log(error)}
+    };
 //TODO Find a way to make these grids with some sort of map/iterator function to cut down on code length
   render(){
-    if (!this.props.issection) {
-        return <Grid>
-            <Row>
-                <NumButton title={this.props.numbers[20]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[19]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[18]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[17]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[16]} onPress={this.handleNum}/>
-            </Row>
-            <Row>
-                <NumButton title={this.props.numbers[15]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[14]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[13]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[12]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[11]} onPress={this.handleNum}/>
-            </Row>
-            <Row>
-                <NumButton title={this.props.numbers[10]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[9]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[8]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[7]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[6]} onPress={this.handleNum}/>
-            </Row>
-            <Row>
-                <NumButton title={this.props.numbers[5]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[4]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[3]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[2]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[1]} onPress={this.handleNum}/>
-            </Row>
-            <Row>
-                <NumButton title={this.props.numbers[21]} onPress={this.handleNum}/>
-                <NumButton title={this.props.numbers[0]} onPress={this.handleNum}/>
-            </Row>
-        </Grid>;
+    if (!this.state.currentNum) {
+      return <Grid>
+        <Row>
+          <NumButton title={"20"} onPress={this.handleNum}/>
+          <NumButton title={"19"} onPress={this.handleNum}/>
+          <NumButton title={"18"} onPress={this.handleNum}/>
+          <NumButton title={"17"} onPress={this.handleNum}/>
+          <NumButton title={"16"} onPress={this.handleNum}/>
+        </Row>
+        <Row>
+          <NumButton title={"15"} onPress={this.handleNum}/>
+          <NumButton title={"14"} onPress={this.handleNum}/>
+          <NumButton title={"13"} onPress={this.handleNum}/>
+          <NumButton title={"12"} onPress={this.handleNum}/>
+          <NumButton title={"11"} onPress={this.handleNum}/>
+        </Row>
+        <Row>
+          <NumButton title={"10"} onPress={this.handleNum}/>
+          <NumButton title={"9"} onPress={this.handleNum}/>
+          <NumButton title={"8"} onPress={this.handleNum}/>
+          <NumButton title={"7"} onPress={this.handleNum}/>
+          <NumButton title={"6"} onPress={this.handleNum}/>
+        </Row>
+        <Row>
+          <NumButton title={"5"} onPress={this.handleNum}/>
+          <NumButton title={"4"} onPress={this.handleNum}/>
+          <NumButton title={"3"} onPress={this.handleNum}/>
+          <NumButton title={"2"} onPress={this.handleNum}/>
+          <NumButton title={"1"} onPress={this.handleNum}/>
+        </Row>
+        <Row>
+          <NumButton title={"Bull"} onPress={this.handleNum}/>
+          <NumButton title={"Miss"} onPress={this.handleNum}/>
+        </Row>
+      </Grid>;
     }else {
-        return <Grid>
-                <Row>
-                    <SecButton
-                        title={this.props.sections[0].section}
-                        number={this.props.number}
-                        mult={this.props.sections[0].mult}
-                        id={this.props.sections[0].id}
-                        onPress={this.handleSec} />
-                    <SecButton
-                        title={this.props.sections[1].section}
-                        number={this.props.number}
-                        mult={this.props.sections[1].mult}
-                        id={this.props.sections[1].id}
-                        onPress={this.handleSec} />
-                </Row><Row>
-                    <SecButton
-                        title={this.props.sections[2].section}
-                        number={this.props.number}
-                        mult={this.props.sections[2].mult}
-                        id={this.props.sections[2].id}
-                        onPress={this.handleSec} />
-                    <SecButton
-                        title={this.props.sections[3].section}
-                        number={this.props.number}
-                        mult={this.props.sections[3].mult}
-                        id={this.props.sections[3].id}
-                        onPress={this.handleSec} />
-                </Row>
-            </Grid>
+      return <Grid>
+              <Row>
+                  <SecButton
+                      title="Outer Single"
+                      sectionHit={0}
+                      onPress={this.handleSec} />
+                  <SecButton
+                      title="Inner Single"
+                      sectionHit={1}
+                      onPress={this.handleSec} />
+              </Row><Row>
+                  <SecButton
+                      title="Double"
+                      sectionHit={2}
+                      onPress={this.handleSec} />
+                  <SecButton
+                      title="Triple"
+                      sectionHit={3}
+                      onPress={this.handleSec} />
+              </Row>
+          </Grid>
     }
 
   }

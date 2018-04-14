@@ -31,7 +31,7 @@ export class Game extends React.Component {
         };
 
         this.player = this.player.bind(this);
-        this.switchEntryScreen = this.switchEntryScreen.bind(this);
+        // this.switchEntryScreen = this.switchEntryScreen.bind(this);
         this.dartHandler = this.dartHandler.bind(this);
         this.turnSwitcher = this.turnSwitcher.bind(this);
         this.roundHandler = this.roundHandler.bind(this);
@@ -45,20 +45,20 @@ export class Game extends React.Component {
             return 1
         }
     };
-    switchEntryScreen = (input) => {
-        if (!this.state.issection) {
-            this.setState({
-                issection: true,
-                currentnum: input
-            })
-        } else {
-            let dart = input;
-            let player = this.player();
-            this.dartHandler(dart, player);
-            //this.setState({roundscore: this.state.roundscore + dartscore});
-            //this.scoreHandler(dart, player);
-        }
-    };
+    // switchEntryScreen = (input) => {
+    //     if (!this.state.issection) {
+    //         this.setState({
+    //             issection: true,
+    //             currentnum: input
+    //         })
+    //     } else {
+    //         let dart = input;
+    //
+    //         this.dartHandler(dart, player);
+    //         //this.setState({roundscore: this.state.roundscore + dartscore});
+    //         //this.scoreHandler(dart, player);
+    //     }
+    // };
 
     turnSwitcher = () => {
         if (this.state.players.length > 1){
@@ -68,13 +68,14 @@ export class Game extends React.Component {
                 currentDarts: []}
         )}else{
             this.setState({roundscore: 0,
-                            currentDarts: []})};
+                            currentDarts: []})
+        }
         if (!this.state.homeTurn) {
             this.state.round++
         }
     };
 
-    roundHandler = (dart, player) => {
+    roundHandler = () => {
         let tempScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
         let outScore = tempScore - this.state.roundscore;
         if (outScore < 2) {
@@ -98,16 +99,22 @@ export class Game extends React.Component {
             }
     };
 
-    dartHandler = (dart, player) => {
+    dartHandler = (dart) => {
+        let player = this.player();
 
-        let dartscore = dart.numberHit * (dart.sectionHit > 1 ? dart.sectionHit : 1);
-        let darts = this.state.darts;
+        //This calculates the score by multiplying any triples or doubles
+        let dartscore;
+        !(dart.sectionHit) ? dartscore = 0:
+        dartscore = dart.numberHit * (dart.sectionHit > 1 ? dart.sectionHit : 1);
+
+        //Ths updates the current score and dart log
         let roundscore = this.state.roundscore + dartscore;
         console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
-        darts[player].push(dart);
         let currentDarts = this.state.currentDarts;
-        currentDarts.push(dart)
+        currentDarts.push(dart);
         this.setState({ currentDarts: currentDarts });
+
+        //This pushes the dart to the gql backend
         const { createDart } = this.props;
         createDart({
             variables: {
@@ -120,9 +127,9 @@ export class Game extends React.Component {
         });
         console.log(this.props);
 
-        this.setState({darts: darts, roundscore: roundscore, issection: false},
+        this.setState({roundscore: roundscore},
             () => {
-                this.roundHandler(dart, player)
+                this.roundHandler(dart)
             });
     };
 
@@ -145,24 +152,10 @@ export class Game extends React.Component {
     };
 
     render() {
-        const { createGame } = this.props;
-        const {gameId} = this.state;
-        const numbers = ["Miss", "20", "19", "18", "17", "16", "15", "14", "13", "12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "Bull"];
-        const sections = [
-            {section: 'Outer Single', mult: 1, id: 0},
-            {section: 'Inner Single', mult: 1, id: 1},
-            {section: 'Double', mult: 2, id: 2},
-            {section: 'Triple', mult: 3, id: 3}
-
-            ];
         const screen = !this.state.gameId ?
             <Button title={"NewGame"} onPress={this.createGame}/>:
             !this.state.gameCompleted ?
-                <NumberGrid issection={this.state.issection}
-                                      sections={sections}
-                                      numbers={numbers}
-                                      number={this.state.currentnum}
-                                      onPress={this.switchEntryScreen}/> :
+                <NumberGrid onPress={this.dartHandler}/> :
                 <Text>Game Over</Text>;
 
 

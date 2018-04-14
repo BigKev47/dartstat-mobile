@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { graphql, compose } from 'react-apollo'
+import { graphql, compose } from '@expo/react-apollo'
 import TeamCard from './teamCard'
 import { Error, Success } from './Alerts'
 import {resetCurrentGame,
