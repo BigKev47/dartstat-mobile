@@ -4,6 +4,11 @@ import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
 import { NumberGrid } from '../components/NumberGrid.js';
 import {createDart, allUsers, createGame} from "../graphql";
 import {graphql, compose} from "@expo/react-apollo";
+import {Scoreboard} from "../components/Game/Scoreboard";
+import {DartEntry} from "../components/Game/DartEntry";
+import {NewGame} from "../components/Game/NewGame";
+import Colors from "../constants/Colors";
+import {GameOver} from "../components/Game/GameOver";
 
 
 
@@ -45,21 +50,7 @@ export class Game extends React.Component {
             return 1
         }
     };
-    // switchEntryScreen = (input) => {
-    //     if (!this.state.issection) {
-    //         this.setState({
-    //             issection: true,
-    //             currentnum: input
-    //         })
-    //     } else {
-    //         let dart = input;
-    //
-    //         this.dartHandler(dart, player);
-    //         //this.setState({roundscore: this.state.roundscore + dartscore});
-    //         //this.scoreHandler(dart, player);
-    //     }
-    // };
-
+    
     turnSwitcher = () => {
         if (this.state.players.length > 1){
             this.setState(
@@ -75,7 +66,7 @@ export class Game extends React.Component {
         }
     };
 
-    roundHandler = () => {
+    roundHandler = (dart) => {
         let tempScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
         let outScore = tempScore - this.state.roundscore;
         if (outScore < 2) {
@@ -122,7 +113,7 @@ export class Game extends React.Component {
                 playerId: this.state.players[player],
                 gameId: this.state.gameId,
                 numberHit: parseInt(dart.numberHit),
-                sectionHit: parseInt(dart.sectionHit)
+                sectionHit: dart.sectionHit
             }
         });
         console.log(this.props);
@@ -153,38 +144,21 @@ export class Game extends React.Component {
 
     render() {
         const screen = !this.state.gameId ?
-            <Button title={"NewGame"} onPress={this.createGame}/>:
+            <NewGame onPress={this.createGame}/>:
             !this.state.gameCompleted ?
-                <NumberGrid onPress={this.dartHandler}/> :
-                <Text>Game Over</Text>;
 
-
-
+                <DartEntry onPress={this.dartHandler}
+                           style={styles.dartentry}{...this.state} />
+                    :
+                <GameOver />;
+        const scoreBoard = this.state.gameId && !this.state.gameCompleted ? <Scoreboard style={styles.scoreboard}
+                                                           {... this.state} /> : null;
 
 //TODO Create a running scoreboard with all necessary information and proper columns
             return <View style={styles.container}>
-                <View style={styles.scoreboard}>
-                    <View style={styles.scoreboardheader}>
-                        <Text adjustsFontSizeToFit numberOfLines={1}
-                              style={[styles.scoretext, styles.scoreheader]}>P1: {this.state.players[0]} </Text>
-                        <Text adjustsFontSizeToFit numberOfLines={1}
-                              style={[styles.scoretext, styles.scoreheader]}>Rnd {this.state.round} </Text>
-                        <Text adjustsFontSizeToFit numberOfLines={1}
-                              style={[styles.scoretext, styles.scoreheader]}>P2: {this.state.players[1]} </Text>
-                    </View>
-                    <View style={{flex: 8, flexDirection: 'row'}}>
-                        <Text style={[styles.scoretext, styles.left]}>{this.state.homeScore}</Text>
-                        <Text/>
-                        <Text style={[styles.scoretext, styles.right]}>{this.state.awayScore}</Text>
-                    </View>
+                {scoreBoard}
+                {screen}
                 </View>
-                <View style={styles.scoreentry}>
-                    <View style={styles.dartlog}></View>
-                    <View style={styles.numberhit}>
-                        { screen }
-                    </View>
-                </View>
-            </View>
         }
 }
 
@@ -192,80 +166,21 @@ export class Game extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-    },
-
-
-    scoreboardheader: {
-        flex: 1,
-        backgroundColor: '#164c16',
-        flexDirection: 'row',
-        borderWidth: 1,
-        borderColor: 'white',
+        backgroundColor: Colors.scoreBoard,
+        alignContent: "center",
     },
 
     scoreboard: {
-        flex: 4,
-        backgroundColor: '#164c16',
+        flex: 5,
+        backgroundColor: Colors.scoreBoard,
     },
 //TODO: Figure out how to properly scale my text sizes.
-    scoretext: {
-        fontFamily: 'chalk-it-up',
-        color: 'white',
-        fontSize: 28,
+
+    dartentry: {
         flex: 3,
-        alignContent: 'center',
-        textAlign: 'center',
-        borderWidth: 1,
-        borderColor: 'white',
-        paddingHorizontal: 6,
-        paddingVertical: 6
-
-       // adjustsFontSizeToFit: true
-        //textDecorationLine: 'line-through',
-    },
-
-    right: {
-        textAlign: 'right',
-        //paddingRight: '6%',
-    },
-
-    left: {
-        textAlign: 'left',
-        //paddingLeft: '6%',
-    },
-
-    scoreheader: {
-
-        flex: 1,
-        flexDirection: 'column',
-        fontFamily: 'sketchy',
-    },
-
-    scoreentry: {
-        flex: 2,
         flexDirection: 'row',
     },
 
-    numberhit: {
-        flex: 4,
-        //flexDirection: 'row',
-        //flexWrap: 'wrap',
-        backgroundColor: 'white',
-        //justifyContent: 'space-around',
-        marginVertical: 5,
-    },
-
-    dartlog: {
-        flex: 1,
-        backgroundColor: 'darkgray',
-    },
-
-    scoringsection: {
-        flex: 5,
-        backgroundColor: 'darkgray',
-        flexDirection: 'row',
-    }
 });
 
 export default compose(

@@ -7,7 +7,7 @@ import Colors from "../constants/Colors";
 
 export class NumButton extends React.Component {
     render(){
-        return <Col style={styles.buttons}>
+        return <Col>
                 <Button
                     style={styles.button}
                     containerStyle={styles.buttoncontainer}
@@ -18,7 +18,7 @@ export class NumButton extends React.Component {
 
 export class SecButton extends React.Component {
     render(){
-        return <Col style={styles.buttons}>
+        return <Col>
                 <Button style={styles.button}
                         containerStyle={[styles.buttoncontainer, styles.section]}
                         onPress={()=>{this.props.onPress(this.props.sectionHit)}}>{this.props.title}</Button>
@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
 
     buttoncontainer: {
         flex: 1,
-        marginHorizontal: 5,
-        marginVertical: 5,
-        padding: 10,
+        marginHorizontal: 3,
+        marginVertical: 3,
+        padding: 4,
         overflow: 'hidden',
         borderRadius: 6,
         justifyContent: 'center',

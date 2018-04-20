@@ -13,6 +13,7 @@ export default {
     noticeText: '#fff',
     numberButton: '#ce1414',
     sectionButton: '#083408',
+    scoreBoard: '#164c16'
 
 
 };
