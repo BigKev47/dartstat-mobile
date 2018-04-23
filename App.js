@@ -24,7 +24,7 @@ export default class App extends React.Component {
         const defaultState = {
           currentGame: {
             __typename: 'currentGame',
-            gameId:"",
+            id:"",
             darts: [],
             currentDarts: [],
             roundScore: 0,
@@ -32,7 +32,7 @@ export default class App extends React.Component {
             awayScore: 501,
             round: 1,
             homeTurn: true,
-            gameActive: false
+            gameActive: false,
             gameCompleted: false
             }
         };
@@ -42,7 +42,7 @@ export default class App extends React.Component {
             defaults: defaultState,
             resolvers: {
                 Mutation: {
-                    updateGame: (_, { index, value }, { cache }) => {
+                    updateCurrentGame: (_, { index, value }, { cache }) => {
                         const query = gql`
                             query GetCurrentGame {
                                 currentGame @client {
@@ -66,7 +66,8 @@ export default class App extends React.Component {
                             }
                         };
 
-                        cache.writeQuery({ query, data })
+                        cache.writeQuery({ query, data });
+                        return null
                     },
                     resetCurrentGame: (_, d, { cache }) => {
                         cache.writeData({ data : defaultState })

@@ -14,19 +14,7 @@ import ModalDropdown from 'react-native-modal-dropdown';
 
     constructor(props) {
         super(props);
-
-        this.state = {players: {}}
-
     }
-
-    pressHandler = ()=> {
-      // const { users, allUsers, loading } = this.props;
-      // if(loading) return null;
-      // const userlist = users.allUsers.map(user.id)
-      // console.log(userlist);
-      // this.setState({players: users});
-      this.props.onPress();
-    };
 
     render() {
       const { allUsers, loading } = this.props;
@@ -34,7 +22,7 @@ import ModalDropdown from 'react-native-modal-dropdown';
 
 
 //TODO Create a running scoreboard with all necessary information and proper columns
-        return <View style={styles.container}><Button onPress={ this.pressHandler.bind(this)}
+        return <View style={styles.container}><Button onPress={ this.props.onPress }
                     style={styles.button}
                     containerStyle={styles.buttoncontainer}>New Game</Button>
             <FlatList

@@ -10,6 +10,8 @@ import NewGame from "../components/Game/NewGame";
 import Colors from "../constants/Colors";
 import {GameOver} from "../components/Game/GameOver";
 import getCurrentGame from "../graphql/getCurrentGame";
+import updateGame from "../graphql/updateGame";
+import updateCurrentGame from "../graphql/updateCurrentGame";
 
 
 
@@ -92,31 +94,49 @@ export class Game extends React.Component {
     };
 
     dartHandler = (dart) => {
-        let player = this.player();
+      const { createDart, currentGame, updateCurrentGame } = this.props;
+      let player = this.player();
 
-        //This calculates the score by multiplying any triples or doubles
-        let dartscore;
-        !(dart.sectionHit) ? dartscore = 0:
-        dartscore = dart.numberHit * (dart.sectionHit > 1 ? dart.sectionHit : 1);
+      //This calculates the score by multiplying any triples or doubles
+      let dartscore;
+      !(dart.sectionHit) ? dartscore = 0:
+      dartscore = dart.numberHit * (dart.sectionHit > 1 ? dart.sectionHit : 1);
 
-        //Ths updates the current score and dart log
-        let roundscore = this.state.roundscore + dartscore;
-        console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
-        let currentDarts = this.state.currentDarts;
-        currentDarts.push(dart);
-        this.setState({ currentDarts: currentDarts });
+      //Ths updates the current score and dart log
+      let roundscore = currentGame.roundScore + dartscore;
+      console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
+      let currentDarts = this.state.currentDarts;
+      currentDarts.push(dart);
+      updateCurrentGame({
+          variables: {
+            index: "roundScore",
+            value: roundscore
+          }
+      }
+      )
 
-        //This pushes the dart to the gql backend
-        const { createDart } = this.props;
-        createDart({
-            variables: {
-                //TODO get player login worked out and remove this hard-code
-                playerId: this.state.players[player],
-                gameId: this.state.gameId,
-                numberHit: parseInt(dart.numberHit),
-                sectionHit: dart.sectionHit
-            }
-        });
+
+
+      this.setState({ currentDarts: currentDarts });
+
+      //This pushes the dart to the gql backend
+      createDart({
+        variables: {
+            //TODO get player login worked out and remove this hard-code
+            playerId: this.state.players[player],
+            gameId: this.state.gameId,
+            numberHit: parseInt(dart.numberHit),
+            sectionHit: dart.sectionHit
+          }
+      });
+      // TODO get DArts to update
+    //   const { currentGame, updateCurrentGame } = this.props;
+    //   const darts =  currentGame.darts.push(dart);
+    //   updateCurrentGame({
+    //     variables: {
+    //       index: 'darts',
+    //       value: darts}
+    // });
         console.log(this.props);
 
         this.setState({roundscore: roundscore},
@@ -135,6 +155,12 @@ export class Game extends React.Component {
                 }
             });
             console.log("gameID:"+ newGame.data.createGame.id);
+            const { updateCurrentGame } = this.props;
+            updateCurrentGame({
+              variables: {
+                index: 'id',
+                value: newGame.data.createGame.id}
+          });
             this.setState({gameId: newGame.data.createGame.id});
 
         }
@@ -157,9 +183,8 @@ export class Game extends React.Component {
 
 //TODO Create a running scoreboard with all necessary information and proper columns
             return <View style={styles.container}>
-                {/*{scoreBoard}*/}
-                {/*{screen}*/}
-              <NewGame style={styles.scoreboard} onPress={this.createGame}/>
+                {scoreBoard}
+                {screen}
                 </View>
         }
 }
@@ -187,14 +212,14 @@ const styles = StyleSheet.create({
 
 export default compose(
     graphql(createDart, { name: 'createDart' }),
-    graphql(createGame, {
-      name: 'createGame'
-    }),
+    graphql(createGame, {name: 'createGame'}),
     graphql(getCurrentGame, {
       props: ({data: {currentGame, loading}}) => ({
         currentGame,
         loading
       })
     }),
-    graphql(updateGame, {name: 'updateGame'})
+    graphql(updateCurrentGame, {
+      name: 'updateCurrentGame'
+    })
 )(Game);

@@ -3,10 +3,15 @@ import gql from 'graphql-tag'
 export default gql`
   query {
     currentGame @client {
-      teamAScore
-      teamBScore
-      teamAName
-      teamBName
+        id
+        darts
+        currentDarts
+        roundScore
+        homeScore
+        awayScore
+        round
+        homeTurn
+        gameActive
     }
   }
 `
