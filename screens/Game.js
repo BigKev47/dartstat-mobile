@@ -6,9 +6,10 @@ import {createDart, allUsers, createGame} from "../graphql";
 import {graphql, compose} from "@expo/react-apollo";
 import {Scoreboard} from "../components/Game/Scoreboard";
 import {DartEntry} from "../components/Game/DartEntry";
-import {NewGame} from "../components/Game/NewGame";
+import NewGame from "../components/Game/NewGame";
 import Colors from "../constants/Colors";
 import {GameOver} from "../components/Game/GameOver";
+import getCurrentGame from "../graphql/getCurrentGame";
 
 
 
@@ -156,8 +157,9 @@ export class Game extends React.Component {
 
 //TODO Create a running scoreboard with all necessary information and proper columns
             return <View style={styles.container}>
-                {scoreBoard}
-                {screen}
+                {/*{scoreBoard}*/}
+                {/*{screen}*/}
+              <NewGame style={styles.scoreboard} onPress={this.createGame}/>
                 </View>
         }
 }
@@ -188,5 +190,11 @@ export default compose(
     graphql(createGame, {
       name: 'createGame'
     }),
-    graphql(allUsers, { name: 'allUsers'})
+    graphql(getCurrentGame, {
+      props: ({data: {currentGame, loading}}) => ({
+        currentGame,
+        loading
+      })
+    }),
+    graphql(updateGame, {name: 'updateGame'})
 )(Game);

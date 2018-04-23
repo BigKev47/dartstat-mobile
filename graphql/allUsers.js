@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export default gql`
-    query AllUsers {
+    query allUsers {
         allUsers{
             id
             firstName

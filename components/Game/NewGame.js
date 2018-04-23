@@ -1,25 +1,53 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import {View, StyleSheet, FlatList, Text} from 'react-native';
 
 import {createDart, allUsers, createGame} from "../../graphql";
 import {graphql, compose} from "@expo/react-apollo";
 import Button from "react-native-button";
 import Colors from "../../constants/Colors";
+import {Game} from "../../screens/Game";
+import ModalDropdown from 'react-native-modal-dropdown';
 
 
 
-export class NewGame extends React.Component {
+ class NewGame extends React.Component {
 
     constructor(props) {
         super(props);
 
+        this.state = {players: {}}
+
     }
+
+    pressHandler = ()=> {
+      // const { users, allUsers, loading } = this.props;
+      // if(loading) return null;
+      // const userlist = users.allUsers.map(user.id)
+      // console.log(userlist);
+      // this.setState({players: users});
+      this.props.onPress();
+    };
+
     render() {
+      const { allUsers, loading } = this.props;
+      if (loading) return null;
+
 
 //TODO Create a running scoreboard with all necessary information and proper columns
-        return <Button onPress={this.props.onPress}
+        return <View style={styles.container}><Button onPress={ this.pressHandler.bind(this)}
                     style={styles.button}
                     containerStyle={styles.buttoncontainer}>New Game</Button>
+            <FlatList
+              style={{flex: 1}}
+              data={allUsers}
+              renderItem={({ item }) => (
+                  <Text style={{color: "white"}}>{item.firstName} {item.lastName}</Text>
+              )}
+              keyExtractor={item => item.id}/>
+
+            {/*<ModalDropdown options={ playerNames }>*/}
+            {/*</ModalDropdown>*/}
+        </View>
 
 
     }
@@ -27,6 +55,11 @@ export class NewGame extends React.Component {
 
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.scoreBoard,
+    alignContent: "center",
+  },
     button: {
         color: "white",
         alignContent: "center",
@@ -49,3 +82,10 @@ const styles = StyleSheet.create({
     },
 
 });
+
+export default graphql(allUsers, {
+  props: ({ data }) => ({ ...data })
+
+
+    }
+)(NewGame);

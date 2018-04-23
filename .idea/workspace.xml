@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f98bd5a5-de42-4639-a44f-f224a90cd849" name="Default" comment="Updated styling and added a few svgs">
-      <change afterPath="$PROJECT_DIR$/components/Game/DartEntry.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Game/GameOver.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Game/NewGame.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Game/Scoreboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Buttons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/GamePlayUtils/RoundConfirmation.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Game/RoundConfirmation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/Colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/Colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/App.js" afterPath="$PROJECT_DIR$/App.js" />
+      <change beforePath="$PROJECT_DIR$/NewGame.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/components/Game/NewGame.js" afterPath="$PROJECT_DIR$/components/Game/NewGame.js" />
+      <change beforePath="$PROJECT_DIR$/graphql/allUsers.js" afterPath="$PROJECT_DIR$/graphql/allUsers.js" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/screens/Game.js" afterPath="$PROJECT_DIR$/screens/Game.js" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,20 +24,11 @@
       <file leaf-file-name="Game.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/screens/Game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1500">
-              <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+            <state relative-caret-position="554">
+              <caret line="194" column="20" lean-forward="true" selection-start-line="194" selection-start-column="20" selection-end-line="194" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Colors.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/constants/Colors.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -45,8 +36,8 @@
       <file leaf-file-name="NewGame.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Game/NewGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="31" column="13" selection-start-line="30" selection-start-column="8" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="428">
+              <caret line="45" column="46" lean-forward="true" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -54,25 +45,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameOver.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Game/GameOver.js">
+      <file leaf-file-name="allUsers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphql/allUsers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            <state relative-caret-position="252">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1524434131527" expanded="true" signature="55:172" ph="query...{&#10;        allUsers{&#10;            id&#10;            firstName&#10;            lastName&#10;        }&#10;        &#10;    }" />
+                <marker date="1524434131527" expanded="true" signature="61:69" ph="allUsers...allUsers" />
+                <marker date="1524434131527" expanded="true" signature="70:172" ph="{...}" />
+                <marker date="1524434131527" expanded="true" signature="80:88" ph="allUsers...allUsers" />
+                <marker date="1524434131527" expanded="true" signature="80:157" ph="allUsers...{&#10;            id&#10;            firstName&#10;            lastName&#10;        }" />
+                <marker date="1524434131527" expanded="true" signature="88:157" ph="{...}" />
+                <marker date="1524434131527" expanded="true" signature="102:104" ph="id...id" />
+                <marker date="1524434131527" expanded="true" signature="117:126" ph="firstName...firstName" />
+                <marker date="1524434131527" expanded="true" signature="139:147" ph="lastName...lastName" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scoreboard.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard.js">
+      <file leaf-file-name="resetCurrentGame.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphql/resetCurrentGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1519636874000" expanded="true" signature="53:170" ph="mutation...{&#10;    resetCurrentGame @client {&#10;      teamAScore&#10;      teamBScore&#10;      teamAName&#10;      teamBName&#10;    }&#10;  }" />
+                <marker date="1519636874000" expanded="true" signature="62:170" ph="{...}" />
+                <marker date="1519636874000" expanded="true" signature="68:84" ph="resetCurrentGame...resetCurrentGame" />
+                <marker date="1519636874000" expanded="true" signature="68:166" ph="resetCurrentGame...{&#10;      teamAScore&#10;      teamBScore&#10;      teamAName&#10;      teamBName&#10;    }" />
+                <marker date="1519636874000" expanded="true" signature="93:166" ph="{...}" />
+                <marker date="1519636874000" expanded="true" signature="101:111" ph="teamAScore...teamAScore" />
+                <marker date="1519636874000" expanded="true" signature="118:128" ph="teamBScore...teamBScore" />
+                <marker date="1519636874000" expanded="true" signature="135:144" ph="teamAName...teamAName" />
+                <marker date="1519636874000" expanded="true" signature="151:160" ph="teamBName...teamBName" />
               </folding>
             </state>
           </provider>
@@ -81,8 +88,8 @@
       <file leaf-file-name="Buttons.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Buttons.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -90,36 +97,107 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createDart.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphql/createDart.js">
+      <file leaf-file-name="createGame.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphql/createGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state relative-caret-position="273">
+              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding>
-                <marker date="1524240204781" expanded="true" signature="55:487" ph="mutation...{&#10;        createDart(&#10;            numberHit: $numberHit&#10;##            gameId: $gameId&#10;            sectionHit: $sectionHit&#10;            playerId: $playerId&#10;        ) {&#10;            numberHit&#10;            sectionHit&#10;##            game{&#10;##                id&#10;##            }&#10;            player{&#10;                id&#10;            }&#10;        }&#10;    }" />
-                <marker date="1524240204781" expanded="true" signature="64:74" ph="createDart...createDart" />
-                <marker date="1524240204781" expanded="true" signature="74:137" ph="(...)" />
-                <marker date="1524240204781" expanded="true" signature="92:95" ph="Int...Int" />
-                <marker date="1524240204781" expanded="true" signature="114:117" ph="Int...Int" />
-                <marker date="1524240204781" expanded="true" signature="133:135" ph="ID...ID" />
-                <marker date="1524240204781" expanded="true" signature="405:481" ph="createDart...{&#10;            numberHit&#10;            sectionHit&#10;##            game{&#10;##                id&#10;##            }&#10;            player{&#10;                id&#10;            }&#10;        }" />
-                <marker date="1524240204781" expanded="true" signature="405:487" ph="{...}" />
-                <marker date="1524240204781" expanded="true" signature="431:437" ph="player...player" />
-                <marker date="1524240204781" expanded="true" signature="431:471" ph="player...{&#10;                id&#10;            }" />
-                <marker date="1524240204781" expanded="true" signature="437:471" ph="{...}" />
-                <marker date="1524240204781" expanded="true" signature="455:457" ph="id...id" />
+                <marker date="1523916025666" expanded="true" signature="53:275" ph="mutation...{&#10;    createGame(&#10;      gameType: $gameType&#10;      playersIds: $playersIds&#10;      completed: false&#10;    ) {&#10;      id&#10;      gameType&#10;      completed&#10;      players{&#10;          id&#10;      }&#10;    }&#10;  }" />
+                <marker date="1523916025666" expanded="true" signature="62:72" ph="createGame...createGame" />
+                <marker date="1523916025666" expanded="true" signature="72:120" ph="(...)" />
+                <marker date="1523916025666" expanded="true" signature="72:123" ph="(...)" />
+                <marker date="1523916025666" expanded="true" signature="89:95" ph="String...String" />
+                <marker date="1523916025666" expanded="true" signature="114:119" ph="[...]" />
+                <marker date="1523916025666" expanded="true" signature="115:117" ph="ID...ID" />
+                <marker date="1523916025666" expanded="true" signature="124:275" ph="{...}" />
+                <marker date="1523916025666" expanded="true" signature="130:140" ph="createGame...createGame" />
+                <marker date="1523916025666" expanded="true" signature="140:203" ph="(...)" />
+                <marker date="1523916025666" expanded="true" signature="148:156" ph="gameType...gameType" />
+                <marker date="1523916025666" expanded="true" signature="174:184" ph="playersIds...playersIds" />
+                <marker date="1523916025666" expanded="true" signature="212:214" ph="id...id" />
+                <marker date="1523916025666" expanded="true" signature="221:229" ph="gameType...gameType" />
+                <marker date="1523916025666" expanded="true" signature="229:271" ph="createGame...{&#10;      id&#10;      gameType&#10;      completed&#10;      players{&#10;          id&#10;      }&#10;    }" />
+                <marker date="1523916025666" expanded="true" signature="229:275" ph="{...}" />
+                <marker date="1523916025666" expanded="true" signature="236:243" ph="players...players" />
+                <marker date="1523916025666" expanded="true" signature="236:265" ph="players...{&#10;          id&#10;      }" />
+                <marker date="1523916025666" expanded="true" signature="243:265" ph="{...}" />
+                <marker date="1523916025666" expanded="true" signature="255:257" ph="id...id" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DartEntry.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Game/DartEntry.js">
+      <file leaf-file-name="updateGame.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphql/updateGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="252">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1523916025666" expanded="true" signature="53:239" ph="mutation...{&#10;    updateCurrentGame(index: $index, value: $value) @client {&#10;      gameId&#10;      gameCompleted&#10;      players&#10;      roundScore&#10;      currentDarts&#10;      darts&#10;      round&#10;      homeScore&#10;      awayScore&#10;    }&#10;  }" />
+                <marker date="1523916025666" expanded="true" signature="62:68" ph="updateCurrentGame...updateCurrentGame" />
+                <marker date="1523916025666" expanded="true" signature="62:72" ph="updateGame...updateGame" />
+                <marker date="1523916025666" expanded="true" signature="72:106" ph="(...)" />
+                <marker date="1523916025666" expanded="true" signature="81:87" ph="String...String" />
+                <marker date="1523916025666" expanded="true" signature="98:104" ph="String...String" />
+                <marker date="1523916025666" expanded="true" signature="107:239" ph="{...}" />
+                <marker date="1523916025666" expanded="true" signature="113:123" ph="updateGame...updateGame" />
+                <marker date="1523916025666" expanded="true" signature="123:153" ph="(...)" />
+                <marker date="1523916025666" expanded="true" signature="124:129" ph="index...index" />
+                <marker date="1523916025666" expanded="true" signature="139:144" ph="value...value" />
+                <marker date="1523916025666" expanded="true" signature="170:180" ph="teamAScore...teamAScore" />
+                <marker date="1523916025666" expanded="true" signature="187:197" ph="teamBScore...teamBScore" />
+                <marker date="1523916025666" expanded="true" signature="204:213" ph="teamAName...teamAName" />
+                <marker date="1523916025666" expanded="true" signature="228:229" ph="awayScore...awayScore" />
+                <marker date="1523916025666" expanded="true" signature="228:235" ph="updateCurrentGame...{&#10;      gameId&#10;      gameCompleted&#10;      players&#10;      roundScore&#10;      currentDarts&#10;      darts&#10;      round&#10;      homeScore&#10;      awayScore&#10;    }" />
+                <marker date="1523916025666" expanded="true" signature="228:239" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getCurrentGame.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphql/getCurrentGame.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+              <folding>
+                <marker date="1523916025666" expanded="true" signature="53:162" ph="query...{&#10;    currentGame @client {&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }&#10;  }" />
+                <marker date="1523916025666" expanded="true" signature="59:162" ph="{...}" />
+                <marker date="1523916025666" expanded="true" signature="65:76" ph="currentGame...currentGame" />
+                <marker date="1523916025666" expanded="true" signature="65:158" ph="currentGame...{&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }" />
+                <marker date="1523916025666" expanded="true" signature="85:158" ph="{...}" />
+                <marker date="1523916025666" expanded="true" signature="93:103" ph="teamAScore...teamAScore" />
+                <marker date="1523916025666" expanded="true" signature="110:120" ph="teamBScore...teamBScore" />
+                <marker date="1523916025666" expanded="true" signature="127:136" ph="teamAName...teamAName" />
+                <marker date="1523916025666" expanded="true" signature="143:152" ph="teamBName...teamBName" />
+                <marker date="1523916025666" expanded="true" signature="151:152" ph="awayScore...awayScore" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="53" column="39" lean-forward="true" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+              <folding>
+                <marker date="1524511574665" expanded="true" signature="1372:1915" ph="query...{&#10;                                currentGame @client {&#10;                                    homeScore&#10;                                    awayScore&#10;                                }&#10;                            }" />
+                <marker date="1524511574665" expanded="true" signature="1378:1392" ph="GetCurrentGame...GetCurrentGame" />
+                <marker date="1524511574665" expanded="true" signature="1393:1915" ph="{...}" />
+                <marker date="1524511574665" expanded="true" signature="1427:1438" ph="currentGame...currentGame" />
+                <marker date="1524511574665" expanded="true" signature="1427:1885" ph="currentGame...{&#10;                                    homeScore&#10;                                    awayScore&#10;                                }" />
+                <marker date="1524511574665" expanded="true" signature="1447:1885" ph="{...}" />
+                <marker date="1524511574665" expanded="true" signature="1485:1487" ph="id...id" />
+                <marker date="1524511574665" expanded="true" signature="1524:1529" ph="darts...darts" />
+                <marker date="1524511574665" expanded="true" signature="1566:1578" ph="currentDarts...currentDarts" />
+                <marker date="1524511574665" expanded="true" signature="1615:1625" ph="roundScore...roundScore" />
+                <marker date="1524511574665" expanded="true" signature="1662:1671" ph="homeScore...homeScore" />
+                <marker date="1524511574665" expanded="true" signature="1708:1717" ph="awayScore...awayScore" />
+                <marker date="1524511574665" expanded="true" signature="1754:1759" ph="round...round" />
+                <marker date="1524511574665" expanded="true" signature="1796:1804" ph="homeTurn...homeTurn" />
+                <marker date="1524511574665" expanded="true" signature="1841:1851" ph="gameActive...gameActive" />
               </folding>
             </state>
           </provider>
@@ -128,20 +206,9 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graphql/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NumberGrid.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/NumberGrid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="49" column="60" lean-forward="true" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -212,7 +279,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/_universe/app.json" />
         <option value="$PROJECT_DIR$/src/screens/Match.ts" />
@@ -248,7 +314,6 @@
         <option value="$PROJECT_DIR$/components/user/LoginUser.js" />
         <option value="$PROJECT_DIR$/navigation/RootNavigation.js" />
         <option value="$PROJECT_DIR$/grahql/createGame.js" />
-        <option value="$PROJECT_DIR$/App.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/graphql/createGame.js" />
         <option value="$PROJECT_DIR$/graphql/createDart.js" />
@@ -257,11 +322,13 @@
         <option value="$PROJECT_DIR$/components/GamePlayUtils/RoundConfirmation.js" />
         <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/constants/Colors.js" />
-        <option value="$PROJECT_DIR$/components/Game/NewGame.js" />
         <option value="$PROJECT_DIR$/components/Buttons.js" />
         <option value="$PROJECT_DIR$/components/Game/DartEntry.js" />
         <option value="$PROJECT_DIR$/components/Game/Scoreboard.js" />
         <option value="$PROJECT_DIR$/components/Game/GameOver.js" />
+        <option value="$PROJECT_DIR$/graphql/allUsers.js" />
+        <option value="$PROJECT_DIR$/components/Game/NewGame.js" />
+        <option value="$PROJECT_DIR$/App.js" />
         <option value="$PROJECT_DIR$/screens/Game.js" />
       </list>
     </option>
@@ -351,21 +418,28 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
               <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
@@ -381,17 +455,7 @@
             <path>
               <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
               <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
               <item name="graphql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
@@ -401,7 +465,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -416,7 +480,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,6 +503,125 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/components/Buttons.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/constants/Colors.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/screens/Game.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/components/Game/DartEntry.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/components/Game/GameOver.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/components/Game/NewGame.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/components/Game/RoundConfirmation.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/components/Game/Scoreboard.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/components/GamePlayUtils/RoundConfirmation.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -452,239 +634,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-    </configuration>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f98bd5a5-de42-4639-a44f-f224a90cd849" name="Default" comment="" />
-      <created>1520216181613</created>
+      <changelist id="0380d09a-82ae-45b2-b348-14f8ecc886c7" name="Default" comment="" />
+      <created>1523746984669</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1520216181613</updated>
-      <workItem from="1520286277230" duration="1771000" />
-      <workItem from="1520288404205" duration="23835000" />
-      <workItem from="1520323231008" duration="151000" />
-      <workItem from="1520323449115" duration="11220000" />
-      <workItem from="1520353399889" duration="1769000" />
-      <workItem from="1520380718358" duration="1676000" />
-      <workItem from="1520546807116" duration="12000" />
-      <workItem from="1520546884148" duration="22719000" />
-      <workItem from="1520643429045" duration="393000" />
-      <workItem from="1521311638811" duration="4492000" />
-      <workItem from="1521408816229" duration="437000" />
-      <workItem from="1521409263418" duration="13319000" />
-      <workItem from="1521747762129" duration="13921000" />
-      <workItem from="1521911902775" duration="2217000" />
-      <workItem from="1521932656057" duration="16000" />
-      <workItem from="1521933089197" duration="507000" />
-      <workItem from="1521933661350" duration="22000" />
-      <workItem from="1521946055290" duration="7906000" />
-      <workItem from="1521985382884" duration="182000" />
-      <workItem from="1522003930323" duration="2715000" />
-      <workItem from="1522006656231" duration="10191000" />
-      <workItem from="1522260663383" duration="2770000" />
-      <workItem from="1522265874928" duration="10939000" />
-      <workItem from="1522345520883" duration="1182000" />
-      <workItem from="1522346713420" duration="1325000" />
-      <workItem from="1522348050613" duration="382000" />
-      <workItem from="1522348442471" duration="454000" />
-      <workItem from="1522348906667" duration="2172000" />
-      <workItem from="1522351160798" duration="11344000" />
-      <workItem from="1522435871047" duration="2009000" />
-      <workItem from="1522438899352" duration="123000" />
-      <workItem from="1522439077338" duration="75000" />
-      <workItem from="1522439314216" duration="63000" />
-      <workItem from="1522439399883" duration="451000" />
-      <workItem from="1522439859979" duration="20468000" />
-      <workItem from="1522703300691" duration="8117000" />
-      <workItem from="1523038030626" duration="9077000" />
-      <workItem from="1523977615608" duration="148000" />
-      <workItem from="1523978066236" duration="1186000" />
-      <workItem from="1524239867508" duration="535000" />
-      <workItem from="1524241397831" duration="13255000" />
+      <updated>1523746984669</updated>
+      <workItem from="1523746985710" duration="16189000" />
+      <workItem from="1524431090256" duration="12786000" />
     </task>
-    <task id="LOCAL-00001" summary="Got my basic Parent/Child props flow working.">
-      <created>1520294932467</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1520294932467</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Actually for my frontend files added to git, and started building out the buttonscreen logic.">
-      <created>1520318161798</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1520318161798</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Screwed around quite royally with my config to try to get ts working. no love yet.">
-      <created>1520563602974</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1520563602974</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Got back to my basic naieve dart-entry version that wasworking.">
-      <created>1520565241826</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1520565241826</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Got Typescript up and running.">
-      <created>1520643523299</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1520643523299</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Got Typescript up and running.">
-      <created>1520643771379</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1520643771379</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Started to refactor the app and gameplay.">
-      <created>1521549406214</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1521549406214</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Got two player switching kind of working.">
-      <created>1521758333071</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1521758333071</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Got started on column styling for the scoresheet">
-      <created>1521809805552</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1521809805552</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Got the round-keeping working with a setState callback.">
-      <created>1522270394220</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1522270394220</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Got the dart-handler talking to the backend!">
-      <created>1522353393275</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1522353393276</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Starting working on NewGame functionality, hitting a wall.">
-      <created>1522363980226</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1522363980226</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Made some progress on Nav Styling.">
-      <created>1522536826560</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1522536826560</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Got game creation returning an Id, finally.">
-      <created>1523560163999</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1523560163999</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Updated styling and added a few svgs">
-      <created>1523647077397</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1523647077397</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221083000" />
+    <option name="totallyTimeSpent" value="233831000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -696,50 +665,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="435" y="9" width="1920" height="1044" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23541667" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.51458335" side_tool="true" weight="0.32873806" />
-      <window_info anchor="bottom" id="GraphQL" order="7" sideWeight="0.49583334" visible="true" weight="0.32837406" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4978903" weight="0.32837406" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48541668" weight="0.32837406" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.32979852" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4978903" weight="0.32893288" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="GraphQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.330033" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23541667" />
-      <window_info anchor="bottom" id="GraphQL" order="9" sideWeight="0.49583334" weight="0.32873806" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4978903" weight="0.32893288" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4978903" weight="0.32893288" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48541668" visible="true" weight="0.32873806" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51458335" side_tool="true" weight="0.32873806" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -801,9 +750,9 @@
     <breakpoint-manager>
       <option name="time" value="1" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/screens/HomeScreen.js" />
     <entry file="file://$PROJECT_DIR$/src/constants.tsx" />
     <entry file="file://$PROJECT_DIR$/src/screens/Match.tsx" />
     <entry file="file://$PROJECT_DIR$/src/screens/Game.js" />
@@ -819,7 +768,7 @@
     <entry file="file://$PROJECT_DIR$/graphql.config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -828,132 +777,103 @@
     <entry file="file://$PROJECT_DIR$/components/NewDart.js" />
     <entry file="file://$PROJECT_DIR$/components/games/Cricket.ts" />
     <entry file="file://$PROJECT_DIR$/components/NewGame.js" />
-    <entry file="file://$PROJECT_DIR$/graphql/getCurrentGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphql/allUsers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/constants/Layout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NewGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/NewGame.js" />
     <entry file="file://$PROJECT_DIR$/graphql/allGames.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1519636874000" expanded="true" signature="53:169" ph="query...{&#10;    allGames {&#10;      teamAName&#10;      teamBName&#10;      teamAScore&#10;      teamBScore&#10;      id&#10;    }&#10;  }" />
+            <marker date="1519636874000" expanded="true" signature="59:67" ph="AllGames...AllGames" />
+            <marker date="1519636874000" expanded="true" signature="68:169" ph="{...}" />
+            <marker date="1519636874000" expanded="true" signature="74:82" ph="allGames...allGames" />
+            <marker date="1519636874000" expanded="true" signature="74:165" ph="allGames...{&#10;      teamAName&#10;      teamBName&#10;      teamAScore&#10;      teamBScore&#10;      id&#10;    }" />
+            <marker date="1519636874000" expanded="true" signature="83:165" ph="{...}" />
+            <marker date="1519636874000" expanded="true" signature="91:100" ph="teamAName...teamAName" />
+            <marker date="1519636874000" expanded="true" signature="107:116" ph="teamBName...teamBName" />
+            <marker date="1519636874000" expanded="true" signature="123:133" ph="teamAScore...teamAScore" />
+            <marker date="1519636874000" expanded="true" signature="140:150" ph="teamBScore...teamBScore" />
+            <marker date="1519636874000" expanded="true" signature="157:159" ph="id...id" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/user/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/user/CreateUser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/user/LoginUser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/navigation/RootNavigation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
-          <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/user/UserForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/StatsScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/HomeScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphql/updateGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yarn.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="4032" column="10" selection-start-line="4032" selection-start-column="6" selection-end-line="4032" selection-end-column="10" />
+          <caret line="4032" column="10" lean-forward="false" selection-start-line="4032" selection-start-column="6" selection-end-line="4032" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/navigation/MainTabNavigator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+          <caret line="37" column="59" lean-forward="false" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphql/createGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <marker date="1523635955253" expanded="true" signature="53:275" ph="mutation...{&#10;    createGame(&#10;      gameType: $gameType&#10;    ) {&#10;      id&#10;      gameType&#10;    }&#10;  }" />
-            <marker date="1523635955253" expanded="true" signature="62:72" ph="createGame...createGame" />
-            <marker date="1523635955253" expanded="true" signature="72:99" ph="(...)" />
-            <marker date="1523635955253" expanded="true" signature="89:95" ph="String...String" />
-            <marker date="1523635955253" expanded="true" signature="265:271" ph="createGame...{&#10;      id&#10;      gameType&#10;    }" />
-            <marker date="1523635955253" expanded="true" signature="265:275" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -961,121 +881,81 @@
     <entry file="file://$PROJECT_DIR$/components/Game/RoundConfirmation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <marker date="1523037452820" expanded="true" signature="1391:1623" ph="query...{&#10;                                currentGame @client {&#10;                                    homeScore&#10;                                    awayScore&#10;                                }&#10;                            }" />
-            <marker date="1523037452820" expanded="true" signature="1397:1411" ph="GetCurrentGame...GetCurrentGame" />
-            <marker date="1523037452820" expanded="true" signature="1412:1623" ph="{...}" />
-            <marker date="1523037452820" expanded="true" signature="1446:1457" ph="currentGame...currentGame" />
-            <marker date="1523037452820" expanded="true" signature="1446:1593" ph="currentGame...{&#10;                                    homeScore&#10;                                    awayScore&#10;                                }" />
-            <marker date="1523037452820" expanded="true" signature="1466:1593" ph="{...}" />
-            <marker date="1523037452820" expanded="true" signature="1504:1513" ph="homeScore...homeScore" />
-            <marker date="1523037452820" expanded="true" signature="1550:1559" ph="awayScore...awayScore" />
-          </folding>
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Game/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Game/index.js" />
     <entry file="file://$PROJECT_DIR$/graphql/createDarts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/constants/Colors.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphql/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Buttons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Game/DartEntry.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graphql/createDart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        <state relative-caret-position="252">
+          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
           <folding>
-            <marker date="1524240204781" expanded="true" signature="55:487" ph="mutation...{&#10;        createDart(&#10;            numberHit: $numberHit&#10;##            gameId: $gameId&#10;            sectionHit: $sectionHit&#10;            playerId: $playerId&#10;        ) {&#10;            numberHit&#10;            sectionHit&#10;##            game{&#10;##                id&#10;##            }&#10;            player{&#10;                id&#10;            }&#10;        }&#10;    }" />
-            <marker date="1524240204781" expanded="true" signature="64:74" ph="createDart...createDart" />
-            <marker date="1524240204781" expanded="true" signature="74:137" ph="(...)" />
-            <marker date="1524240204781" expanded="true" signature="92:95" ph="Int...Int" />
-            <marker date="1524240204781" expanded="true" signature="114:117" ph="Int...Int" />
-            <marker date="1524240204781" expanded="true" signature="133:135" ph="ID...ID" />
-            <marker date="1524240204781" expanded="true" signature="405:481" ph="createDart...{&#10;            numberHit&#10;            sectionHit&#10;##            game{&#10;##                id&#10;##            }&#10;            player{&#10;                id&#10;            }&#10;        }" />
-            <marker date="1524240204781" expanded="true" signature="405:487" ph="{...}" />
-            <marker date="1524240204781" expanded="true" signature="431:437" ph="player...player" />
-            <marker date="1524240204781" expanded="true" signature="431:471" ph="player...{&#10;                id&#10;            }" />
-            <marker date="1524240204781" expanded="true" signature="437:471" ph="{...}" />
-            <marker date="1524240204781" expanded="true" signature="455:457" ph="id...id" />
+            <marker date="1523743892021" expanded="true" signature="55:487" ph="mutation...{&#10;        createDart(&#10;            numberHit: $numberHit&#10;            gameId: $gameId&#10;            sectionHit: $sectionHit&#10;            playerId: $playerId&#10;        ) {&#10;            numberHit&#10;            sectionHit&#10;            game{&#10;                id&#10;            }&#10;            player{&#10;                id&#10;            }&#10;        }&#10;    }" />
+            <marker date="1523743892021" expanded="true" signature="64:74" ph="createDart...createDart" />
+            <marker date="1523743892021" expanded="true" signature="74:159" ph="(...)" />
+            <marker date="1523743892021" expanded="true" signature="92:95" ph="Int...Int" />
+            <marker date="1523743892021" expanded="true" signature="114:117" ph="Int...Int" />
+            <marker date="1523743892021" expanded="true" signature="133:135" ph="ID...ID" />
+            <marker date="1523743892021" expanded="true" signature="150:152" ph="ID...ID" />
+            <marker date="1523743892021" expanded="true" signature="159:487" ph="{...}" />
+            <marker date="1523743892021" expanded="true" signature="169:179" ph="createDart...createDart" />
+            <marker date="1523743892021" expanded="true" signature="169:481" ph="createDart...{&#10;            numberHit&#10;            sectionHit&#10;            game{&#10;                id&#10;            }&#10;            player{&#10;                id&#10;            }&#10;        }" />
+            <marker date="1523743892021" expanded="true" signature="179:320" ph="(...)" />
+            <marker date="1523743892021" expanded="true" signature="193:202" ph="numberHit...numberHit" />
+            <marker date="1523743892021" expanded="true" signature="227:233" ph="gameId...gameId" />
+            <marker date="1523743892021" expanded="true" signature="255:265" ph="sectionHit...sectionHit" />
+            <marker date="1523743892021" expanded="true" signature="291:299" ph="playerId...playerId" />
+            <marker date="1523743892021" expanded="true" signature="321:481" ph="{...}" />
+            <marker date="1523743892021" expanded="true" signature="335:344" ph="numberHit...numberHit" />
+            <marker date="1523743892021" expanded="true" signature="357:367" ph="sectionHit...sectionHit" />
+            <marker date="1523743892021" expanded="true" signature="380:384" ph="game...game" />
+            <marker date="1523743892021" expanded="true" signature="380:418" ph="game...{&#10;                id&#10;            }" />
+            <marker date="1523743892021" expanded="true" signature="384:418" ph="{...}" />
+            <marker date="1523743892021" expanded="true" signature="402:404" ph="id...id" />
+            <marker date="1523743892021" expanded="true" signature="431:437" ph="player...player" />
+            <marker date="1523743892021" expanded="true" signature="431:471" ph="player...{&#10;                id&#10;            }" />
+            <marker date="1523743892021" expanded="true" signature="437:471" ph="{...}" />
+            <marker date="1523743892021" expanded="true" signature="455:457" ph="id...id" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/NumberGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="49" column="60" lean-forward="true" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Game/NewGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="13" selection-start-line="30" selection-start-column="8" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="567">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -1087,7 +967,7 @@
         <state relative-caret-position="102">
           <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1097,15 +977,177 @@
         <state relative-caret-position="482">
           <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
           <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql/updateGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1523916025666" expanded="true" signature="53:239" ph="mutation...{&#10;    updateCurrentGame(index: $index, value: $value) @client {&#10;      gameId&#10;      gameCompleted&#10;      players&#10;      roundScore&#10;      currentDarts&#10;      darts&#10;      round&#10;      homeScore&#10;      awayScore&#10;    }&#10;  }" />
+            <marker date="1523916025666" expanded="true" signature="62:68" ph="updateCurrentGame...updateCurrentGame" />
+            <marker date="1523916025666" expanded="true" signature="62:72" ph="updateGame...updateGame" />
+            <marker date="1523916025666" expanded="true" signature="72:106" ph="(...)" />
+            <marker date="1523916025666" expanded="true" signature="81:87" ph="String...String" />
+            <marker date="1523916025666" expanded="true" signature="98:104" ph="String...String" />
+            <marker date="1523916025666" expanded="true" signature="107:239" ph="{...}" />
+            <marker date="1523916025666" expanded="true" signature="113:123" ph="updateGame...updateGame" />
+            <marker date="1523916025666" expanded="true" signature="123:153" ph="(...)" />
+            <marker date="1523916025666" expanded="true" signature="124:129" ph="index...index" />
+            <marker date="1523916025666" expanded="true" signature="139:144" ph="value...value" />
+            <marker date="1523916025666" expanded="true" signature="170:180" ph="teamAScore...teamAScore" />
+            <marker date="1523916025666" expanded="true" signature="187:197" ph="teamBScore...teamBScore" />
+            <marker date="1523916025666" expanded="true" signature="204:213" ph="teamAName...teamAName" />
+            <marker date="1523916025666" expanded="true" signature="228:229" ph="awayScore...awayScore" />
+            <marker date="1523916025666" expanded="true" signature="228:235" ph="updateCurrentGame...{&#10;      gameId&#10;      gameCompleted&#10;      players&#10;      roundScore&#10;      currentDarts&#10;      darts&#10;      round&#10;      homeScore&#10;      awayScore&#10;    }" />
+            <marker date="1523916025666" expanded="true" signature="228:239" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql/resetCurrentGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1519636874000" expanded="true" signature="53:170" ph="mutation...{&#10;    resetCurrentGame @client {&#10;      teamAScore&#10;      teamBScore&#10;      teamAName&#10;      teamBName&#10;    }&#10;  }" />
+            <marker date="1519636874000" expanded="true" signature="62:170" ph="{...}" />
+            <marker date="1519636874000" expanded="true" signature="68:84" ph="resetCurrentGame...resetCurrentGame" />
+            <marker date="1519636874000" expanded="true" signature="68:166" ph="resetCurrentGame...{&#10;      teamAScore&#10;      teamBScore&#10;      teamAName&#10;      teamBName&#10;    }" />
+            <marker date="1519636874000" expanded="true" signature="93:166" ph="{...}" />
+            <marker date="1519636874000" expanded="true" signature="101:111" ph="teamAScore...teamAScore" />
+            <marker date="1519636874000" expanded="true" signature="118:128" ph="teamBScore...teamBScore" />
+            <marker date="1519636874000" expanded="true" signature="135:144" ph="teamAName...teamAName" />
+            <marker date="1519636874000" expanded="true" signature="151:160" ph="teamBName...teamBName" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Buttons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql/createGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding>
+            <marker date="1523916025666" expanded="true" signature="53:275" ph="mutation...{&#10;    createGame(&#10;      gameType: $gameType&#10;      playersIds: $playersIds&#10;      completed: false&#10;    ) {&#10;      id&#10;      gameType&#10;      completed&#10;      players{&#10;          id&#10;      }&#10;    }&#10;  }" />
+            <marker date="1523916025666" expanded="true" signature="62:72" ph="createGame...createGame" />
+            <marker date="1523916025666" expanded="true" signature="72:120" ph="(...)" />
+            <marker date="1523916025666" expanded="true" signature="72:123" ph="(...)" />
+            <marker date="1523916025666" expanded="true" signature="89:95" ph="String...String" />
+            <marker date="1523916025666" expanded="true" signature="114:119" ph="[...]" />
+            <marker date="1523916025666" expanded="true" signature="115:117" ph="ID...ID" />
+            <marker date="1523916025666" expanded="true" signature="124:275" ph="{...}" />
+            <marker date="1523916025666" expanded="true" signature="130:140" ph="createGame...createGame" />
+            <marker date="1523916025666" expanded="true" signature="140:203" ph="(...)" />
+            <marker date="1523916025666" expanded="true" signature="148:156" ph="gameType...gameType" />
+            <marker date="1523916025666" expanded="true" signature="174:184" ph="playersIds...playersIds" />
+            <marker date="1523916025666" expanded="true" signature="212:214" ph="id...id" />
+            <marker date="1523916025666" expanded="true" signature="221:229" ph="gameType...gameType" />
+            <marker date="1523916025666" expanded="true" signature="229:271" ph="createGame...{&#10;      id&#10;      gameType&#10;      completed&#10;      players{&#10;          id&#10;      }&#10;    }" />
+            <marker date="1523916025666" expanded="true" signature="229:275" ph="{...}" />
+            <marker date="1523916025666" expanded="true" signature="236:243" ph="players...players" />
+            <marker date="1523916025666" expanded="true" signature="236:265" ph="players...{&#10;          id&#10;      }" />
+            <marker date="1523916025666" expanded="true" signature="243:265" ph="{...}" />
+            <marker date="1523916025666" expanded="true" signature="255:257" ph="id...id" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql/allUsers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1524434131527" expanded="true" signature="55:172" ph="query...{&#10;        allUsers{&#10;            id&#10;            firstName&#10;            lastName&#10;        }&#10;        &#10;    }" />
+            <marker date="1524434131527" expanded="true" signature="61:69" ph="allUsers...allUsers" />
+            <marker date="1524434131527" expanded="true" signature="70:172" ph="{...}" />
+            <marker date="1524434131527" expanded="true" signature="80:88" ph="allUsers...allUsers" />
+            <marker date="1524434131527" expanded="true" signature="80:157" ph="allUsers...{&#10;            id&#10;            firstName&#10;            lastName&#10;        }" />
+            <marker date="1524434131527" expanded="true" signature="88:157" ph="{...}" />
+            <marker date="1524434131527" expanded="true" signature="102:104" ph="id...id" />
+            <marker date="1524434131527" expanded="true" signature="117:126" ph="firstName...firstName" />
+            <marker date="1524434131527" expanded="true" signature="139:147" ph="lastName...lastName" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Game/NewGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="45" column="46" lean-forward="true" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql/getCurrentGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding>
+            <marker date="1523916025666" expanded="true" signature="53:162" ph="query...{&#10;    currentGame @client {&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }&#10;  }" />
+            <marker date="1523916025666" expanded="true" signature="59:162" ph="{...}" />
+            <marker date="1523916025666" expanded="true" signature="65:76" ph="currentGame...currentGame" />
+            <marker date="1523916025666" expanded="true" signature="65:158" ph="currentGame...{&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }" />
+            <marker date="1523916025666" expanded="true" signature="85:158" ph="{...}" />
+            <marker date="1523916025666" expanded="true" signature="93:103" ph="teamAScore...teamAScore" />
+            <marker date="1523916025666" expanded="true" signature="110:120" ph="teamBScore...teamBScore" />
+            <marker date="1523916025666" expanded="true" signature="127:136" ph="teamAName...teamAName" />
+            <marker date="1523916025666" expanded="true" signature="143:152" ph="teamBName...teamBName" />
+            <marker date="1523916025666" expanded="true" signature="151:152" ph="awayScore...awayScore" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="53" column="39" lean-forward="true" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+          <folding>
+            <marker date="1524511574665" expanded="true" signature="1372:1915" ph="query...{&#10;                                currentGame @client {&#10;                                    homeScore&#10;                                    awayScore&#10;                                }&#10;                            }" />
+            <marker date="1524511574665" expanded="true" signature="1378:1392" ph="GetCurrentGame...GetCurrentGame" />
+            <marker date="1524511574665" expanded="true" signature="1393:1915" ph="{...}" />
+            <marker date="1524511574665" expanded="true" signature="1427:1438" ph="currentGame...currentGame" />
+            <marker date="1524511574665" expanded="true" signature="1427:1885" ph="currentGame...{&#10;                                    homeScore&#10;                                    awayScore&#10;                                }" />
+            <marker date="1524511574665" expanded="true" signature="1447:1885" ph="{...}" />
+            <marker date="1524511574665" expanded="true" signature="1485:1487" ph="id...id" />
+            <marker date="1524511574665" expanded="true" signature="1524:1529" ph="darts...darts" />
+            <marker date="1524511574665" expanded="true" signature="1566:1578" ph="currentDarts...currentDarts" />
+            <marker date="1524511574665" expanded="true" signature="1615:1625" ph="roundScore...roundScore" />
+            <marker date="1524511574665" expanded="true" signature="1662:1671" ph="homeScore...homeScore" />
+            <marker date="1524511574665" expanded="true" signature="1708:1717" ph="awayScore...awayScore" />
+            <marker date="1524511574665" expanded="true" signature="1754:1759" ph="round...round" />
+            <marker date="1524511574665" expanded="true" signature="1796:1804" ph="homeTurn...homeTurn" />
+            <marker date="1524511574665" expanded="true" signature="1841:1851" ph="gameActive...gameActive" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/Game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1500">
-          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+        <state relative-caret-position="554">
+          <caret line="194" column="20" lean-forward="true" selection-start-line="194" selection-start-column="20" selection-end-line="194" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

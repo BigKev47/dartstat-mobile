@@ -22,17 +22,18 @@ export default class App extends React.Component {
         const cache = new InMemoryCache();
 
         const defaultState = {
-            currentGame: {
-                __typename: 'currentGame',
-                currentnum: "",
-                issection: false,
-                roundscore: 0,
-                darts: [[],[]],
-                homeScore: 501,
-                awayScore: 501,
-                round: 1,
-                homeTurn: true,
-                gameActive: false
+          currentGame: {
+            __typename: 'currentGame',
+            gameId:"",
+            darts: [],
+            currentDarts: [],
+            roundScore: 0,
+            homeScore: 501,
+            awayScore: 501,
+            round: 1,
+            homeTurn: true,
+            gameActive: false
+            gameCompleted: false
             }
         };
 
@@ -45,8 +46,15 @@ export default class App extends React.Component {
                         const query = gql`
                             query GetCurrentGame {
                                 currentGame @client {
+                                    id
+                                    darts
+                                    currentDarts
+                                    roundScore
                                     homeScore
                                     awayScore
+                                    round
+                                    homeTurn
+                                    gameActive
                                 }
                             }
                         `
@@ -56,7 +64,7 @@ export default class App extends React.Component {
                                 ...previous.currentGame,
                                 [index]: value
                             }
-                        }
+                        };
 
                         cache.writeQuery({ query, data })
                     },
