@@ -24,14 +24,14 @@ export default class App extends React.Component {
         const defaultState = {
           currentGame: {
             __typename: 'currentGame',
-            id:"",
+            id: "",
             darts: [],
+            players: [],
+            scores: [],
+            currentPlayerIndex: 0,
             currentDarts: [],
             roundScore: 0,
-            homeScore: 501,
-            awayScore: 501,
             round: 1,
-            homeTurn: true,
             gameActive: false,
             gameCompleted: false
             }
@@ -42,36 +42,72 @@ export default class App extends React.Component {
             defaults: defaultState,
             resolvers: {
                 Mutation: {
-                    updateCurrentGame: (_, { index, value }, { cache }) => {
-                        const query = gql`
-                            query GetCurrentGame {
-                                currentGame @client {
+                  updateCurrentGame: (_, {index, value}, {cache}) => {
+                    const query = gql`
+                        query GetCurrentGame {
+                            currentGame @client {
+                                id
+                                players {
                                     id
-                                    darts
-                                    currentDarts
-                                    roundScore
-                                    homeScore
-                                    awayScore
-                                    round
-                                    homeTurn
-                                    gameActive
+                                    firstName
+                                    lastName
                                 }
+                                scores
+                                currentPlayerIndex
+                                darts
+                                currentDarts
+                                roundScore
+                                round
+                                gameActive
                             }
-                        `
-                        const previous = cache.readQuery({ query })
-                        const data = {
-                            currentGame: {
-                                ...previous.currentGame,
-                                [index]: value
-                            }
-                        };
+                        }
+                    `
+                    const previous = cache.readQuery({query});
+                    const data = {
+                      currentGame: {
+                        ...previous.currentGame,
+                        [index]: value
+                      }
+                    };
 
-                        cache.writeQuery({ query, data });
-                        return null
-                    },
-                    resetCurrentGame: (_, d, { cache }) => {
-                        cache.writeData({ data : defaultState })
-                    }
+                    cache.writeQuery({query, data});
+                    return null
+                  },
+                  resetCurrentGame: (_, d, {cache}) => {
+                    cache.writeData({data: defaultState})
+                  },
+                  endTurn: (_, {index, value}, {cache}) => {
+                    // const query = gql`
+                    //     query GetCurrentGame {
+                    //         currentGame @client {
+                    //             id
+                    //             players {
+                    //                 id
+                    //                 firstName
+                    //                 lastName
+                    //             }
+                    //             scores
+                    //             currentPlayerIndex
+                    //             darts
+                    //             currentDarts
+                    //             roundScore
+                    //             round
+                    //             homeTurn
+                    //             gameActive
+                    //         }
+                    //     }
+                    // `
+                    const previous = cache.readQuery({query});
+                    const data = {
+                      currentGame: {
+                        ...previous.currentGame,
+                        roundScore: 0,
+                        [index]: value
+                      }
+                    };
+                    cache.writeQuery({query, data});
+                    return null
+                  }
                 }
             }
         });

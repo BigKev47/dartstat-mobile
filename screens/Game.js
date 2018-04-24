@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
 
 import { NumberGrid } from '../components/NumberGrid.js';
-import {createDart, allUsers, createGame} from "../graphql";
+import {createDart, allUsers, createGame, endTurn} from "../graphql";
 import {graphql, compose} from "@expo/react-apollo";
 import {Scoreboard} from "../components/Game/Scoreboard";
 import {DartEntry} from "../components/Game/DartEntry";
@@ -53,7 +53,7 @@ export class Game extends React.Component {
             return 1
         }
     };
-    
+
     turnSwitcher = () => {
         if (this.state.players.length > 1){
             this.setState(
@@ -70,6 +70,7 @@ export class Game extends React.Component {
     };
 
     roundHandler = (dart) => {
+        const { endTurn, currentGame } = this.props;
         let tempScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
         let outScore = tempScore - this.state.roundscore;
         if (outScore < 2) {
@@ -88,7 +89,16 @@ export class Game extends React.Component {
                 console.log("playerScore:" + playerScore);
                 let newScore = playerScore - this.state.roundscore;
                 this.setState((!this.state.homeTurn) ? {awayScore: newScore} : {homeScore: newScore} );
-                this.turnSwitcher()
+                endTurn({
+                      variables: {
+                        index: "currentPlayerIndex",
+                        value: (currentGame.currentPlayerIndex + 1) % this.state.players.length
+                      },
+                    }
+                );
+                console.log(currentGame)
+              this.turnSwitcher();
+
             }
             }
     };
@@ -213,6 +223,7 @@ const styles = StyleSheet.create({
 export default compose(
     graphql(createDart, { name: 'createDart' }),
     graphql(createGame, {name: 'createGame'}),
+    graphql(endTurn, {name: 'endTurn'}),
     graphql(getCurrentGame, {
       props: ({data: {currentGame, loading}}) => ({
         currentGame,
