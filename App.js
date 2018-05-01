@@ -41,81 +41,68 @@ export default class App extends React.Component {
             cache,
             defaults: defaultState,
             resolvers: {
-                Mutation: {
-                  updateCurrentGame: (_, {index, value}, {cache}) => {
-                    const query = gql`
-                        query GetCurrentGame {
-                            currentGame @client {
-                                id
-                                players {
-                                    id
-                                    firstName
-                                    lastName
-                                }
-                                scores
-                                currentPlayerIndex
-                                darts
-                                currentDarts
-                                roundScore
-                                round
-                                gameActive
-                            }
-                        }
-                    `
-                    const previous = cache.readQuery({query});
-                    const data = {
-                      currentGame: {
-                        ...previous.currentGame,
-                        [index]: value
+              Mutation: {
+                updateCurrentGame: (_, {index, value}, {cache}) => {
+                  const query = gql`
+                      query GetCurrentGame {
+                          currentGame @client {
+                              id
+                              players {
+                                  id
+                                  firstName
+                                  lastName
+                              }
+                              scores
+                              currentPlayerIndex
+                              darts
+                              currentDarts
+                              roundScore
+                              round
+                              gameActive
+                          }
                       }
-                    };
+                  `
+                  const previous = cache.readQuery({query});
+                  const data = {
+                    currentGame: {
+                      ...previous.currentGame,
+                      [index]: value
+                    }
+                  };
 
-                    cache.writeQuery({query, data});
-                    return null
-                  },
-                  resetCurrentGame: (_, d, {cache}) => {
-                    cache.writeData({data: defaultState})
-                  },
-                  endTurn: (_, {index, value}, {cache}) => {
-                    // const query = gql`
-                    //     query GetCurrentGame {
-                    //         currentGame @client {
-                    //             id
-                    //             players {
-                    //                 id
-                    //                 firstName
-                    //                 lastName
-                    //             }
-                    //             scores
-                    //             currentPlayerIndex
-                    //             darts
-                    //             currentDarts
-                    //             roundScore
-                    //             round
-                    //             homeTurn
-                    //             gameActive
-                    //         }
-                    //     }
-                    // `
-                    const previous = cache.readQuery({query});
-                    const data = {
-                      currentGame: {
-                        ...previous.currentGame,
-                        roundScore: 0,
-                        [index]: value
-                      }
-                    };
-                    cache.writeQuery({query, data});
-                    return null
-                  }
+                  cache.writeQuery({query, data});
+                  return null
+                },
+                resetCurrentGame: (_, d, {cache}) => {
+                  cache.writeData({data: defaultState})
+                  return null
+                },
+                endTurn: (_, {args}, {cache}) => {
+                  const previous = cache.readQuery({query});
+                  const newPlayerIndex = previous.currentGame.currentPlayerIndex + 1;
+                  const newRound = newPlayerIndex === 0 ? previous.currentGame.round + 1 : previous.currentGame.round;
+                  const roundScore = 0;
+                  const data = {
+                    currentGame: {
+                      ...previous.currentGame,
+                      currentPlayerIndex: newPlayerIndex,
+                      round: newRound,
+                      roundScore: roundScore
+                    }
+                  };
+                  cache.writeQuery({query, data});
+                  return null
+
                 }
+              }
             }
+
         });
 
-        const client = new ApolloClient({
-            link: ApolloLink.from([
-                stateLink,
-                new HttpLink({
+      const client = new ApolloClient({
+        link: ApolloLink.from([
+          stateLink,
+          new HttpLink({
                     uri: 'https://api.graph.cool/simple/v1/cjf65iozh1xj701410jqbrlf2'
                 })
             ]),

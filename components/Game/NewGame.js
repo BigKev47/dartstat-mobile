@@ -25,13 +25,13 @@ import ModalDropdown from 'react-native-modal-dropdown';
         return <View style={styles.container}><Button onPress={ this.props.onPress }
                     style={styles.button}
                     containerStyle={styles.buttoncontainer}>New Game</Button>
-            <FlatList
-              style={{flex: 1}}
-              data={allUsers}
-              renderItem={({ item }) => (
-                  <Text style={{color: "white"}}>{item.firstName} {item.lastName}</Text>
-              )}
-              keyExtractor={item => item.id}/>
+            {/*<FlatList*/}
+              {/*style={{flex: 1}}*/}
+              {/*data={allUsers}*/}
+              {/*renderItem={({ item }) => (*/}
+                  {/*<Text style={{color: "white"}}>{item.firstName} {item.lastName}</Text>*/}
+              {/*)}*/}
+              {/*keyExtractor={item => item.id}/>*/}
 
             {/*<ModalDropdown options={ playerNames }>*/}
             {/*</ModalDropdown>*/}

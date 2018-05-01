@@ -2,16 +2,15 @@ import React from 'react';
 import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
 
 import { NumberGrid } from '../components/NumberGrid.js';
-import {createDart, allUsers, createGame, endTurn} from "../graphql";
+import {createDart, allUsers, createGame, endTurn, updateCurrentGame, getCurrentGame} from "../graphql";
 import {graphql, compose} from "@expo/react-apollo";
 import {Scoreboard} from "../components/Game/Scoreboard";
 import {DartEntry} from "../components/Game/DartEntry";
 import NewGame from "../components/Game/NewGame";
 import Colors from "../constants/Colors";
 import {GameOver} from "../components/Game/GameOver";
-import getCurrentGame from "../graphql/getCurrentGame";
-import updateGame from "../graphql/updateGame";
-import updateCurrentGame from "../graphql/updateCurrentGame";
+
+
 
 
 
@@ -54,23 +53,40 @@ export class Game extends React.Component {
         }
     };
 
-    turnSwitcher = () => {
-        if (this.state.players.length > 1){
-            this.setState(
-                {homeTurn: !this.state.homeTurn,
-                roundscore: 0,
-                currentDarts: []}
-        )}else{
-            this.setState({roundscore: 0,
-                            currentDarts: []})
-        }
-        if (!this.state.homeTurn) {
-            this.state.round++
-        }
-    };
+    turnSwitcher = async () => {
+      try{
+        const { endTurn, currentGame } = this.props;
+        const newPlayerIndex = currentGame.currentPlayerIndex + 1;
+        const newRound = newPlayerIndex === 0 ? currentGame.round + 1:currentGame.round;
+        await endTurn({
+          variables: {
+            //TODO get player login worked out and remove this hard-code
+            round: newRound,
+            currentPlayerIndex: newPlayerIndex,
+            roundScore: 0
+          }}
+        );
+        console.log(currentGame);
+        }catch(err){console.log(err)}
+
+
+      };
+        // if (this.state.players.length > 1){
+        //     this.setState(
+        //         {homeTurn: !this.state.homeTurn,
+        //         roundscore: 0,
+        //         currentDarts: []}
+        // )}else{
+        //     this.setState({roundscore: 0,
+        //                     currentDarts: []})
+        // }
+        // if (!this.state.homeTurn) {
+        //     this.state.round++
+        // }
+
 
     roundHandler = (dart) => {
-        const { endTurn, currentGame } = this.props;
+        const { loading, endTurn, currentGame, updateCurrentGame } = this.props;
         let tempScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
         let outScore = tempScore - this.state.roundscore;
         if (outScore < 2) {
@@ -83,80 +99,76 @@ export class Game extends React.Component {
                 console.log("Bust");
                 this.turnSwitcher()
             }
-        }else{
-            if (this.state.currentDarts.length === 3) {
-                let playerScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
-                console.log("playerScore:" + playerScore);
-                let newScore = playerScore - this.state.roundscore;
-                this.setState((!this.state.homeTurn) ? {awayScore: newScore} : {homeScore: newScore} );
-                endTurn({
-                      variables: {
-                        index: "currentPlayerIndex",
-                        value: (currentGame.currentPlayerIndex + 1) % this.state.players.length
-                      },
-                    }
-                );
-                console.log(currentGame)
-              this.turnSwitcher();
+        }else {
+          if (this.state.currentDarts.length === 3) {
+            let playerScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
+            console.log("playerScore:" + playerScore);
+            let newScore = playerScore - currentGame.roundScore;
+            this.setState((!this.state.homeTurn) ? {awayScore: newScore} : {homeScore: newScore});
 
-            }
-            }
+            this.turnSwitcher();
+
+
+          }
+        }
     };
 
-    dartHandler = (dart) => {
-      const { createDart, currentGame, updateCurrentGame } = this.props;
+    dartHandler = async (dart) => {
+      const {createDart, currentGame, updateCurrentGame} = this.props;
       let player = this.player();
 
       //This calculates the score by multiplying any triples or doubles
       let dartscore;
-      !(dart.sectionHit) ? dartscore = 0:
-      dartscore = dart.numberHit * (dart.sectionHit > 1 ? dart.sectionHit : 1);
+      !(dart.sectionHit) ? dartscore = 0 :
+          dartscore = dart.numberHit * (dart.sectionHit > 1 ? dart.sectionHit : 1);
 
       //Ths updates the current score and dart log
       let roundscore = currentGame.roundScore + dartscore;
-      console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
+
       let currentDarts = this.state.currentDarts;
       currentDarts.push(dart);
-      updateCurrentGame({
+      this.setState({currentDarts: currentDarts});
+      //This pushes the dart to the gql backend
+      try {
+        // await createDart({
+        //   variables: {
+        //       //TODO get player login worked out and remove this hard-code
+        //       playerId: this.state.players[player],
+        //       gameId: this.state.gameId,
+        //       numberHit: parseInt(dart.numberHit),
+        //       sectionHit: dart.sectionHit
+        //     }
+        // });
+        await updateCurrentGame({
           variables: {
             index: "roundScore",
             value: roundscore
           }
+        });
+        console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
+        this.roundHandler(dart)
       }
-      )
+      catch (err) {
+        console.log(err)
+      }
 
 
-
-      this.setState({ currentDarts: currentDarts });
-
-      //This pushes the dart to the gql backend
-      createDart({
-        variables: {
-            //TODO get player login worked out and remove this hard-code
-            playerId: this.state.players[player],
-            gameId: this.state.gameId,
-            numberHit: parseInt(dart.numberHit),
-            sectionHit: dart.sectionHit
-          }
-      });
       // TODO get DArts to update
-    //   const { currentGame, updateCurrentGame } = this.props;
-    //   const darts =  currentGame.darts.push(dart);
-    //   updateCurrentGame({
-    //     variables: {
-    //       index: 'darts',
-    //       value: darts}
-    // });
-        console.log(this.props);
+      //   const { currentGame, updateCurrentGame } = this.props;
+      //   const darts =  currentGame.darts.push(dart);
+      //   updateCurrentGame({
+      //     variables: {
+      //       index: 'darts',
+      //       value: darts}
+      // });
 
-        this.setState({roundscore: roundscore},
-            () => {
-                this.roundHandler(dart)
-            });
+      // this.setState({roundscore: roundscore},
+
+
     };
 
     createGame = async () => {
-        const { createGame } = this.props;
+        const { loading, createGame } = this.props;
         try {
             const newGame = await createGame({
                 variables: {
@@ -179,25 +191,31 @@ export class Game extends React.Component {
         }
     };
 
-    render() {
-        const screen = !this.state.gameId ?
-            <NewGame onPress={this.createGame}/>:
-            !this.state.gameCompleted ?
+    render()
+{
+  const screen = !this.state.gameId ?
+      <NewGame onPress={this.createGame}/> :
+      !this.state.gameCompleted ?
 
-                <DartEntry onPress={this.dartHandler}
-                           style={styles.dartentry}{...this.state} />
-                    :
-                <GameOver />;
-        const scoreBoard = this.state.gameId && !this.state.gameCompleted ? <Scoreboard style={styles.scoreboard}
-                                                           {... this.state} /> : null;
+          <DartEntry onPress={this.dartHandler}
+                     style={styles.dartentry}{...this.state} />
+          :
+          <GameOver/>;
+  const scoreBoard = this.state.gameId && !this.state.gameCompleted ? <Scoreboard style={styles.scoreboard}
+                                                                                  {...this.state} /> : null;
 
 //TODO Create a running scoreboard with all necessary information and proper columns
-            return <View style={styles.container}>
-                {scoreBoard}
-                {screen}
-                </View>
-        }
+  return <View style={styles.container}>
+    {scoreBoard}
+    {screen}
+  </View>
+
+
+
+                     }
+
 }
+
 
 
 const styles = StyleSheet.create({
