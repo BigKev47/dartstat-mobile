@@ -26,8 +26,20 @@ export default class App extends React.Component {
             __typename: 'currentGame',
             id: "",
             darts: [],
-            players: [],
-            scores: [],
+            players: [{
+              __typename: 'player',
+              id: "cjf673owt4whi0104fng14osm",
+              firstName: "Kevin",
+              lastName: "Corlett",
+              },
+              {
+              __typename: 'player',
+              id: "cjf676w4x53oz01920blawszb",
+              firstName: "Michael",
+              lastName: "Antry",
+              }
+              ],
+            scores: [501, 501],
             currentPlayerIndex: 0,
             currentDarts: [],
             roundScore: 0,
@@ -36,6 +48,7 @@ export default class App extends React.Component {
             gameCompleted: false
             }
         };
+
 
         const stateLink = withClientState({
             cache,
@@ -77,11 +90,21 @@ export default class App extends React.Component {
                   cache.writeData({data: defaultState})
                   return null
                 },
-                endTurn: (_, {args}, {cache}) => {
+                endTurn: (_, d, {cache}) => {
+                  const query = gql`
+                      query EndTurn {
+                          currentGame @client {
+                              id
+                              currentPlayerIndex
+                              roundScore
+                              round
+                } }
+                      `
                   const previous = cache.readQuery({query});
-                  const newPlayerIndex = previous.currentGame.currentPlayerIndex + 1;
+                  const newPlayerIndex = (previous.currentGame.currentPlayerIndex + 1) % 2;
                   const newRound = newPlayerIndex === 0 ? previous.currentGame.round + 1 : previous.currentGame.round;
                   const roundScore = 0;
+
                   const data = {
                     currentGame: {
                       ...previous.currentGame,

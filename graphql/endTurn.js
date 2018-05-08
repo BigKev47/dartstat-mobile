@@ -5,11 +5,15 @@ export default gql`
     $currentPlayerIndex: Int!, 
     $round: Int!, 
     $roundScore: Int!
-    ) @client{
+    ){
         endTurn(
             currentPlayerIndex: $currentPlayerIndex
             round: $round
             roundScore: $roundScore
-        )
+        )@client{
+            currentPlayerIndex
+            round
+            roundScore
+        }
     }
 `

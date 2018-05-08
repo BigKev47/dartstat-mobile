@@ -1,33 +1,34 @@
 import React from 'react';
 import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
-import {createDart, allUsers, createGame} from "../../graphql";
+import {createDart, allUsers, createGame, getCurrentGame} from "../../graphql";
 import {graphql, compose} from "@expo/react-apollo";
 
 
 
-export class Scoreboard extends React.Component {
-    constructor(props) {
-        super(props);
+export class ScoreColumn extends React.Component {
+  constructor(props) {
+    super(props);
 
-    }
+  }
 
 
-    render() {
-      const {player} = this.props;
+  render() {
+    const {playerIdx} = this.props;
 
 //TODO Create a running scoreboard with all necessary information and proper columns
-        return <View>
-                <View style={styles.scoreboardheader}>
-                    <Text adjustsFontSizeToFit numberOfLines={1}
-                          style={[styles.scoretext, styles.scoreheader, awayActive]}>P1: {this.props.players[0]} </Text>
+    return <View>
+      <View style={styles.scoreboardheader}>
+        <Text adjustsFontSizeToFit numberOfLines={1}
+              style={[styles.scoretext, styles.scoreheader]}>{this.props.currentGame.players[playerIdx].firstName} </Text>
 
-                </View>
-                <View style={{flex: 10, flexDirection: 'row'}}>
-                    <Text style={[styles.scoretext, styles.left, awayActive]}>{this.props.homeScore}</Text>
-                </View>
-            </View>
+      </View>
+      <View style={{flex: 10, flexDirection: 'row'}}>
+        <Text style={[styles.scoretext, styles.left]}>{this.props.currentGame.scores[playerIdx]}</Text>
+      </View>
+    </View>
 
-    }
+
+  }
 }
 
 
@@ -91,4 +92,12 @@ const styles = StyleSheet.create({
   },
 
 });
+
+
+export default graphql(getCurrentGame, {
+  props: ({data: {currentGame, loading}}) => ({
+    currentGame,
+    loading
+  })
+})(ScoreColumn);
 

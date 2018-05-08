@@ -5,6 +5,11 @@ export default gql`
         updateCurrentGame(index: $index, value: $value) @client {
             id
             darts
+            players{
+                id
+                firstName
+                lastName
+            }
             currentDarts
             roundScore
             scores

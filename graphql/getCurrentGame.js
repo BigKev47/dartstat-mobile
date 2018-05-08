@@ -5,7 +5,11 @@ export default gql`
     currentGame @client {
         id
         darts
-        players
+        players{
+            id
+            firstName
+            lastName
+        }
         currentPlayerIndex
         currentDarts
         roundScore

@@ -2,6 +2,9 @@ import React from 'react';
 import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
 import {createDart, allUsers, createGame} from "../../graphql";
 import {graphql, compose} from "@expo/react-apollo";
+import ScoreColumn from "./ScoreColumn";
+import Grid from "react-native-easy-grid/Components/Grid";
+import Col from "react-native-easy-grid/Components/Col";
 
 
 
@@ -11,27 +14,29 @@ export class Scoreboard extends React.Component {
 
     }
     render() {
-        const homeActive = this.props.homeTurn ? {opacity: .7} : null;
-        const awayActive = this.props.awayTurn ? {opacity: .7} : null;
+        // const homeActive = this.props.homeTurn ? {opacity: .7} : null;
+        // const awayActive = this.props.awayTurn ? {opacity: .7} : null;
 //TODO Create a running scoreboard with all necessary information and proper columns
-        return <View  style={{flex: 5}}>
-                <View style={styles.scoreboardheader}>
-                    <Text adjustsFontSizeToFit numberOfLines={1}
-                          style={[styles.scoretext, styles.scoreheader, awayActive]}>P1: {this.props.players[0]} </Text>
-                    <Text adjustsFontSizeToFit numberOfLines={1}
-                          style={[styles.scoretext, styles.scoreheader]}>Round {this.props.round} </Text>
-                    <Text adjustsFontSizeToFit numberOfLines={1}
-                          style={[styles.scoretext, styles.scoreheader, homeActive]}>P2: {this.props.players[1]} </Text>
-                </View>
-                <View style={{flex: 10, flexDirection: 'row'}}>
-                    <Text style={[styles.scoretext, styles.left, awayActive]}>{this.props.homeScore}</Text>
-                    <Text/>
-                    <Text style={[styles.scoretext, styles.right, homeActive]}>{this.props.awayScore}</Text>
-                </View>
-            </View>
-
-    }
+        return <Grid  style={{flex:5, flexDirection: 'row'}}>
+          {/*<View style={styles.scoreboardheader}>*/}
+          <Col><ScoreColumn playerIdx = {0} /></Col>
+          <Col><ScoreColumn playerIdx = {1} /></Col>
+                    {/*<Text adjustsFontSizeToFit numberOfLines={1}*/}
+                          {/*style={[styles.scoretext, styles.scoreheader, awayActive]}>P1: {this.props.players[0]} </Text>*/}
+                    {/*<Text adjustsFontSizeToFit numberOfLines={1}*/}
+                          {/*style={[styles.scoretext, styles.scoreheader]}>Round {this.props.round} </Text>*/}
+                    {/*<Text adjustsFontSizeToFit numberOfLines={1}*/}
+                          {/*style={[styles.scoretext, styles.scoreheader, homeActive]}>P2: {this.props.players[1]} </Text>*/}
+                {/*</View>*/}
+                {/*<View style={{flex: 10, flexDirection: 'row'}}>*/}
+                    {/*<Text style={[styles.scoretext, styles.left, awayActive]}>{this.props.homeScore}</Text>*/}
+                    {/*<Text/>*/}
+                    {/*<Text style={[styles.scoretext, styles.right, homeActive]}>{this.props.awayScore}</Text>*/}
+                {/*</View>*/}
+            </Grid>
 }
+          }
+
 
 
 const styles = StyleSheet.create({
@@ -48,8 +53,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'white',
     },
-
-
 //TODO: Figure out how to properly scale my text sizes.
     scoretext: {
         fontFamily: 'chalk-it-up',
@@ -85,7 +88,6 @@ const styles = StyleSheet.create({
         fontSize: 20
 
     },
-
 
 
     dartlog: {

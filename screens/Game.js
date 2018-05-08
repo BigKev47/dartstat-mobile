@@ -37,25 +37,19 @@ export class Game extends React.Component {
             gameId: ""
         };
 
-        this.player = this.player.bind(this);
         // this.switchEntryScreen = this.switchEntryScreen.bind(this);
         this.dartHandler = this.dartHandler.bind(this);
         this.turnSwitcher = this.turnSwitcher.bind(this);
         this.roundHandler = this.roundHandler.bind(this);
         this.createGame = this.createGame.bind(this);
+
     };
 //TODO: Refactor gameplay and incorporate round scores and game winning/losing conditions
-    player = () => {
-        if (this.state.homeTurn){
-            return 0
-        }else{
-            return 1
-        }
-    };
 
     turnSwitcher = async () => {
       try{
         const { endTurn, currentGame } = this.props;
+        this.setState({currentDarts: []});
         const newPlayerIndex = currentGame.currentPlayerIndex + 1;
         const newRound = newPlayerIndex === 0 ? currentGame.round + 1:currentGame.round;
         await endTurn({
@@ -64,9 +58,7 @@ export class Game extends React.Component {
             round: newRound,
             currentPlayerIndex: newPlayerIndex,
             roundScore: 0
-          }}
-        );
-        console.log(currentGame);
+          }});
         }catch(err){console.log(err)}
 
 
@@ -85,8 +77,9 @@ export class Game extends React.Component {
         // }
 
 
-    roundHandler = (dart) => {
+    roundHandler = async (dart) => {
         const { loading, endTurn, currentGame, updateCurrentGame } = this.props;
+        let playerIdx = currentGame.currentPlayerIndex;
         let tempScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
         let outScore = tempScore - this.state.roundscore;
         if (outScore < 2) {
@@ -101,12 +94,23 @@ export class Game extends React.Component {
             }
         }else {
           if (this.state.currentDarts.length === 3) {
-            let playerScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
+            let playerScore = currentGame.scores[currentGame.currentPlayerIndex];
             console.log("playerScore:" + playerScore);
             let newScore = playerScore - currentGame.roundScore;
-            this.setState((!this.state.homeTurn) ? {awayScore: newScore} : {homeScore: newScore});
-
+            let scores = currentGame.scores.slice(0);
+            scores[playerIdx] = newScore;
+            console.log("newScore: " + newScore);
+            console.log("scores: " + scores);
+            try {
+              await updateCurrentGame({
+                variables: {
+                  index: "scores",
+                  value: scores
+                }
+              });
+            }catch(err){console.log(err)}
             this.turnSwitcher();
+            console.log(currentGame);
 
 
           }
@@ -115,8 +119,8 @@ export class Game extends React.Component {
 
     dartHandler = async (dart) => {
       const {createDart, currentGame, updateCurrentGame} = this.props;
-      let player = this.player();
-
+      let player = currentGame.currentPlayerIndex;
+      console.log(currentGame)
       //This calculates the score by multiplying any triples or doubles
       let dartscore;
       !(dart.sectionHit) ? dartscore = 0 :
