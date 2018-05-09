@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
+import {View, ScrollView, Text, Button, StyleSheet, FlatList} from 'react-native';
 import {createDart, allUsers, createGame, getCurrentGame} from "../../graphql";
 import {graphql, compose} from "@expo/react-apollo";
 
@@ -13,17 +13,24 @@ export class ScoreColumn extends React.Component {
 
 
   render() {
-    const {playerIdx} = this.props;
+    const {playerIdx,currentGame} = this.props;
+    const alignStyle = playerIdx === 0 ? styles.left : styles.right;
 
 //TODO Create a running scoreboard with all necessary information and proper columns
-    return <View>
+    return <View style={styles.container}>
       <View style={styles.scoreboardheader}>
-        <Text adjustsFontSizeToFit numberOfLines={1}
-              style={[styles.scoretext, styles.scoreheader]}>{this.props.currentGame.players[playerIdx].firstName} </Text>
+        <Text adjustsFontSizeToFit numberOfLines={1} style={[styles.scoretext, styles.scoreheader, alignStyle ]}>{currentGame.players[playerIdx].firstName} </Text>
 
       </View>
-      <View style={{flex: 10, flexDirection: 'row'}}>
-        <Text style={[styles.scoretext, styles.left]}>{this.props.currentGame.scores[playerIdx]}</Text>
+      <View style={{flex: 10}}>
+        <FlatList
+            data={currentGame.scoreHistory[playerIdx]}
+            keyExtractor={item => item.index}
+            renderItem={({ item }) => (
+                <Text style={[styles.scoretext, styles.scorehistory, alignStyle]} key={item.index}>{item}</Text>
+        )}
+            />
+        <Text style={[styles.scoretext, alignStyle]}>{currentGame.scores[playerIdx]}</Text>
       </View>
     </View>
 
@@ -35,9 +42,9 @@ export class ScoreColumn extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: 'white',
   },
-
 
   scoreboardheader: {
     flex: 1,
@@ -47,22 +54,24 @@ const styles = StyleSheet.create({
     borderColor: 'white',
   },
 
-
 //TODO: Figure out how to properly scale my text sizes.
   scoretext: {
     fontFamily: 'chalk-it-up',
     color: 'white',
     fontSize: 28,
-    flex: 3,
-    alignContent: 'center',
+    alignSelf: 'flex-start',
     textAlign: 'center',
-    borderWidth: 1,
-    borderColor: 'white',
     paddingHorizontal: 6,
-    paddingVertical: 6
+    paddingVertical: -2
 
     // adjustsFontSizeToFit: true
-    //textDecorationLine: 'line-through',
+  },
+
+  scorehistory: {
+    color: 'white',
+    fontSize: 26,
+    textDecorationLine: 'line-through',
+    opacity: .7
   },
 
   right: {

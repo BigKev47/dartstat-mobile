@@ -13,6 +13,7 @@ export default gql`
             currentDarts
             roundScore
             scores
+            scoreHistory
             currentPlayerIndex
             round
             gameActive

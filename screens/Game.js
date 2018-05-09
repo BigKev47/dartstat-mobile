@@ -99,9 +99,20 @@ export class Game extends React.Component {
             let newScore = playerScore - currentGame.roundScore;
             let scores = currentGame.scores.slice(0);
             scores[playerIdx] = newScore;
+            let scoreHistory = currentGame.scoreHistory.slice(0);
+            let playerScoreHistory = scoreHistory[playerIdx].slice(0);
+            playerScoreHistory.push(playerScore);
+            scoreHistory[playerIdx] = playerScoreHistory
+
             console.log("newScore: " + newScore);
             console.log("scores: " + scores);
             try {
+              await updateCurrentGame({
+                variables: {
+                  index: "scoreHistory",
+                  value: scoreHistory
+                }
+              });
               await updateCurrentGame({
                 variables: {
                   index: "scores",
@@ -205,8 +216,7 @@ export class Game extends React.Component {
                      style={styles.dartentry}{...this.state} />
           :
           <GameOver/>;
-  const scoreBoard = this.state.gameId && !this.state.gameCompleted ? <Scoreboard style={styles.scoreboard}
-                                                                                  {...this.state} /> : null;
+  const scoreBoard = this.state.gameId && !this.state.gameCompleted ? <Scoreboard  /> : null;
 
 //TODO Create a running scoreboard with all necessary information and proper columns
   return <View style={styles.container}>

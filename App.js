@@ -40,6 +40,7 @@ export default class App extends React.Component {
               }
               ],
             scores: [501, 501],
+            scoreHistory: [[],[]],
             currentPlayerIndex: 0,
             currentDarts: [],
             roundScore: 0,
@@ -66,6 +67,7 @@ export default class App extends React.Component {
                                   lastName
                               }
                               scores
+                              scoreHistory
                               currentPlayerIndex
                               darts
                               currentDarts

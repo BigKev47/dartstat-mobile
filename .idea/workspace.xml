@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f98bd5a5-de42-4639-a44f-f224a90cd849" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/components/Game/ScoreColumn.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/App.js" afterPath="$PROJECT_DIR$/App.js" />
-      <change beforePath="$PROJECT_DIR$/components/Game/NewGame.js" afterPath="$PROJECT_DIR$/components/Game/NewGame.js" />
-      <change beforePath="$PROJECT_DIR$/graphql/endTurn.js" afterPath="$PROJECT_DIR$/graphql/endTurn.js" />
-      <change beforePath="$PROJECT_DIR$/graphql/index.js" afterPath="$PROJECT_DIR$/graphql/index.js" />
+      <change beforePath="$PROJECT_DIR$/components/Game/ScoreColumn.js" afterPath="$PROJECT_DIR$/components/Game/ScoreColumn.js" />
+      <change beforePath="$PROJECT_DIR$/graphql/getCurrentGame.js" afterPath="$PROJECT_DIR$/graphql/getCurrentGame.js" />
+      <change beforePath="$PROJECT_DIR$/graphql/updateCurrentGame.js" afterPath="$PROJECT_DIR$/graphql/updateCurrentGame.js" />
       <change beforePath="$PROJECT_DIR$/screens/Game.js" afterPath="$PROJECT_DIR$/screens/Game.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +21,8 @@
       <file leaf-file-name="Game.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/Game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+            <state relative-caret-position="-2223">
+              <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -35,20 +34,15 @@
         <entry file="file://$PROJECT_DIR$/graphql/endTurn.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
-                <marker date="1524945535543" expanded="true" signature="55:307" ph="mutation...{&#10;        endTurn(&#10;            currentPlayerIndex: $currentPlayerIndex&#10;            round: $round&#10;            roundScore: $roundScore&#10;        )&#10;    }" />
-                <marker date="1524945535543" expanded="true" signature="64:71" ph="endTurn...endTurn" />
-                <marker date="1524945535543" expanded="true" signature="71:151" ph="(...)" />
-                <marker date="1524945535543" expanded="true" signature="98:101" ph="Int...Int" />
-                <marker date="1524945535543" expanded="true" signature="117:120" ph="Int...Int" />
-                <marker date="1524945535543" expanded="true" signature="141:144" ph="Int...Int" />
-                <marker date="1524945535543" expanded="true" signature="159:307" ph="{...}" />
-                <marker date="1524945535543" expanded="true" signature="169:176" ph="endTurn...endTurn" />
-                <marker date="1524945535543" expanded="true" signature="176:301" ph="(...)" />
-                <marker date="1524945535543" expanded="true" signature="190:208" ph="currentPlayerIndex...currentPlayerIndex" />
-                <marker date="1524945535543" expanded="true" signature="242:247" ph="round...round" />
-                <marker date="1524945535543" expanded="true" signature="268:278" ph="roundScore...roundScore" />
+                <marker date="1525882810391" expanded="true" signature="55:389" ph="mutation...{&#10;        endTurn(&#10;            currentPlayerIndex: $currentPlayerIndex&#10;            round: $round&#10;            roundScore: $roundScore&#10;        )&#10;    }" />
+                <marker date="1525882810391" expanded="true" signature="64:71" ph="endTurn...endTurn" />
+                <marker date="1525882810391" expanded="true" signature="71:151" ph="(...)" />
+                <marker date="1525882810391" expanded="true" signature="98:101" ph="Int...Int" />
+                <marker date="1525882810391" expanded="true" signature="117:120" ph="Int...Int" />
+                <marker date="1525882810391" expanded="true" signature="141:144" ph="Int...Int" />
+                <marker date="1525882810391" expanded="true" signature="383:389" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -58,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/graphql/createDart.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
-              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding>
                 <marker date="1523743892021" expanded="true" signature="55:487" ph="mutation...{&#10;        createDart(&#10;            numberHit: $numberHit&#10;            gameId: $gameId&#10;            sectionHit: $sectionHit&#10;            playerId: $playerId&#10;        ) {&#10;            numberHit&#10;            sectionHit&#10;            game{&#10;                id&#10;            }&#10;            player{&#10;                id&#10;            }&#10;        }&#10;    }" />
                 <marker date="1523743892021" expanded="true" signature="64:74" ph="createDart...createDart" />
@@ -95,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/components/Buttons.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+              <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -104,8 +98,8 @@
       <file leaf-file-name="NumberGrid.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/NumberGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1365">
-              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="517">
+              <caret line="104" column="1" lean-forward="true" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -113,12 +107,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphql/index.js">
+      <file leaf-file-name="ScoreColumn.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/Game/ScoreColumn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-              <folding />
+            <state relative-caret-position="273">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getCurrentGame.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphql/getCurrentGame.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <marker date="1525884479701" expanded="true" signature="53:342" ph="query...{&#10;    currentGame @client {&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }&#10;  }" />
+                <marker date="1525884479701" expanded="true" signature="59:342" ph="{...}" />
+                <marker date="1525884479701" expanded="true" signature="65:76" ph="currentGame...currentGame" />
+                <marker date="1525884479701" expanded="true" signature="65:338" ph="currentGame...{&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }" />
+                <marker date="1525884479701" expanded="true" signature="85:338" ph="{...}" />
+                <marker date="1525884479701" expanded="true" signature="95:97" ph="id...id" />
+                <marker date="1525884479701" expanded="true" signature="106:111" ph="darts...darts" />
+                <marker date="1525884479701" expanded="true" signature="120:127" ph="players...players" />
+                <marker date="1525884479701" expanded="true" signature="120:196" ph="players...players" />
+                <marker date="1525884479701" expanded="true" signature="127:196" ph="{...}" />
+                <marker date="1525884479701" expanded="true" signature="141:143" ph="id...id" />
+                <marker date="1525884479701" expanded="true" signature="156:165" ph="firstName...firstName" />
+                <marker date="1525884479701" expanded="true" signature="178:186" ph="lastName...lastName" />
+                <marker date="1525884479701" expanded="true" signature="205:223" ph="currentPlayerIndex...currentPlayerIndex" />
+                <marker date="1525884479701" expanded="true" signature="232:244" ph="currentDarts...currentDarts" />
+                <marker date="1525884479701" expanded="true" signature="253:263" ph="roundScore...roundScore" />
+                <marker date="1525884479701" expanded="true" signature="272:278" ph="scores...scores" />
+                <marker date="1525884479701" expanded="true" signature="287:299" ph="scoreHistory...scoreHistory" />
+                <marker date="1525884479701" expanded="true" signature="308:313" ph="round...round" />
+                <marker date="1525884479701" expanded="true" signature="322:332" ph="gameActive...gameActive" />
+                <marker date="1525884479701" expanded="true" signature="331:332" ph="awayScore...awayScore" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,18 +154,8 @@
       <file leaf-file-name="Scoreboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="48" column="29" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DartEntry.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Game/DartEntry.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+            <state relative-caret-position="769">
+              <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="54" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -146,62 +164,81 @@
       <file leaf-file-name="updateCurrentGame.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graphql/updateCurrentGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
-                <marker date="1524943069848" expanded="true" signature="55:371" ph="mutation...{&#10;        updateCurrentGame(index: $index, value: $value) @client {&#10;            id&#10;            darts&#10;            currentNum&#10;            currentPlayerId&#10;            currentDarts&#10;            roundScore&#10;            homeScore&#10;            awayScore&#10;            round&#10;            homeTurn&#10;            gameActive&#10;        }&#10;    }" />
-                <marker date="1524943069848" expanded="true" signature="64:70" ph="updateGame...updateGame" />
-                <marker date="1524943069848" expanded="true" signature="64:81" ph="updateCurrentGame...updateCurrentGame" />
-                <marker date="1524943069848" expanded="true" signature="81:115" ph="(...)" />
-                <marker date="1524943069848" expanded="true" signature="90:96" ph="String...String" />
-                <marker date="1524943069848" expanded="true" signature="107:113" ph="String...String" />
-                <marker date="1524943069848" expanded="true" signature="116:371" ph="{...}" />
-                <marker date="1524943069848" expanded="true" signature="126:143" ph="updateCurrentGame...updateCurrentGame" />
-                <marker date="1524943069848" expanded="true" signature="143:173" ph="(...)" />
-                <marker date="1524943069848" expanded="true" signature="144:149" ph="index...index" />
-                <marker date="1524943069848" expanded="true" signature="159:164" ph="value...value" />
-                <marker date="1524943069848" expanded="true" signature="196:198" ph="id...id" />
-                <marker date="1524943069848" expanded="true" signature="211:216" ph="darts...darts" />
-                <marker date="1524943069848" expanded="true" signature="229:241" ph="currentDarts...currentDarts" />
-                <marker date="1524943069848" expanded="true" signature="254:264" ph="roundScore...roundScore" />
-                <marker date="1524943069848" expanded="true" signature="277:283" ph="scores...scores" />
-                <marker date="1524943069848" expanded="true" signature="296:314" ph="currentPlayerIndex...currentPlayerIndex" />
-                <marker date="1524943069848" expanded="true" signature="327:332" ph="round...round" />
-                <marker date="1524943069848" expanded="true" signature="332:365" ph="updateCurrentGame...{&#10;            id&#10;            darts&#10;            currentNum&#10;            currentPlayerId&#10;            currentDarts&#10;            roundScore&#10;            homeScore&#10;            awayScore&#10;            round&#10;            homeTurn&#10;            gameActive&#10;        }" />
-                <marker date="1524943069848" expanded="true" signature="332:371" ph="{...}" />
-                <marker date="1524943069848" expanded="true" signature="345:355" ph="gameActive...gameActive" />
+                <marker date="1525884479693" expanded="true" signature="55:501" ph="mutation...{&#10;        updateCurrentGame(index: $index, value: $value) @client {&#10;            id&#10;            darts&#10;            currentNum&#10;            currentPlayerId&#10;            currentDarts&#10;            roundScore&#10;            homeScore&#10;            awayScore&#10;            round&#10;            homeTurn&#10;            gameActive&#10;        }&#10;    }" />
+                <marker date="1525884479693" expanded="true" signature="64:70" ph="updateGame...updateGame" />
+                <marker date="1525884479693" expanded="true" signature="64:81" ph="updateCurrentGame...updateCurrentGame" />
+                <marker date="1525884479693" expanded="true" signature="81:115" ph="(...)" />
+                <marker date="1525884479693" expanded="true" signature="90:96" ph="String...String" />
+                <marker date="1525884479693" expanded="true" signature="107:113" ph="String...String" />
+                <marker date="1525884479693" expanded="true" signature="116:501" ph="{...}" />
+                <marker date="1525884479693" expanded="true" signature="126:143" ph="updateCurrentGame...updateCurrentGame" />
+                <marker date="1525884479693" expanded="true" signature="143:173" ph="(...)" />
+                <marker date="1525884479693" expanded="true" signature="144:149" ph="index...index" />
+                <marker date="1525884479693" expanded="true" signature="159:164" ph="value...value" />
+                <marker date="1525884479693" expanded="true" signature="196:198" ph="id...id" />
+                <marker date="1525884479693" expanded="true" signature="211:216" ph="darts...darts" />
+                <marker date="1525884479693" expanded="true" signature="229:236" ph="players...players" />
+                <marker date="1525884479693" expanded="true" signature="229:321" ph="players...{&#10;                id&#10;                firstName&#10;                lastName&#10;            }" />
+                <marker date="1525884479693" expanded="true" signature="229:346" ph="currentDarts...currentDarts" />
+                <marker date="1525884479693" expanded="true" signature="236:321" ph="{...}" />
+                <marker date="1525884479693" expanded="true" signature="254:256" ph="id...id" />
+                <marker date="1525884479693" expanded="true" signature="273:282" ph="firstName...firstName" />
+                <marker date="1525884479693" expanded="true" signature="299:307" ph="lastName...lastName" />
+                <marker date="1525884479693" expanded="true" signature="334:346" ph="currentDarts...currentDarts" />
+                <marker date="1525884479693" expanded="true" signature="359:369" ph="roundScore...roundScore" />
+                <marker date="1525884479693" expanded="true" signature="382:388" ph="scores...scores" />
+                <marker date="1525884479693" expanded="true" signature="401:413" ph="scoreHistory...scoreHistory" />
+                <marker date="1525884479693" expanded="true" signature="426:444" ph="currentPlayerIndex...currentPlayerIndex" />
+                <marker date="1525884479693" expanded="true" signature="457:462" ph="round...round" />
+                <marker date="1525884479693" expanded="true" signature="462:495" ph="updateCurrentGame...{&#10;            id&#10;            darts&#10;            currentNum&#10;            currentPlayerId&#10;            currentDarts&#10;            roundScore&#10;            homeScore&#10;            awayScore&#10;            round&#10;            homeTurn&#10;            gameActive&#10;        }" />
+                <marker date="1525884479693" expanded="true" signature="462:501" ph="{...}" />
+                <marker date="1525884479693" expanded="true" signature="475:485" ph="gameActive...gameActive" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+            <state relative-caret-position="672">
+              <caret line="50" column="10" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <marker date="1524945880652" expanded="true" signature="1355:1989" ph="query...{&#10;                          currentGame @client {&#10;                              id&#10;                              players {&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }&#10;                              scores&#10;                              currentPlayerIndex&#10;                              darts&#10;                              currentDarts&#10;                              roundScore&#10;                              round&#10;                              gameActive&#10;                          }&#10;                      }" />
-                <marker date="1524945880652" expanded="true" signature="1361:1375" ph="GetCurrentGame...GetCurrentGame" />
-                <marker date="1524945880652" expanded="true" signature="1376:1989" ph="{...}" />
-                <marker date="1524945880652" expanded="true" signature="1404:1415" ph="currentGame...currentGame" />
-                <marker date="1524945880652" expanded="true" signature="1404:1965" ph="currentGame...{&#10;                              id&#10;                              players {&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }&#10;                              scores&#10;                              currentPlayerIndex&#10;                              darts&#10;                              currentDarts&#10;                              roundScore&#10;                              round&#10;                              gameActive&#10;                          }" />
-                <marker date="1524945880652" expanded="true" signature="1424:1965" ph="{...}" />
-                <marker date="1524945880652" expanded="true" signature="1456:1458" ph="id...id" />
-                <marker date="1524945880652" expanded="true" signature="1489:1496" ph="players...players" />
-                <marker date="1524945880652" expanded="true" signature="1489:1654" ph="players...{&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }" />
-                <marker date="1524945880652" expanded="true" signature="1497:1654" ph="{...}" />
-                <marker date="1524945880652" expanded="true" signature="1533:1535" ph="id...id" />
-                <marker date="1524945880652" expanded="true" signature="1570:1579" ph="firstName...firstName" />
-                <marker date="1524945880652" expanded="true" signature="1614:1622" ph="lastName...lastName" />
-                <marker date="1524945880652" expanded="true" signature="1685:1691" ph="scores...scores" />
-                <marker date="1524945880652" expanded="true" signature="1722:1740" ph="currentPlayerIndex...currentPlayerIndex" />
-                <marker date="1524945880652" expanded="true" signature="1771:1776" ph="darts...darts" />
-                <marker date="1524945880652" expanded="true" signature="1807:1819" ph="currentDarts...currentDarts" />
-                <marker date="1524945880652" expanded="true" signature="1850:1860" ph="roundScore...roundScore" />
-                <marker date="1524945880652" expanded="true" signature="1891:1896" ph="round...round" />
-                <marker date="1524945880652" expanded="true" signature="1927:1937" ph="gameActive...gameActive" />
+                <marker date="1525886617018" expanded="true" signature="1768:2445" ph="query...{&#10;                          currentGame @client {&#10;                              id&#10;                              players {&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }&#10;                              scores&#10;                              scoreHistory&#10;                              currentPlayerIndex&#10;                              darts&#10;                              currentDarts&#10;                              roundScore&#10;                              round&#10;                              gameActive&#10;                          }&#10;                      }" />
+                <marker date="1525886617018" expanded="true" signature="1774:1788" ph="GetCurrentGame...GetCurrentGame" />
+                <marker date="1525886617018" expanded="true" signature="1789:2445" ph="{...}" />
+                <marker date="1525886617018" expanded="true" signature="1817:1828" ph="currentGame...currentGame" />
+                <marker date="1525886617018" expanded="true" signature="1817:2421" ph="currentGame...{&#10;                              id&#10;                              players {&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }&#10;                              scores&#10;                              scoreHistory&#10;                              currentPlayerIndex&#10;                              darts&#10;                              currentDarts&#10;                              roundScore&#10;                              round&#10;                              gameActive&#10;                          }" />
+                <marker date="1525886617018" expanded="true" signature="1837:2421" ph="{...}" />
+                <marker date="1525886617018" expanded="true" signature="1869:1871" ph="id...id" />
+                <marker date="1525886617018" expanded="true" signature="1902:1909" ph="players...players" />
+                <marker date="1525886617018" expanded="true" signature="1902:2067" ph="players...{&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }" />
+                <marker date="1525886617018" expanded="true" signature="1910:2067" ph="{...}" />
+                <marker date="1525886617018" expanded="true" signature="1946:1948" ph="id...id" />
+                <marker date="1525886617018" expanded="true" signature="1983:1992" ph="firstName...firstName" />
+                <marker date="1525886617018" expanded="true" signature="2027:2035" ph="lastName...lastName" />
+                <marker date="1525886617018" expanded="true" signature="2098:2104" ph="scores...scores" />
+                <marker date="1525886617018" expanded="true" signature="2135:2147" ph="scoreHistory...scoreHistory" />
+                <marker date="1525886617018" expanded="true" signature="2178:2196" ph="currentPlayerIndex...currentPlayerIndex" />
+                <marker date="1525886617018" expanded="true" signature="2227:2232" ph="darts...darts" />
+                <marker date="1525886617018" expanded="true" signature="2263:2275" ph="currentDarts...currentDarts" />
+                <marker date="1525886617018" expanded="true" signature="2306:2316" ph="roundScore...roundScore" />
+                <marker date="1525886617018" expanded="true" signature="2347:2352" ph="round...round" />
+                <marker date="1525886617018" expanded="true" signature="2383:2393" ph="gameActive...gameActive" />
+                <marker date="1525886617018" expanded="true" signature="3088:3330" ph="query...{&#10;                          currentGame @client {&#10;                              id&#10;                              currentPlayerIndex&#10;                              roundScore&#10;                              round&#10;                } }" />
+                <marker date="1525886617018" expanded="true" signature="3094:3101" ph="EndTurn...EndTurn" />
+                <marker date="1525886617018" expanded="true" signature="3102:3330" ph="{...}" />
+                <marker date="1525886617018" expanded="true" signature="3130:3141" ph="currentGame...currentGame" />
+                <marker date="1525886617018" expanded="true" signature="3130:3328" ph="currentGame...{&#10;                              id&#10;                              currentPlayerIndex&#10;                              roundScore&#10;                              round&#10;                }" />
+                <marker date="1525886617018" expanded="true" signature="3150:3328" ph="{...}" />
+                <marker date="1525886617018" expanded="true" signature="3182:3184" ph="id...id" />
+                <marker date="1525886617018" expanded="true" signature="3215:3233" ph="currentPlayerIndex...currentPlayerIndex" />
+                <marker date="1525886617018" expanded="true" signature="3264:3274" ph="roundScore...roundScore" />
+                <marker date="1525886617018" expanded="true" signature="3305:3310" ph="round...round" />
               </folding>
             </state>
           </provider>
@@ -245,8 +282,8 @@
       <find>state</find>
       <find>console.log</find>
       <find>aw</find>
-      <find>upd</find>
       <find>&lt;</find>
+      <find>upd</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;/Col&gt;</replace>
@@ -320,14 +357,14 @@
         <option value="$PROJECT_DIR$/graphql/allUsers.js" />
         <option value="$PROJECT_DIR$/graphql/switchPlayer.js" />
         <option value="$PROJECT_DIR$/graphql/updateGame.js" />
-        <option value="$PROJECT_DIR$/graphql/getCurrentGame.js" />
-        <option value="$PROJECT_DIR$/components/Game/ScoreColumn.js" />
         <option value="$PROJECT_DIR$/components/Game/NewGame.js" />
-        <option value="$PROJECT_DIR$/graphql/updateCurrentGame.js" />
         <option value="$PROJECT_DIR$/graphql/endTurn.js" />
-        <option value="$PROJECT_DIR$/App.js" />
         <option value="$PROJECT_DIR$/graphql/index.js" />
+        <option value="$PROJECT_DIR$/graphql/getCurrentGame.js" />
+        <option value="$PROJECT_DIR$/graphql/updateCurrentGame.js" />
         <option value="$PROJECT_DIR$/screens/Game.js" />
+        <option value="$PROJECT_DIR$/App.js" />
+        <option value="$PROJECT_DIR$/components/Game/ScoreColumn.js" />
       </list>
     </option>
   </component>
@@ -542,12 +579,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/App.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/components/Game/ScoreColumn.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/components/Game/Scoreboard.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/graphql/endTurn.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/graphql/getCurrentGame.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/graphql/index.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/graphql/updateCurrentGame.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/graphql/updateGame.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/screens/Game.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -556,7 +593,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/graphql/endTurn.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -680,11 +716,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524511760641</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Still working on Apollo-Link-State...">
+      <created>1525177391786</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525177391786</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258176000" />
+    <option name="totallyTimeSpent" value="263884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -809,7 +852,8 @@
     <MESSAGE value="Got game creation returning an Id, finally." />
     <MESSAGE value="Updated styling and added a few svgs" />
     <MESSAGE value="Figured out graphql query integration, starting on Apollo-Link-State" />
-    <option name="LAST_COMMIT_MESSAGE" value="Figured out graphql query integration, starting on Apollo-Link-State" />
+    <MESSAGE value="Still working on Apollo-Link-State..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Still working on Apollo-Link-State..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -967,40 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Game/ScoreColumn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphql/getCurrentGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="13" selection-end-column="18" />
-          <folding>
-            <marker date="1524937424339" expanded="true" signature="53:252" ph="query...{&#10;    currentGame @client {&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }&#10;  }" />
-            <marker date="1524937424339" expanded="true" signature="59:252" ph="{...}" />
-            <marker date="1524937424339" expanded="true" signature="65:76" ph="currentGame...currentGame" />
-            <marker date="1524937424339" expanded="true" signature="65:248" ph="currentGame...{&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }" />
-            <marker date="1524937424339" expanded="true" signature="85:248" ph="{...}" />
-            <marker date="1524937424339" expanded="true" signature="95:97" ph="id...id" />
-            <marker date="1524937424339" expanded="true" signature="106:111" ph="darts...darts" />
-            <marker date="1524937424339" expanded="true" signature="120:127" ph="players...players" />
-            <marker date="1524937424339" expanded="true" signature="136:154" ph="currentPlayerIndex...currentPlayerIndex" />
-            <marker date="1524937424339" expanded="true" signature="163:175" ph="currentDarts...currentDarts" />
-            <marker date="1524937424339" expanded="true" signature="184:194" ph="roundScore...roundScore" />
-            <marker date="1524937424339" expanded="true" signature="203:209" ph="scores...scores" />
-            <marker date="1524937424339" expanded="true" signature="218:223" ph="round...round" />
-            <marker date="1524937424339" expanded="true" signature="232:242" ph="gameActive...gameActive" />
-            <marker date="1524937424339" expanded="true" signature="241:242" ph="awayScore...awayScore" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphql/updateGame.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -1047,32 +1057,8 @@
         <state relative-caret-position="609">
           <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Buttons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="48" column="29" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Game/DartEntry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1087,7 +1073,7 @@
     <entry file="file://$PROJECT_DIR$/graphql/createDart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
-          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <marker date="1523743892021" expanded="true" signature="55:487" ph="mutation...{&#10;        createDart(&#10;            numberHit: $numberHit&#10;            gameId: $gameId&#10;            sectionHit: $sectionHit&#10;            playerId: $playerId&#10;        ) {&#10;            numberHit&#10;            sectionHit&#10;            game{&#10;                id&#10;            }&#10;            player{&#10;                id&#10;            }&#10;        }&#10;    }" />
             <marker date="1523743892021" expanded="true" signature="64:74" ph="createDart...createDart" />
@@ -1119,111 +1105,189 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphql/updateCurrentGame.js">
+    <entry file="file://$PROJECT_DIR$/graphql/endTurn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="315">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <marker date="1524943069848" expanded="true" signature="55:371" ph="mutation...{&#10;        updateCurrentGame(index: $index, value: $value) @client {&#10;            id&#10;            darts&#10;            currentNum&#10;            currentPlayerId&#10;            currentDarts&#10;            roundScore&#10;            homeScore&#10;            awayScore&#10;            round&#10;            homeTurn&#10;            gameActive&#10;        }&#10;    }" />
-            <marker date="1524943069848" expanded="true" signature="64:70" ph="updateGame...updateGame" />
-            <marker date="1524943069848" expanded="true" signature="64:81" ph="updateCurrentGame...updateCurrentGame" />
-            <marker date="1524943069848" expanded="true" signature="81:115" ph="(...)" />
-            <marker date="1524943069848" expanded="true" signature="90:96" ph="String...String" />
-            <marker date="1524943069848" expanded="true" signature="107:113" ph="String...String" />
-            <marker date="1524943069848" expanded="true" signature="116:371" ph="{...}" />
-            <marker date="1524943069848" expanded="true" signature="126:143" ph="updateCurrentGame...updateCurrentGame" />
-            <marker date="1524943069848" expanded="true" signature="143:173" ph="(...)" />
-            <marker date="1524943069848" expanded="true" signature="144:149" ph="index...index" />
-            <marker date="1524943069848" expanded="true" signature="159:164" ph="value...value" />
-            <marker date="1524943069848" expanded="true" signature="196:198" ph="id...id" />
-            <marker date="1524943069848" expanded="true" signature="211:216" ph="darts...darts" />
-            <marker date="1524943069848" expanded="true" signature="229:241" ph="currentDarts...currentDarts" />
-            <marker date="1524943069848" expanded="true" signature="254:264" ph="roundScore...roundScore" />
-            <marker date="1524943069848" expanded="true" signature="277:283" ph="scores...scores" />
-            <marker date="1524943069848" expanded="true" signature="296:314" ph="currentPlayerIndex...currentPlayerIndex" />
-            <marker date="1524943069848" expanded="true" signature="327:332" ph="round...round" />
-            <marker date="1524943069848" expanded="true" signature="332:365" ph="updateCurrentGame...{&#10;            id&#10;            darts&#10;            currentNum&#10;            currentPlayerId&#10;            currentDarts&#10;            roundScore&#10;            homeScore&#10;            awayScore&#10;            round&#10;            homeTurn&#10;            gameActive&#10;        }" />
-            <marker date="1524943069848" expanded="true" signature="332:371" ph="{...}" />
-            <marker date="1524943069848" expanded="true" signature="345:355" ph="gameActive...gameActive" />
+            <marker date="1525882810391" expanded="true" signature="55:389" ph="mutation...{&#10;        endTurn(&#10;            currentPlayerIndex: $currentPlayerIndex&#10;            round: $round&#10;            roundScore: $roundScore&#10;        )&#10;    }" />
+            <marker date="1525882810391" expanded="true" signature="64:71" ph="endTurn...endTurn" />
+            <marker date="1525882810391" expanded="true" signature="71:151" ph="(...)" />
+            <marker date="1525882810391" expanded="true" signature="98:101" ph="Int...Int" />
+            <marker date="1525882810391" expanded="true" signature="117:120" ph="Int...Int" />
+            <marker date="1525882810391" expanded="true" signature="141:144" ph="Int...Int" />
+            <marker date="1525882810391" expanded="true" signature="383:389" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Game/DartEntry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graphql/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+          <caret line="8" column="48" lean-forward="false" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphql/endTurn.js">
+    <entry file="file://$PROJECT_DIR$/components/Buttons.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <marker date="1524945535543" expanded="true" signature="55:307" ph="mutation...{&#10;        endTurn(&#10;            currentPlayerIndex: $currentPlayerIndex&#10;            round: $round&#10;            roundScore: $roundScore&#10;        )&#10;    }" />
-            <marker date="1524945535543" expanded="true" signature="64:71" ph="endTurn...endTurn" />
-            <marker date="1524945535543" expanded="true" signature="71:151" ph="(...)" />
-            <marker date="1524945535543" expanded="true" signature="98:101" ph="Int...Int" />
-            <marker date="1524945535543" expanded="true" signature="117:120" ph="Int...Int" />
-            <marker date="1524945535543" expanded="true" signature="141:144" ph="Int...Int" />
-            <marker date="1524945535543" expanded="true" signature="159:307" ph="{...}" />
-            <marker date="1524945535543" expanded="true" signature="169:176" ph="endTurn...endTurn" />
-            <marker date="1524945535543" expanded="true" signature="176:301" ph="(...)" />
-            <marker date="1524945535543" expanded="true" signature="190:208" ph="currentPlayerIndex...currentPlayerIndex" />
-            <marker date="1524945535543" expanded="true" signature="242:247" ph="round...round" />
-            <marker date="1524945535543" expanded="true" signature="268:278" ph="roundScore...roundScore" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/NumberGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1365">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="517">
+          <caret line="104" column="1" lean-forward="true" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql/getCurrentGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1525884479701" expanded="true" signature="53:342" ph="query...{&#10;    currentGame @client {&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }&#10;  }" />
+            <marker date="1525884479701" expanded="true" signature="59:342" ph="{...}" />
+            <marker date="1525884479701" expanded="true" signature="65:76" ph="currentGame...currentGame" />
+            <marker date="1525884479701" expanded="true" signature="65:338" ph="currentGame...{&#10;        gameId&#10;        gameCompleted&#10;        players&#10;        roundScore&#10;        roundDarts&#10;        darts&#10;        round&#10;        homeScore&#10;        awayScore&#10;    }" />
+            <marker date="1525884479701" expanded="true" signature="85:338" ph="{...}" />
+            <marker date="1525884479701" expanded="true" signature="95:97" ph="id...id" />
+            <marker date="1525884479701" expanded="true" signature="106:111" ph="darts...darts" />
+            <marker date="1525884479701" expanded="true" signature="120:127" ph="players...players" />
+            <marker date="1525884479701" expanded="true" signature="120:196" ph="players...players" />
+            <marker date="1525884479701" expanded="true" signature="127:196" ph="{...}" />
+            <marker date="1525884479701" expanded="true" signature="141:143" ph="id...id" />
+            <marker date="1525884479701" expanded="true" signature="156:165" ph="firstName...firstName" />
+            <marker date="1525884479701" expanded="true" signature="178:186" ph="lastName...lastName" />
+            <marker date="1525884479701" expanded="true" signature="205:223" ph="currentPlayerIndex...currentPlayerIndex" />
+            <marker date="1525884479701" expanded="true" signature="232:244" ph="currentDarts...currentDarts" />
+            <marker date="1525884479701" expanded="true" signature="253:263" ph="roundScore...roundScore" />
+            <marker date="1525884479701" expanded="true" signature="272:278" ph="scores...scores" />
+            <marker date="1525884479701" expanded="true" signature="287:299" ph="scoreHistory...scoreHistory" />
+            <marker date="1525884479701" expanded="true" signature="308:313" ph="round...round" />
+            <marker date="1525884479701" expanded="true" signature="322:332" ph="gameActive...gameActive" />
+            <marker date="1525884479701" expanded="true" signature="331:332" ph="awayScore...awayScore" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql/updateCurrentGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1525884479693" expanded="true" signature="55:501" ph="mutation...{&#10;        updateCurrentGame(index: $index, value: $value) @client {&#10;            id&#10;            darts&#10;            currentNum&#10;            currentPlayerId&#10;            currentDarts&#10;            roundScore&#10;            homeScore&#10;            awayScore&#10;            round&#10;            homeTurn&#10;            gameActive&#10;        }&#10;    }" />
+            <marker date="1525884479693" expanded="true" signature="64:70" ph="updateGame...updateGame" />
+            <marker date="1525884479693" expanded="true" signature="64:81" ph="updateCurrentGame...updateCurrentGame" />
+            <marker date="1525884479693" expanded="true" signature="81:115" ph="(...)" />
+            <marker date="1525884479693" expanded="true" signature="90:96" ph="String...String" />
+            <marker date="1525884479693" expanded="true" signature="107:113" ph="String...String" />
+            <marker date="1525884479693" expanded="true" signature="116:501" ph="{...}" />
+            <marker date="1525884479693" expanded="true" signature="126:143" ph="updateCurrentGame...updateCurrentGame" />
+            <marker date="1525884479693" expanded="true" signature="143:173" ph="(...)" />
+            <marker date="1525884479693" expanded="true" signature="144:149" ph="index...index" />
+            <marker date="1525884479693" expanded="true" signature="159:164" ph="value...value" />
+            <marker date="1525884479693" expanded="true" signature="196:198" ph="id...id" />
+            <marker date="1525884479693" expanded="true" signature="211:216" ph="darts...darts" />
+            <marker date="1525884479693" expanded="true" signature="229:236" ph="players...players" />
+            <marker date="1525884479693" expanded="true" signature="229:321" ph="players...{&#10;                id&#10;                firstName&#10;                lastName&#10;            }" />
+            <marker date="1525884479693" expanded="true" signature="229:346" ph="currentDarts...currentDarts" />
+            <marker date="1525884479693" expanded="true" signature="236:321" ph="{...}" />
+            <marker date="1525884479693" expanded="true" signature="254:256" ph="id...id" />
+            <marker date="1525884479693" expanded="true" signature="273:282" ph="firstName...firstName" />
+            <marker date="1525884479693" expanded="true" signature="299:307" ph="lastName...lastName" />
+            <marker date="1525884479693" expanded="true" signature="334:346" ph="currentDarts...currentDarts" />
+            <marker date="1525884479693" expanded="true" signature="359:369" ph="roundScore...roundScore" />
+            <marker date="1525884479693" expanded="true" signature="382:388" ph="scores...scores" />
+            <marker date="1525884479693" expanded="true" signature="401:413" ph="scoreHistory...scoreHistory" />
+            <marker date="1525884479693" expanded="true" signature="426:444" ph="currentPlayerIndex...currentPlayerIndex" />
+            <marker date="1525884479693" expanded="true" signature="457:462" ph="round...round" />
+            <marker date="1525884479693" expanded="true" signature="462:495" ph="updateCurrentGame...{&#10;            id&#10;            darts&#10;            currentNum&#10;            currentPlayerId&#10;            currentDarts&#10;            roundScore&#10;            homeScore&#10;            awayScore&#10;            round&#10;            homeTurn&#10;            gameActive&#10;        }" />
+            <marker date="1525884479693" expanded="true" signature="462:501" ph="{...}" />
+            <marker date="1525884479693" expanded="true" signature="475:485" ph="gameActive...gameActive" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="769">
+          <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="54" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="50" column="10" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1525886617018" expanded="true" signature="1768:2445" ph="query...{&#10;                          currentGame @client {&#10;                              id&#10;                              players {&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }&#10;                              scores&#10;                              scoreHistory&#10;                              currentPlayerIndex&#10;                              darts&#10;                              currentDarts&#10;                              roundScore&#10;                              round&#10;                              gameActive&#10;                          }&#10;                      }" />
+            <marker date="1525886617018" expanded="true" signature="1774:1788" ph="GetCurrentGame...GetCurrentGame" />
+            <marker date="1525886617018" expanded="true" signature="1789:2445" ph="{...}" />
+            <marker date="1525886617018" expanded="true" signature="1817:1828" ph="currentGame...currentGame" />
+            <marker date="1525886617018" expanded="true" signature="1817:2421" ph="currentGame...{&#10;                              id&#10;                              players {&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }&#10;                              scores&#10;                              scoreHistory&#10;                              currentPlayerIndex&#10;                              darts&#10;                              currentDarts&#10;                              roundScore&#10;                              round&#10;                              gameActive&#10;                          }" />
+            <marker date="1525886617018" expanded="true" signature="1837:2421" ph="{...}" />
+            <marker date="1525886617018" expanded="true" signature="1869:1871" ph="id...id" />
+            <marker date="1525886617018" expanded="true" signature="1902:1909" ph="players...players" />
+            <marker date="1525886617018" expanded="true" signature="1902:2067" ph="players...{&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }" />
+            <marker date="1525886617018" expanded="true" signature="1910:2067" ph="{...}" />
+            <marker date="1525886617018" expanded="true" signature="1946:1948" ph="id...id" />
+            <marker date="1525886617018" expanded="true" signature="1983:1992" ph="firstName...firstName" />
+            <marker date="1525886617018" expanded="true" signature="2027:2035" ph="lastName...lastName" />
+            <marker date="1525886617018" expanded="true" signature="2098:2104" ph="scores...scores" />
+            <marker date="1525886617018" expanded="true" signature="2135:2147" ph="scoreHistory...scoreHistory" />
+            <marker date="1525886617018" expanded="true" signature="2178:2196" ph="currentPlayerIndex...currentPlayerIndex" />
+            <marker date="1525886617018" expanded="true" signature="2227:2232" ph="darts...darts" />
+            <marker date="1525886617018" expanded="true" signature="2263:2275" ph="currentDarts...currentDarts" />
+            <marker date="1525886617018" expanded="true" signature="2306:2316" ph="roundScore...roundScore" />
+            <marker date="1525886617018" expanded="true" signature="2347:2352" ph="round...round" />
+            <marker date="1525886617018" expanded="true" signature="2383:2393" ph="gameActive...gameActive" />
+            <marker date="1525886617018" expanded="true" signature="3088:3330" ph="query...{&#10;                          currentGame @client {&#10;                              id&#10;                              currentPlayerIndex&#10;                              roundScore&#10;                              round&#10;                } }" />
+            <marker date="1525886617018" expanded="true" signature="3094:3101" ph="EndTurn...EndTurn" />
+            <marker date="1525886617018" expanded="true" signature="3102:3330" ph="{...}" />
+            <marker date="1525886617018" expanded="true" signature="3130:3141" ph="currentGame...currentGame" />
+            <marker date="1525886617018" expanded="true" signature="3130:3328" ph="currentGame...{&#10;                              id&#10;                              currentPlayerIndex&#10;                              roundScore&#10;                              round&#10;                }" />
+            <marker date="1525886617018" expanded="true" signature="3150:3328" ph="{...}" />
+            <marker date="1525886617018" expanded="true" signature="3182:3184" ph="id...id" />
+            <marker date="1525886617018" expanded="true" signature="3215:3233" ph="currentPlayerIndex...currentPlayerIndex" />
+            <marker date="1525886617018" expanded="true" signature="3264:3274" ph="roundScore...roundScore" />
+            <marker date="1525886617018" expanded="true" signature="3305:3310" ph="round...round" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/Game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+        <state relative-caret-position="-2223">
+          <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App.js">
+    <entry file="file://$PROJECT_DIR$/components/Game/ScoreColumn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+        <state relative-caret-position="273">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <marker date="1524945880652" expanded="true" signature="1355:1989" ph="query...{&#10;                          currentGame @client {&#10;                              id&#10;                              players {&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }&#10;                              scores&#10;                              currentPlayerIndex&#10;                              darts&#10;                              currentDarts&#10;                              roundScore&#10;                              round&#10;                              gameActive&#10;                          }&#10;                      }" />
-            <marker date="1524945880652" expanded="true" signature="1361:1375" ph="GetCurrentGame...GetCurrentGame" />
-            <marker date="1524945880652" expanded="true" signature="1376:1989" ph="{...}" />
-            <marker date="1524945880652" expanded="true" signature="1404:1415" ph="currentGame...currentGame" />
-            <marker date="1524945880652" expanded="true" signature="1404:1965" ph="currentGame...{&#10;                              id&#10;                              players {&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }&#10;                              scores&#10;                              currentPlayerIndex&#10;                              darts&#10;                              currentDarts&#10;                              roundScore&#10;                              round&#10;                              gameActive&#10;                          }" />
-            <marker date="1524945880652" expanded="true" signature="1424:1965" ph="{...}" />
-            <marker date="1524945880652" expanded="true" signature="1456:1458" ph="id...id" />
-            <marker date="1524945880652" expanded="true" signature="1489:1496" ph="players...players" />
-            <marker date="1524945880652" expanded="true" signature="1489:1654" ph="players...{&#10;                                  id&#10;                                  firstName&#10;                                  lastName&#10;                              }" />
-            <marker date="1524945880652" expanded="true" signature="1497:1654" ph="{...}" />
-            <marker date="1524945880652" expanded="true" signature="1533:1535" ph="id...id" />
-            <marker date="1524945880652" expanded="true" signature="1570:1579" ph="firstName...firstName" />
-            <marker date="1524945880652" expanded="true" signature="1614:1622" ph="lastName...lastName" />
-            <marker date="1524945880652" expanded="true" signature="1685:1691" ph="scores...scores" />
-            <marker date="1524945880652" expanded="true" signature="1722:1740" ph="currentPlayerIndex...currentPlayerIndex" />
-            <marker date="1524945880652" expanded="true" signature="1771:1776" ph="darts...darts" />
-            <marker date="1524945880652" expanded="true" signature="1807:1819" ph="currentDarts...currentDarts" />
-            <marker date="1524945880652" expanded="true" signature="1850:1860" ph="roundScore...roundScore" />
-            <marker date="1524945880652" expanded="true" signature="1891:1896" ph="round...round" />
-            <marker date="1524945880652" expanded="true" signature="1927:1937" ph="gameActive...gameActive" />
           </folding>
         </state>
       </provider>
