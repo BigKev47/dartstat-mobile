@@ -25,9 +25,10 @@ export class ScoreColumn extends React.Component {
       <View style={{flex: 10}}>
         <FlatList
             data={currentGame.scoreHistory[playerIdx]}
-            keyExtractor={item => item.index}
+            keyExtractor={item => item}
+            style={{flex:0, flexGrow:0}}
             renderItem={({ item }) => (
-                <Text style={[styles.scoretext, styles.scorehistory, alignStyle]} key={item.index}>{item}</Text>
+                <Text style={[styles.scoretext, styles.scorehistory, alignStyle]} key={item}>{item}</Text>
         )}
             />
         <Text style={[styles.scoretext, alignStyle]}>{currentGame.scores[playerIdx]}</Text>
@@ -59,10 +60,11 @@ const styles = StyleSheet.create({
     fontFamily: 'chalk-it-up',
     color: 'white',
     fontSize: 28,
-    alignSelf: 'flex-start',
+    flex: 0,
+
     textAlign: 'center',
     paddingHorizontal: 6,
-    paddingVertical: -2
+    paddingVertical: -2,
 
     // adjustsFontSizeToFit: true
   },
@@ -71,7 +73,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 26,
     textDecorationLine: 'line-through',
-    opacity: .7
+    opacity: .7,
+    flex: 0
+
   },
 
   right: {

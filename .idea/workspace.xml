@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f98bd5a5-de42-4639-a44f-f224a90cd849" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/App.js" afterPath="$PROJECT_DIR$/App.js" />
       <change beforePath="$PROJECT_DIR$/components/Game/ScoreColumn.js" afterPath="$PROJECT_DIR$/components/Game/ScoreColumn.js" />
-      <change beforePath="$PROJECT_DIR$/graphql/getCurrentGame.js" afterPath="$PROJECT_DIR$/graphql/getCurrentGame.js" />
-      <change beforePath="$PROJECT_DIR$/graphql/updateCurrentGame.js" afterPath="$PROJECT_DIR$/graphql/updateCurrentGame.js" />
-      <change beforePath="$PROJECT_DIR$/screens/Game.js" afterPath="$PROJECT_DIR$/screens/Game.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -110,8 +106,8 @@
       <file leaf-file-name="ScoreColumn.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/Game/ScoreColumn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="104">
+              <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -723,11 +719,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525177391786</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Got scoreHistory working in scoreColumn. Still needs styling.">
+      <created>1525887899108</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1525887899108</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263884000" />
+    <option name="totallyTimeSpent" value="266827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -853,7 +856,8 @@
     <MESSAGE value="Updated styling and added a few svgs" />
     <MESSAGE value="Figured out graphql query integration, starting on Apollo-Link-State" />
     <MESSAGE value="Still working on Apollo-Link-State..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Still working on Apollo-Link-State..." />
+    <MESSAGE value="Got scoreHistory working in scoreColumn. Still needs styling." />
+    <option name="LAST_COMMIT_MESSAGE" value="Got scoreHistory working in scoreColumn. Still needs styling." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1284,8 +1288,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Game/ScoreColumn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="104">
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
