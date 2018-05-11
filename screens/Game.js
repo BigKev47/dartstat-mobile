@@ -1,8 +1,16 @@
 import React from 'react';
-import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
+import { View, Alert, StyleSheet } from 'react-native';
 
 import { NumberGrid } from '../components/NumberGrid.js';
-import {createDart, allUsers, createGame, endTurn, updateCurrentGame, getCurrentGame} from "../graphql";
+import {
+  createDart,
+  allUsers,
+  createGame,
+  endTurn,
+  updateCurrentGame,
+  getCurrentGame,
+  resetCurrentGame
+} from "../graphql";
 import {graphql, compose} from "@expo/react-apollo";
 import {Scoreboard} from "../components/Game/Scoreboard";
 import {DartEntry} from "../components/Game/DartEntry";
@@ -78,16 +86,19 @@ export class Game extends React.Component {
 
 
     roundHandler = async (dart) => {
-        const { loading, endTurn, currentGame, updateCurrentGame } = this.props;
+        const { loading, resetCurrentGame, currentGame, updateCurrentGame } = this.props;
         let playerIdx = currentGame.currentPlayerIndex;
-        let tempScore = (!this.state.homeTurn) ? this.state.awayScore : this.state.homeScore;
-        let outScore = tempScore - this.state.roundscore;
+        let tempScore = currentGame.scores[playerIdx];
+        let outScore = tempScore - currentGame.roundScore;
         if (outScore < 2) {
             if (outScore === 0 && dart.sectionHit === 2) {
                 console.log("Game Over");
-                this.setState((!this.state.homeTurn) ?
-                    {awayScore: 0, gameCompleted: true} :
-                    {homeScore: 0, gameCompleted: true} );
+                Alert.alert(
+                    'Game Over',
+                    currentGame.players[playerIdx].firstName + ' Wins!',
+                    [{text: 'View Match Report', onPress: () => console.log('Ask me later pressed')},
+                      {text: 'Done', onPress: () => resetCurrentGame()},
+                    ])
             } else {
                 console.log("Bust");
                 this.turnSwitcher()
@@ -145,15 +156,15 @@ export class Game extends React.Component {
       this.setState({currentDarts: currentDarts});
       //This pushes the dart to the gql backend
       try {
-        // await createDart({
-        //   variables: {
-        //       //TODO get player login worked out and remove this hard-code
-        //       playerId: this.state.players[player],
-        //       gameId: this.state.gameId,
-        //       numberHit: parseInt(dart.numberHit),
-        //       sectionHit: dart.sectionHit
-        //     }
-        // });
+        await createDart({
+          variables: {
+              //TODO get player login worked out and remove this hard-code
+              playerId: currentGame.players[player].id,
+              gameId: currentGame.id,
+              numberHit: parseInt(dart.numberHit),
+              sectionHit: dart.sectionHit
+            }
+        });
         await updateCurrentGame({
           variables: {
             index: "roundScore",
@@ -198,7 +209,6 @@ export class Game extends React.Component {
                 index: 'id',
                 value: newGame.data.createGame.id}
           });
-            this.setState({gameId: newGame.data.createGame.id});
 
         }
         catch (error) {
@@ -208,15 +218,11 @@ export class Game extends React.Component {
 
     render()
 {
-  const screen = !this.state.gameId ?
+  const screen = !this.props.currentGame.id ?
       <NewGame onPress={this.createGame}/> :
-      !this.state.gameCompleted ?
-
-          <DartEntry onPress={this.dartHandler}
-                     style={styles.dartentry}{...this.state} />
-          :
-          <GameOver/>;
-  const scoreBoard = this.state.gameId && !this.state.gameCompleted ? <Scoreboard  /> : null;
+      <DartEntry onPress={this.dartHandler}
+                 style={styles.dartentry}{...this.state} />;
+  const scoreBoard = this.props.currentGame.id ? <Scoreboard  /> : null;
 
 //TODO Create a running scoreboard with all necessary information and proper columns
   return <View style={styles.container}>
@@ -264,5 +270,8 @@ export default compose(
     }),
     graphql(updateCurrentGame, {
       name: 'updateCurrentGame'
+    }),
+    graphql(resetCurrentGame, {
+      name: 'resetCurrentGame'
     })
 )(Game);

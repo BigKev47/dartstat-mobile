@@ -28,7 +28,7 @@ export class ScoreColumn extends React.Component {
             keyExtractor={item => item}
             style={{flex:0, flexGrow:0}}
             renderItem={({ item }) => (
-                <Text style={[styles.scoretext, styles.scorehistory, alignStyle]} key={item}>{item}</Text>
+                <Text style={[styles.scoretext, styles.scorehistory, alignStyle]} key={item.index}>{item}</Text>
         )}
             />
         <Text style={[styles.scoretext, alignStyle]}>{currentGame.scores[playerIdx]}</Text>
