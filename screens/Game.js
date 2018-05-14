@@ -45,7 +45,6 @@ export class Game extends React.Component {
             gameId: ""
         };
 
-        // this.switchEntryScreen = this.switchEntryScreen.bind(this);
         this.dartHandler = this.dartHandler.bind(this);
         this.turnSwitcher = this.turnSwitcher.bind(this);
         this.roundHandler = this.roundHandler.bind(this);
@@ -71,19 +70,6 @@ export class Game extends React.Component {
 
 
       };
-        // if (this.state.players.length > 1){
-        //     this.setState(
-        //         {homeTurn: !this.state.homeTurn,
-        //         roundscore: 0,
-        //         currentDarts: []}
-        // )}else{
-        //     this.setState({roundscore: 0,
-        //                     currentDarts: []})
-        // }
-        // if (!this.state.homeTurn) {
-        //     this.state.round++
-        // }
-
 
     roundHandler = async (dart) => {
         const { loading, resetCurrentGame, currentGame, updateCurrentGame } = this.props;
@@ -100,7 +86,9 @@ export class Game extends React.Component {
                       {text: 'Done', onPress: () => resetCurrentGame()},
                     ])
             } else {
-                console.log("Bust");
+                Alert.alert(
+                    "Bust"
+                );
                 this.turnSwitcher()
             }
         }else {
@@ -177,24 +165,10 @@ export class Game extends React.Component {
       catch (err) {
         console.log(err)
       }
-
-
-      // TODO get DArts to update
-      //   const { currentGame, updateCurrentGame } = this.props;
-      //   const darts =  currentGame.darts.push(dart);
-      //   updateCurrentGame({
-      //     variables: {
-      //       index: 'darts',
-      //       value: darts}
-      // });
-
-      // this.setState({roundscore: roundscore},
-
-
     };
 
     createGame = async () => {
-        const { loading, createGame } = this.props;
+        const { createGame } = this.props;
         try {
             const newGame = await createGame({
                 variables: {
