@@ -24,14 +24,16 @@ export class ScoreColumn extends React.Component {
       </View>
       <View style={{flex: 10}}>
         <FlatList
+            ref={ref=>this.flatList = ref}
             data={currentGame.scoreHistory[playerIdx]}
             keyExtractor={item => item}
             style={{flex:0, flexGrow:0}}
+            onContentSizeChange={()=> this.flatList.scrollToEnd({animated: false})}
             renderItem={({ item }) => (
-                <Text style={[styles.scoretext, styles.scorehistory, alignStyle]} key={item.index}>{item}</Text>
+                <Text style={[styles.scoretext, styles.scorehistory, {textAlign: 'center'}]} key={item.index}>{item}</Text>
         )}
             />
-        <Text style={[styles.scoretext, alignStyle]}>{currentGame.scores[playerIdx]}</Text>
+        <Text style={[styles.scoretext, {textAlign:'center'}]}>{currentGame.scores[playerIdx]}</Text>
       </View>
     </View>
 
@@ -53,16 +55,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderWidth: 1,
     borderColor: 'white',
+    alignContent: 'center',
+    paddingTop: 8
   },
 
 //TODO: Figure out how to properly scale my text sizes.
   scoretext: {
     fontFamily: 'chalk-it-up',
     color: 'white',
-    fontSize: 28,
+    fontSize: 32,
     flex: 0,
 
-    textAlign: 'center',
+    alignContent: 'center',
     paddingHorizontal: 6,
     paddingVertical: -2,
 
@@ -71,7 +75,7 @@ const styles = StyleSheet.create({
 
   scorehistory: {
     color: 'white',
-    fontSize: 26,
+    fontSize: 28,
     textDecorationLine: 'line-through',
     opacity: .7,
     flex: 0
@@ -93,7 +97,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     fontFamily: 'sketchy',
-    fontSize: 20
+    fontSize: 24
 
   },
 
