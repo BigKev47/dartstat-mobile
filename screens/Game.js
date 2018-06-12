@@ -130,11 +130,11 @@ export class Game extends React.Component {
     dartHandler = async (dart) => {
       const {createDart, currentGame, updateCurrentGame} = this.props;
       let player = currentGame.currentPlayerIndex;
-      console.log(currentGame)
+      console.log(dart)
       //This calculates the score by multiplying any triples or doubles
-      let dartscore;
-      !(dart.sectionHit) ? dartscore = 0 :
-          dartscore = dart.numberHit * (dart.sectionHit > 1 ? dart.sectionHit : 1);
+      let dartscore=
+          dart.sectionHit === null ? 0 :
+          dart.numberHit * (dart.sectionHit === 0 ? 1 : dart.sectionHit);
 
       //Ths updates the current score and dart log
       let roundscore = currentGame.roundScore + dartscore;

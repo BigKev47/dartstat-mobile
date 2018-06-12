@@ -3,6 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import {NumButton, SecButton} from "./Buttons";
 
+
 export class NumberGrid extends React.Component {
     constructor(props) {
         super(props);
@@ -36,6 +37,7 @@ export class NumberGrid extends React.Component {
         let dart = {numberHit: numberHit, sectionHit: sectionHit};
         try {
           await this.props.onPress(dart);
+          // await <dartHandler {dart} />;
           this.setState( {currentNum: "", currentSec: null});
         }
         catch(error) {console.log(error)}
