@@ -5,6 +5,7 @@ export default gql`
     $currentPlayerIndex: Int!, 
     $round: Int!, 
     $roundScore: Int!
+        
     ){
         endTurn(
             currentPlayerIndex: $currentPlayerIndex

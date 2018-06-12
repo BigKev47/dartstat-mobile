@@ -32,17 +32,6 @@ export class Game extends React.Component {
 
         this.state = {
             players: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"],
-            currentnum: "",
-            issection: false,
-            roundscore: 0,
-            darts: [[],[]],
-            homeScore: 501,
-            awayScore: 501,
-            round: 1,
-            homeTurn: true,
-            gameCompleted: false,
-            currentDarts: [],
-            gameId: ""
         };
 
         this.dartHandler = this.dartHandler.bind(this);
@@ -56,7 +45,6 @@ export class Game extends React.Component {
     turnSwitcher = async () => {
       try{
         const { endTurn, currentGame } = this.props;
-        this.setState({currentDarts: []});
         const newPlayerIndex = currentGame.currentPlayerIndex + 1;
         const newRound = newPlayerIndex === 0 ? currentGame.round + 1:currentGame.round;
         await endTurn({
@@ -64,7 +52,8 @@ export class Game extends React.Component {
             //TODO get player login worked out and remove this hard-code
             round: newRound,
             currentPlayerIndex: newPlayerIndex,
-            roundScore: 0
+            roundScore: 0,
+            currentDarts: []
           }});
         }catch(err){console.log(err)}
 
@@ -74,6 +63,7 @@ export class Game extends React.Component {
     roundHandler = async (dart) => {
         const { loading, resetCurrentGame, currentGame, updateCurrentGame } = this.props;
         let playerIdx = currentGame.currentPlayerIndex;
+        let currentDarts = currentGame.currentDarts;
         let tempScore = currentGame.scores[playerIdx];
         let outScore = tempScore - currentGame.roundScore;
         if (outScore < 2) {
@@ -92,7 +82,7 @@ export class Game extends React.Component {
                 this.turnSwitcher()
             }
         }else {
-          if (this.state.currentDarts.length === 3) {
+          if (currentDarts.length === 3) {
             let playerScore = currentGame.scores[currentGame.currentPlayerIndex];
             console.log("playerScore:" + playerScore);
             let newScore = playerScore - currentGame.roundScore;
@@ -139,12 +129,11 @@ export class Game extends React.Component {
       //Ths updates the current score and dart log
       let roundscore = currentGame.roundScore + dartscore;
 
-      let currentDarts = this.state.currentDarts;
+      let currentDarts = currentGame.currentDarts.slice(0);
       currentDarts.push(dart);
-      this.setState({currentDarts: currentDarts});
       //This pushes the dart to the gql backend
       try {
-        await createDart({
+        const newDart = await createDart({
           variables: {
               //TODO get player login worked out and remove this hard-code
               playerId: currentGame.players[player].id,
@@ -159,6 +148,12 @@ export class Game extends React.Component {
             value: roundscore
           }
         });
+        await updateCurrentGame({
+          variables: {
+            index: "currentDarts",
+            value: currentDarts
+          }
+          });
         console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
         this.roundHandler(dart)
       }

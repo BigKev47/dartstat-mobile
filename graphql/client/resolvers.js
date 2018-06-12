@@ -46,6 +46,7 @@ export const resolvers = {
                   currentPlayerIndex
                   roundScore
                   round
+                  currentDarts
               } }
       `
       const previous = cache.readQuery({query});
@@ -58,7 +59,8 @@ export const resolvers = {
           ...previous.currentGame,
           currentPlayerIndex: newPlayerIndex,
           round: newRound,
-          roundScore: roundScore
+          roundScore: roundScore,
+          currentDarts: []
         }
       };
       cache.writeQuery({query, data});
