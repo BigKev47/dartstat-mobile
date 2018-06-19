@@ -4,10 +4,9 @@ import {compose, graphql} from "@expo/react-apollo/index";
 import {Game} from "../../screens/Game";
 
 
-const turnSwitcher = async () => {
+turnSwitcher = async () => {
   try{
     const { endTurn, currentGame } = this.props;
-    this.setState({currentDarts: []});
     const newPlayerIndex = currentGame.currentPlayerIndex + 1;
     const newRound = newPlayerIndex === 0 ? currentGame.round + 1:currentGame.round;
     await endTurn({
@@ -15,7 +14,8 @@ const turnSwitcher = async () => {
         //TODO get player login worked out and remove this hard-code
         round: newRound,
         currentPlayerIndex: newPlayerIndex,
-        roundScore: 0
+        roundScore: 0,
+        currentDarts: []
       }});
   }catch(err){console.log(err)}
 

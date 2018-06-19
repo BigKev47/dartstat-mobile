@@ -14,17 +14,51 @@ import ModalDropdown from 'react-native-modal-dropdown';
 
     constructor(props) {
         super(props);
+
+        this.state = {
+          on: false,
+          playersIds: ["cjf673owt4whi0104fng14osm"],
+          gameType: null
+        }
     }
+  gameMenu = () => {
+    const {allUsers, loading} = this.props;
+    const {on, playersIds, gameType} = this.state;
+    if (loading) {
+      return null
+    } else if (!on) {
+      return <Button onPress={this.setState({on: true})}
+                     style={styles.button}
+                     containerStyle={styles.buttoncontainer}>New Game</Button>
+    } else if (!gameType) {
+      return (
+          <View>
+            <Text style={styles.button}>Choose Game</Text>
+            <Button onPress={this.setState({gameType: "501"})}
+                    style={[styles.button, styles.smallButton]}
+                    containerStyle={styles.buttoncontainer}>501</Button>
+            <Button //onPress={ this.setState({gameType: "501"}) }
+                style={[styles.button, styles.smallButton, {opacity: .6}]}
+                containerStyle={styles.buttoncontainer}>Cricket</Button>
+          </View>)
+    }
+  };
 
     render() {
-      const { allUsers, loading } = this.props;
-      if (loading) return null;
+      const gameMenu = this.gameMenu();
+
+
+
+
+
+
 
 
 //TODO Create a running scoreboard with all necessary information and proper columns
-        return <View style={styles.container}><Button onPress={ this.props.onPress }
-                    style={styles.button}
-                    containerStyle={styles.buttoncontainer}>New Game</Button>
+        return <View style={styles.container}>
+          {gameMenu}
+
+
             {/*<FlatList*/}
               {/*style={{flex: 1}}*/}
               {/*data={allUsers}*/}
@@ -48,26 +82,32 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.scoreBoard,
     alignContent: "center",
   },
-    button: {
-        color: "white",
-        alignContent: "center",
-        fontSize: 50,
-        fontFamily: 'sketchy',
-        fontWeight: "400",
-    },
 
-    buttoncontainer: {
-        flex: 1,
-        marginHorizontal: 5,
-        marginVertical: 5,
-        padding: 10,
-        overflow: 'hidden',
-        borderRadius: 6,
-        justifyContent: 'center',
-        backgroundColor: Colors.scoreBoard,
+  button: {
+    color: "white",
+    alignContent: "center",
+    fontSize: 50,
+    fontFamily: 'sketchy',
+    fontWeight: "400",
+  },
 
-        //flexDirection: 'row',
-    },
+  smallbutton: {
+    fontSize: 40,
+    fontWeight: "300"
+  },
+
+  buttoncontainer: {
+    flex: 1,
+    marginHorizontal: 5,
+    marginVertical: 5,
+    padding: 10,
+    overflow: 'hidden',
+    borderRadius: 6,
+    justifyContent: 'center',
+    backgroundColor: Colors.scoreBoard,
+
+    //flexDirection: 'row',
+  },
 
 });
 
