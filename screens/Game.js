@@ -188,9 +188,12 @@ export class Game extends React.Component {
     render()
 {
   const screen = !this.props.currentGame.id ?
-      <NewGame onPress={this.createGame}/> :
-      <DartEntry onPress={this.dartHandler}
-                 style={styles.dartentry}{...this.state} />;
+        <NewGame onPress={this.createGame}
+        style = {styles.container} />:
+      <View style={styles.container}>
+        <DartEntry onPress={this.dartHandler}
+                 style={styles.dartentry}{...this.state} />
+      </View>;
   const scoreBoard = this.props.currentGame.id ? <Scoreboard  /> : null;
 
 //TODO Create a running scoreboard with all necessary information and proper columns
