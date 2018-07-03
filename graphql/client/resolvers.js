@@ -19,6 +19,7 @@ export const resolvers = {
                   currentDarts
                   roundScore
                   round
+                  gameType
                   gameActive
               }
           }

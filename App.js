@@ -41,6 +41,7 @@ export default class App extends React.Component {
               }
               ],
             scores: [501, 501],
+            gameType: "Cricket",
             scoreHistory: [[],[]],
             currentPlayerIndex: 0,
             currentDarts: [],

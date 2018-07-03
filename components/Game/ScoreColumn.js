@@ -2,6 +2,9 @@ import React from 'react';
 import {View, ScrollView, Text, Button, StyleSheet, FlatList} from 'react-native';
 import {createDart, allUsers, createGame, getCurrentGame} from "../../graphql";
 import {graphql, compose} from "@expo/react-apollo";
+import Grid from "react-native-easy-grid/Components/Grid";
+import Col from "react-native-easy-grid/Components/Col";
+import Row from "react-native-easy-grid/Components/Row";
 
 
 
@@ -13,33 +16,50 @@ export class ScoreColumn extends React.Component {
 
 
   render() {
-    const {playerIdx,currentGame} = this.props;
+    const {playerIdx, currentGame} = this.props;
     const alignStyle = playerIdx === 0 ? styles.left : styles.right;
+    let markNums = [];
+    for (let i = 15; i < 21; i++) {
+      markNums.push(<Row><Text>{i}</Text></Row>)
+    }
+    ;
 
-//TODO Create a running scoreboard with all necessary information and proper columns
+
+//TODO Figure out the array/object scorecard and iterate over it better
     return <View style={styles.container}>
       <View style={styles.scoreboardheader}>
-        <Text adjustsFontSizeToFit numberOfLines={1} style={[styles.scoretext, styles.scoreheader, alignStyle ]}>{currentGame.players[playerIdx].firstName} </Text>
+        <Text adjustsFontSizeToFit numberOfLines={1}
+              style={[styles.scoretext, styles.scoreheader, alignStyle]}>{currentGame.players[playerIdx].firstName} </Text>
 
       </View>
       <View style={{flex: 10}}>
-        <FlatList
-            ref={ref=>this.flatList = ref}
-            data={currentGame.scoreHistory[playerIdx]}
-            keyExtractor={item => item}
-            style={{flex:0, flexGrow:0}}
-            onContentSizeChange={()=> this.flatList.scrollToEnd({animated: false})}
-            renderItem={({ item }) => (
-                <Text style={[styles.scoretext, styles.scorehistory, {textAlign: 'center'}]} key={item.index}>{item}</Text>
-        )}
+        <Grid>
+          <Col>
+            <FlatList
+                ref={ref => this.flatList = ref}
+                data={currentGame.scoreHistory[playerIdx]}
+                keyExtractor={item => item}
+                style={{flex: 0, flexGrow: 0}}
+                onContentSizeChange={() => this.flatList.scrollToEnd({animated: false})}
+                renderItem={({item}) => (
+                    <Text style={[styles.scoretext, styles.scorehistory, {textAlign: 'center'}]}
+                          key={item.index}>{item}</Text>
+                )}
             />
-        <Text style={[styles.scoretext, {textAlign:'center'}]}>{currentGame.scores[playerIdx]}</Text>
+            <Text style={[styles.scoretext, {textAlign: 'center'}]}>{currentGame.scores[playerIdx]}</Text>
+          </Col>
+          <Col>
+            {markNums}
+          </Col>
+        </Grid>
+
       </View>
     </View>
-
-
   }
 }
+
+
+
 
 
 const styles = StyleSheet.create({

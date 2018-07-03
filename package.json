@@ -28,5 +28,7 @@
     "react-navigation": "^1.5.8"
   },
   "false": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "prettier": "^1.13.7"
+  }
 }
