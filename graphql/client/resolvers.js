@@ -13,6 +13,7 @@ export const resolvers = {
                       lastName
                   }
                   scores
+                  marks
                   scoreHistory
                   currentPlayerIndex
                   darts
@@ -20,6 +21,7 @@ export const resolvers = {
                   roundScore
                   round
                   gameType
+                  gameMarks
                   gameActive
               }
           }

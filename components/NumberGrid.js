@@ -44,6 +44,7 @@ export class NumberGrid extends React.Component {
     };
 //TODO Find a way to make these grids with some sort of map/iterator function to cut down on code length
   render(){
+
     if (!this.state.currentNum) {
       return <Grid>
         <Row>

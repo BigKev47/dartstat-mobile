@@ -20,18 +20,18 @@ export class ScoreColumn extends React.Component {
     const alignStyle = playerIdx === 0 ? styles.left : styles.right;
     let markNums = [];
     for (let i = 15; i < 21; i++) {
-      markNums.push(<Row><Text>{i}</Text></Row>)
+      markNums.push(<Row key={i}><Text>{i}</Text></Row>)
     }
-    ;
 
 
-//TODO Figure out the array/object scorecard and iterate over it better
+
+//TODO Figure out the array/object scorecard and iterate over it good
     return <View style={styles.container}>
-      <View style={styles.scoreboardheader}>
-        <Text adjustsFontSizeToFit numberOfLines={1}
-              style={[styles.scoretext, styles.scoreheader, alignStyle]}>{currentGame.players[playerIdx].firstName} </Text>
+      {/*<View style={styles.scoreboardheader}>*/}
+        {/*<Text adjustsFontSizeToFit numberOfLines={1}*/}
+              {/*style={[styles.scoretext, styles.scoreheader, alignStyle]}>{currentGame.players[playerIdx].firstName} </Text>*/}
 
-      </View>
+      {/*</View>*/}
       <View style={{flex: 10}}>
         <Grid>
           <Col>
@@ -48,9 +48,9 @@ export class ScoreColumn extends React.Component {
             />
             <Text style={[styles.scoretext, {textAlign: 'center'}]}>{currentGame.scores[playerIdx]}</Text>
           </Col>
-          <Col>
-            {markNums}
-          </Col>
+          {/*<Col>*/}
+            {/*{markNums}*/}
+          {/*</Col>*/}
         </Grid>
 
       </View>

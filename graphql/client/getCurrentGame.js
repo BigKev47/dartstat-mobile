@@ -14,6 +14,9 @@ export default gql`
         currentDarts
         roundScore
         scores
+        marks
+        gameType
+        gameMarks
         scoreHistory
         round
         gameActive

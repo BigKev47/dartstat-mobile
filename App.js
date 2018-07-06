@@ -40,8 +40,10 @@ export default class App extends React.Component {
               lastName: "Antry",
               }
               ],
-            scores: [501, 501],
+            scores: [0, 0],
+            marks: [[],[]],
             gameType: "Cricket",
+            gameMarks: [],
             scoreHistory: [[],[]],
             currentPlayerIndex: 0,
             currentDarts: [],
