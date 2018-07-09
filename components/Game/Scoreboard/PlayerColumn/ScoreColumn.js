@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, ScrollView, Text, Button, StyleSheet, FlatList} from 'react-native';
-import {createDart, allUsers, createGame, getCurrentGame} from "../../graphql";
+import {createDart, allUsers, createGame, getCurrentGame} from "../../../../graphql/index";
 import {graphql, compose} from "@expo/react-apollo";
 import Grid from "react-native-easy-grid/Components/Grid";
 import Col from "react-native-easy-grid/Components/Col";
@@ -8,33 +8,18 @@ import Row from "react-native-easy-grid/Components/Row";
 
 
 
-export class ScoreColumn extends React.Component {
+export default class ScoreColumn extends React.Component {
   constructor(props) {
     super(props);
 
   }
-
-
   render() {
-    const {playerIdx, currentGame} = this.props;
-    const alignStyle = playerIdx === 0 ? styles.left : styles.right;
-    let markNums = [];
-    for (let i = 15; i < 21; i++) {
-      markNums.push(<Row key={i}><Text>{i}</Text></Row>)
-    }
+    const {currentGame, playerIdx} = this.props;
 
 
-
-//TODO Figure out the array/object scorecard and iterate over it good
     return <View style={styles.container}>
-      {/*<View style={styles.scoreboardheader}>*/}
-        {/*<Text adjustsFontSizeToFit numberOfLines={1}*/}
-              {/*style={[styles.scoretext, styles.scoreheader, alignStyle]}>{currentGame.players[playerIdx].firstName} </Text>*/}
+      <Col style={{flex: 10}}>
 
-      {/*</View>*/}
-      <View style={{flex: 10}}>
-        <Grid>
-          <Col>
             <FlatList
                 ref={ref => this.flatList = ref}
                 data={currentGame.scoreHistory[playerIdx]}
@@ -47,13 +32,7 @@ export class ScoreColumn extends React.Component {
                 )}
             />
             <Text style={[styles.scoretext, {textAlign: 'center'}]}>{currentGame.scores[playerIdx]}</Text>
-          </Col>
-          {/*<Col>*/}
-            {/*{markNums}*/}
-          {/*</Col>*/}
-        </Grid>
-
-      </View>
+      </Col>
     </View>
   }
 }
@@ -129,12 +108,3 @@ const styles = StyleSheet.create({
   },
 
 });
-
-
-export default graphql(getCurrentGame, {
-  props: ({data: {currentGame, loading}}) => ({
-    currentGame,
-    loading
-  })
-})(ScoreColumn);
-

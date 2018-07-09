@@ -1,8 +1,9 @@
 import React from "react";
-import { View, ScrollView, Text, Button, StyleSheet } from "react-native";
-import { createDart, allUsers, createGame } from "../../graphql";
+import {View, ScrollView, Text, Button, StyleSheet, Image} from "react-native";
+import { createDart, allUsers, createGame } from "../../../graphql/index";
 import { graphql, compose } from "@expo/react-apollo";
-import ScoreColumn from "./ScoreColumn";
+import ScoreColumn from "./PlayerColumn/ScoreColumn";
+import MarksColumn from "./PlayerColumn/MarksColumn";
 import Grid from "react-native-easy-grid/Components/Grid";
 import Col from "react-native-easy-grid/Components/Col";
 import Row from "react-native-easy-grid/Components/Row";
@@ -15,13 +16,20 @@ export class Scoreboard extends React.Component {
     const { currentGame } = this.props;
     let gameMarks = currentGame.gameMarks.map(i => (
       <Row key={i}>
-        <Text style={styles.scoretext}>{i}</Text>
+        {/*<Col>*/}
+          {/*<Image*/}
+              {/*style={{flex:1, height: undefined, width: undefined}}*/}
+              {/*source={require('../../../assets/images/ThreeMark.png')}*/}
+              {/*//Does this work?*/}
+              {/*resizeMode="contain"*/}
+          {/*/>*/}
+        {/*</Col>*/}
+        <Col><Text style={styles.scoretext}>{i}</Text>
+        </Col>
       </Row>
     ));
 
-    // const homeActive = this.props.homeTurn ? {opacity: .7} : null;
-    // const awayActive = this.props.awayTurn ? {opacity: .7} : null;
-    //TODO Create a running scoreboard with all necessary information and proper columns
+    //TODO Format Down to Player Columns and style
     return (
       <View style={[styles.container, { flex: 5, flexDirection: "row" }]}>
         <Grid  style={styles.scoreboardheader}>
@@ -55,12 +63,14 @@ export class Scoreboard extends React.Component {
             </Col>
           </Row>
           <Row style={{ flex: 10 }}>
-            <Col>
-              <ScoreColumn style={styles.scoretext} playerIdx={0} />
+            <Col style={{flexDirection: 'row'}}>
+              <ScoreColumn {...this.props} style={styles.scoretext} playerIdx={0} />
+              <MarksColumn {...this.props} style={styles.scoretext} playerIdx={0} />
             </Col>
             <Col>{gameMarks}</Col>
-            <Col>
-              <ScoreColumn style={styles.scoretext} playerIdx={1} />
+            <Col style={{flexDirection: 'row'}}>
+              <ScoreColumn {...this.props} style={styles.scoretext} playerIdx={1} />
+              <MarksColumn {...this.props} style={styles.scoretext} playerIdx={1} />
             </Col>
           </Row>
           {/*<Text adjustsFontSizeToFit numberOfLines={1}*/}

@@ -12,7 +12,7 @@ import {
   resetCurrentGame
 } from "../graphql";
 import {graphql, compose} from "@expo/react-apollo";
-import {Scoreboard} from "../components/Game/Scoreboard";
+import {Scoreboard} from "../components/Game/Scoreboard/Scoreboard";
 import {DartEntry} from "../components/Game/DartEntry";
 import NewGame from "../components/Game/NewGame";
 import Colors from "../constants/Colors";
