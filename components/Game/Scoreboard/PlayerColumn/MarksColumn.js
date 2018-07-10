@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ScrollView, Text, Button, StyleSheet, FlatList} from 'react-native';
+import {View, ScrollView, Text, Button, StyleSheet, FlatList, Image} from 'react-native';
 import {createDart, allUsers, createGame, getCurrentGame} from "../../../../graphql/index";
 import {graphql, compose} from "@expo/react-apollo";
 import Grid from "react-native-easy-grid/Components/Grid";
@@ -8,26 +8,39 @@ import Row from "react-native-easy-grid/Components/Row";
 
 
 
-export default class ScoreColumn extends React.Component {
+export default class MarksColumn extends React.Component {
   constructor(props) {
     super(props);
 
   }
+  markSrc = (value)=> {
+    switch (value) {
+      case -3:
+        return null;
+      case -2:
+        return require('../../../../assets/images/OneMark.png');
+      case -1:
+        return require('../../../../assets/images/TwoMark.png');
+      default:
+        return require('../../../../assets/images/ThreeMark.png');
 
+    }
+  };
 
-  render() {
-    const { currentGame, playerIdx } = this.props;
-    let playerMarks = currentGame.marks[playerIdx].map((i, index) => (
-        <Row key={index}>
-            <Text style={styles.scoretext}>{i}</Text>
-            {/*<Image*/}
-                {/*style={{flex:1, height: undefined, width: undefined}}*/}
-                {/*source={require('../../../assets/images/ThreeMark.png')}*/}
-                {/*//Does this work?*/}
-                {/*resizeMode="contain"*/}
-            {/*/>*/}
-        </Row>
-    ));
+  render(){
+      const {currentGame, playerIdx} = this.props;
+      let playerMarks = currentGame.marks[playerIdx].map((i, index) => (
+          <Row key={index} style={{paddingHorizontal: 3, paddingVertical: 3}}>
+            {/*<Text style={styles.scoretext}>{i}</Text>*/}
+            <Image
+                style={{flex: 1, height: undefined, width: undefined}}
+                source={this.markSrc(i)}
+                //Does this work?
+                resizeMode="contain"
+            />
+          </Row>
+      ));
+
 
 
 
@@ -47,8 +60,6 @@ export default class ScoreColumn extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: 'white',
   },
 
   scoreboardheader: {

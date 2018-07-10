@@ -14,18 +14,56 @@ export class DartEntry extends React.Component {
     constructor(props) {
         super(props);
 
+      this.dartHandler = this.dartHandler.bind(this);
+
     }
+
+  dartHandler = async dart => {
+    const { createDart, currentGame, updateCurrentGame } = this.props;
+    let playerIdx = currentGame.currentPlayerIndex;
+    console.log(dart);
+    //This calculates the score by multiplying any triples or doubles
+    let dartscore = dart.sectionHit === null ? 0 : dart.numberHit * (dart.sectionHit === 0 ? 1 : dart.sectionHit);
+
+    //Ths updates the current score and dart log
+    let roundscore = currentGame.roundScore + dartscore;
+
+    let currentDarts = currentGame.currentDarts.slice(0);
+    currentDarts.push(dart);
+    //This pushes the dart to the gql backend
+    try {
+      await createDart({
+        variables: {
+          //TODO get player login worked out and remove this hard-code
+          playerId: currentGame.players[playerIdx].id,
+          gameId: currentGame.id,
+          numberHit: parseInt(dart.numberHit),
+          sectionHit: dart.sectionHit
+        }
+      });
+      await updateCurrentGame({
+        variables: {
+          index: "roundScore",
+          value: roundscore
+        }
+      });
+      await updateCurrentGame({
+        variables: {
+          index: "currentDarts",
+          value: currentDarts
+        }
+      });
+      console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
+      this.roundHandler(dart);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
     render() {
-
-
-
-
-
-
-//TODO Create a running scoreboard with all necessary information and proper columns
         return <View style={styles.scoreentry}>
             <View style={styles.numberhit}>
-                <NumberGrid onPress={ this.props.onPress }/>
+                <NumberGrid onPress={ this.dartHandler }/>
             </View>
         </View>
 

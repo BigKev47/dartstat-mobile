@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f98bd5a5-de42-4639-a44f-f224a90cd849" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/MarksColumn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/OneMark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/TwoMark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/PlayerColumn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Game/ScoreColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/ScoreColumn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Game/Scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Game/Scoreboard/Scoreboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Game/DartEntry.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Game/DartEntry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Game/NewGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Game/NewGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/MarksColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/MarksColumn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/ScoreColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/ScoreColumn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Game/Scoreboard/Scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Game/Scoreboard/Scoreboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -21,8 +28,29 @@
       <file leaf-file-name="Game.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/Game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3675">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="294">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DartEntry.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/Game/DartEntry.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -30,8 +58,8 @@
       <file leaf-file-name="MarksColumn.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/MarksColumn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+            <state relative-caret-position="1218">
+              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -42,8 +70,8 @@
       <file leaf-file-name="NumberGrid.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/NumberGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-126">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <state relative-caret-position="462">
+              <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
               <folding>
                 <marker date="1531163948647" expanded="true" signature="3620:3637" ph="&lt;Grid/&gt;" />
               </folding>
@@ -54,7 +82,7 @@
       <file leaf-file-name="MainTabNavigator.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/navigation/MainTabNavigator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378">
+            <state>
               <caret column="7" selection-start-column="7" selection-end-column="7" />
             </state>
           </provider>
@@ -69,11 +97,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scoreboard.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Scoreboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/Scoreboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+            <state relative-caret-position="2016">
+              <caret line="101" column="22" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerColumn.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/PlayerColumn.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="641">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -84,41 +124,11 @@
       <file leaf-file-name="ScoreColumn.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/ScoreColumn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="43" />
+            <state relative-caret-position="1239">
+              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Buttons.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Buttons.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="987">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
-              <folding>
-                <marker date="1526329345212" expanded="true" signature="280:284" ph="&lt;Col/&gt;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createGame.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphql/createGame.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createDart.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphql/createDart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -195,9 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/graphql.config.json" />
-        <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/client.js" />
         <option value="$PROJECT_DIR$/grahql/addDart.js" />
         <option value="$PROJECT_DIR$/components/NewDart.js" />
         <option value="$PROJECT_DIR$/components/NewGame.js" />
@@ -220,12 +227,10 @@
         <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/constants/Colors.js" />
         <option value="$PROJECT_DIR$/components/Buttons.js" />
-        <option value="$PROJECT_DIR$/components/Game/DartEntry.js" />
         <option value="$PROJECT_DIR$/components/Game/GameOver.js" />
         <option value="$PROJECT_DIR$/graphql/allUsers.js" />
         <option value="$PROJECT_DIR$/graphql/switchPlayer.js" />
         <option value="$PROJECT_DIR$/graphql/updateGame.js" />
-        <option value="$PROJECT_DIR$/components/Game/NewGame.js" />
         <option value="$PROJECT_DIR$/graphql/endTurn.js" />
         <option value="$PROJECT_DIR$/graphql/index.js" />
         <option value="$PROJECT_DIR$/graphql/getCurrentGame.js" />
@@ -240,12 +245,17 @@
         <option value="$PROJECT_DIR$/graphql/client/getCurrentGame.js" />
         <option value="$PROJECT_DIR$/graphql/client/updateCurrentGame.js" />
         <option value="$PROJECT_DIR$/graphql/client/resetCurrentGame.js" />
-        <option value="$PROJECT_DIR$/screens/Game.js" />
         <option value="$PROJECT_DIR$/components/Game/ScoreColumn.js" />
         <option value="$PROJECT_DIR$/components/Game/Scoreboard.js" />
         <option value="$PROJECT_DIR$/components/Game/Scoreboard/ScoreColumn.js" />
         <option value="$PROJECT_DIR$/components/Game/Scoreboard/MarksColumn.js" />
         <option value="$PROJECT_DIR$/components/Game/Scoreboard/Scoreboard.js" />
+        <option value="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/PlayerColumn.js" />
+        <option value="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/MarksColumn.js" />
+        <option value="$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/ScoreColumn.js" />
+        <option value="$PROJECT_DIR$/components/Game/NewGame.js" />
+        <option value="$PROJECT_DIR$/screens/Game.js" />
+        <option value="$PROJECT_DIR$/components/Game/DartEntry.js" />
       </list>
     </option>
   </component>
@@ -341,7 +351,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,11 +361,6 @@
             <path>
               <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
               <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -364,21 +368,6 @@
               <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="Scoreboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dartstat-mobile" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="Scoreboard" type="462c0819:PsiDirectoryNode" />
-              <item name="PlayerColumn" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dartstat-mobile" type="b2602c69:ProjectViewProjectNode" />
@@ -398,6 +387,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -424,6 +414,7 @@
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Kevin.UM\Dropbox\Coding\dartstat-mobile\node_modules\prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -470,6 +461,7 @@
       <workItem from="1530636311520" duration="2311000" />
       <workItem from="1530640322286" duration="3977000" />
       <workItem from="1530891306499" duration="13799000" />
+      <workItem from="1531191690139" duration="990000" />
     </task>
     <task id="LOCAL-00001" summary="Figured out graphql query integration, starting on Apollo-Link-State">
       <created>1524511760641</created>
@@ -513,11 +505,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530645250216</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactored the Scoreboard down to make room for Cx marks.">
+      <created>1531170252743</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1531170252743</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318182000" />
+    <option name="totallyTimeSpent" value="328929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -530,59 +529,47 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="GraphQL" order="7" weight="0.33040616" />
+      <window_info anchor="bottom" id="GraphQL" order="7" weight="0.32855567" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3296582" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32855567" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32858709" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32745314" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
-      <window_info anchor="bottom" id="GraphQL" order="7" weight="0.32943678" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32893288" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32837406" />
-      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="GraphQL" order="9" weight="0.330033" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32893288" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32893288" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32893288" />
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
@@ -647,7 +634,8 @@
     <MESSAGE value="tinkered with styling" />
     <MESSAGE value="Got basic scorekeeping debugged." />
     <MESSAGE value="Starting to work out my cricket scoreboard/card objects." />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting to work out my cricket scoreboard/card objects." />
+    <MESSAGE value="Refactored the Scoreboard down to make room for Cx marks." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored the Scoreboard down to make room for Cx marks." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -655,8 +643,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/interfaces.d.ts" />
-    <entry file="file://$PROJECT_DIR$/components/games/OhOne.js" />
     <entry file="file://$PROJECT_DIR$/components/dart/Dart.js" />
     <entry file="file://$PROJECT_DIR$/components/dart/dart.graphql" />
     <entry file="file://$PROJECT_DIR$/graphql.schema.json" />
@@ -715,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yarn.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -755,34 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <marker date="1523562985043" expanded="true" signature="55:489" ph="mutation...{&#10;        createDart(&#10;            numberHit: $numberHit&#10;            gameId: $gameId&#10;            sectionHit: $sectionHit&#10;            playerId: $playerId&#10;        ) {&#10;            numberHit&#10;            sectionHit&#10;            game{&#10;                id&#10;            }&#10;            player{&#10;                id&#10;            }&#10;        }&#10;    }" />
-            <marker date="1523562985043" expanded="true" signature="64:75" ph="createDarts...createDarts" />
-            <marker date="1523562985043" expanded="true" signature="75:161" ph="(...)" />
-            <marker date="1523562985043" expanded="true" signature="93:96" ph="Int...Int" />
-            <marker date="1523562985043" expanded="true" signature="115:118" ph="Int...Int" />
-            <marker date="1523562985043" expanded="true" signature="135:137" ph="ID...ID" />
-            <marker date="1523562985043" expanded="true" signature="152:154" ph="ID...ID" />
-            <marker date="1523562985043" expanded="true" signature="161:489" ph="{...}" />
-            <marker date="1523562985043" expanded="true" signature="171:181" ph="createDart...createDart" />
-            <marker date="1523562985043" expanded="true" signature="171:483" ph="createDart...{&#10;            numberHit&#10;            sectionHit&#10;            game{&#10;                id&#10;            }&#10;            player{&#10;                id&#10;            }&#10;        }" />
-            <marker date="1523562985043" expanded="true" signature="181:322" ph="(...)" />
-            <marker date="1523562985043" expanded="true" signature="195:204" ph="numberHit...numberHit" />
-            <marker date="1523562985043" expanded="true" signature="229:235" ph="gameId...gameId" />
-            <marker date="1523562985043" expanded="true" signature="257:267" ph="sectionHit...sectionHit" />
-            <marker date="1523562985043" expanded="true" signature="293:301" ph="playerId...playerId" />
-            <marker date="1523562985043" expanded="true" signature="323:483" ph="{...}" />
-            <marker date="1523562985043" expanded="true" signature="337:346" ph="numberHit...numberHit" />
-            <marker date="1523562985043" expanded="true" signature="359:369" ph="sectionHit...sectionHit" />
-            <marker date="1523562985043" expanded="true" signature="382:386" ph="game...game" />
-            <marker date="1523562985043" expanded="true" signature="382:420" ph="game...{&#10;                id&#10;            }" />
-            <marker date="1523562985043" expanded="true" signature="386:420" ph="{...}" />
-            <marker date="1523562985043" expanded="true" signature="404:406" ph="id...id" />
-            <marker date="1523562985043" expanded="true" signature="433:439" ph="player...player" />
-            <marker date="1523562985043" expanded="true" signature="433:473" ph="player...{&#10;                id&#10;            }" />
-            <marker date="1523562985043" expanded="true" signature="439:473" ph="{...}" />
-            <marker date="1523562985043" expanded="true" signature="457:459" ph="id...id" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,13 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/navigation/RootNavigation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphql/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -835,23 +779,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Game/NewGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Buttons.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="987">
           <caret line="51" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <marker date="1526329345212" expanded="true" signature="280:284" ph="&lt;Col/&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -861,16 +792,6 @@
           <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Game/DartEntry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -924,54 +845,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/navigation/MainTabNavigator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/ThreeMark.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/NumberGrid.js">
+    <entry file="file://$PROJECT_DIR$/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding>
-            <marker date="1531163948647" expanded="true" signature="3620:3637" ph="&lt;Grid/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/ScoreColumn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="43" />
+        <state relative-caret-position="546">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Game.js">
+    <entry file="file://$PROJECT_DIR$/assets/images/OneMark.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navigation/RootNavigation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3675">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="294">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navigation/MainTabNavigator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/NumberGrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding>
+            <marker date="1531163948647" expanded="true" signature="3620:3637" ph="&lt;Grid/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/MarksColumn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        <state relative-caret-position="1218">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/ScoreColumn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1239">
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -980,8 +907,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/Scoreboard.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="101" column="22" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Game/NewGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="44" column="21" lean-forward="true" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Game.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/PlayerColumn/PlayerColumn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Game/DartEntry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

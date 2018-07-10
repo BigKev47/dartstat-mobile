@@ -44,8 +44,6 @@ export default class ScoreColumn extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: 'white',
   },
 
   scoreboardheader: {
@@ -62,7 +60,7 @@ const styles = StyleSheet.create({
   scoretext: {
     fontFamily: 'chalk-it-up',
     color: 'white',
-    fontSize: 32,
+    fontSize: 38,
     flex: 0,
 
     alignContent: 'center',

@@ -1,12 +1,9 @@
 import React from "react";
 import {View, ScrollView, Text, Button, StyleSheet, Image} from "react-native";
-import { createDart, allUsers, createGame } from "../../../graphql/index";
-import { graphql, compose } from "@expo/react-apollo";
-import ScoreColumn from "./PlayerColumn/ScoreColumn";
-import MarksColumn from "./PlayerColumn/MarksColumn";
 import Grid from "react-native-easy-grid/Components/Grid";
 import Col from "react-native-easy-grid/Components/Col";
 import Row from "react-native-easy-grid/Components/Row";
+import PlayerColumn from "./PlayerColumn/PlayerColumn";
 
 export class Scoreboard extends React.Component {
   constructor(props) {
@@ -16,14 +13,6 @@ export class Scoreboard extends React.Component {
     const { currentGame } = this.props;
     let gameMarks = currentGame.gameMarks.map(i => (
       <Row key={i}>
-        {/*<Col>*/}
-          {/*<Image*/}
-              {/*style={{flex:1, height: undefined, width: undefined}}*/}
-              {/*source={require('../../../assets/images/ThreeMark.png')}*/}
-              {/*//Does this work?*/}
-              {/*resizeMode="contain"*/}
-          {/*/>*/}
-        {/*</Col>*/}
         <Col><Text style={styles.scoretext}>{i}</Text>
         </Col>
       </Row>
@@ -62,21 +51,15 @@ export class Scoreboard extends React.Component {
               </Text>
             </Col>
           </Row>
-          <Row style={{ flex: 10 }}>
-            <Col style={{flexDirection: 'row'}}>
-              <ScoreColumn {...this.props} style={styles.scoretext} playerIdx={0} />
-              <MarksColumn {...this.props} style={styles.scoretext} playerIdx={0} />
-            </Col>
-            <Col>{gameMarks}</Col>
-            <Col style={{flexDirection: 'row'}}>
-              <ScoreColumn {...this.props} style={styles.scoretext} playerIdx={1} />
-              <MarksColumn {...this.props} style={styles.scoretext} playerIdx={1} />
-            </Col>
+          <Row style={{ flex: 10, flexDirection: 'row'}}>
+            <PlayerColumn {...this.props} playerIdx={0}/>
+            <Col style={{flex: 1}}>{gameMarks}</Col>
+            <PlayerColumn {...this.props} playerIdx={1} style={{flex: 2}}/>
           </Row>
           {/*<Text adjustsFontSizeToFit numberOfLines={1}*/}
           {/*style={[styles.scoretext, styles.scoreheader, awayActive]}>P1: {this.props.players[0]} </Text>*/}
           {/*<Text adjustsFontSizeToFit numberOfLines={1}*/}
-          {/*style={[styles.scoretext, styles.scoreheader]}>Round {this.props.round} </Text>*/}
+          {/*style={[styles.scoretext, styles.scoreheader]}>Round {this.pr-ops.round} </Text>*/}
           {/*<Text adjustsFontSizeToFit numberOfLines={1}*/}
           {/*style={[styles.scoretext, styles.scoreheader, homeActive]}>P2: {this.props.players[1]} </Text>*/}
           {/*</View>*/}
@@ -106,16 +89,17 @@ const styles = StyleSheet.create({
   },
   //TODO: Figure out how to properly scale my text sizes.
   scoretext: {
-    fontFamily: "chalk-it-up",
-    color: "white",
-    fontSize: 28,
+    fontFamily: "sketchy",
     flex: 3,
+    color: "white",
+    fontSize: 40,
     alignContent: "center",
+    justifyContent: "center",
     textAlign: "center",
     borderWidth: 1,
     borderColor: "white",
-    paddingHorizontal: 6,
-    paddingVertical: 6
+    paddingHorizontal: 2,
+    paddingVertical: 2
 
     // adjustsFontSizeToFit: true
     //textDecorationLine: 'line-through',

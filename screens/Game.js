@@ -30,10 +30,10 @@ export class Game extends React.Component {
 
            this.state = { players: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"] };
 
-           this.dartHandler = this.dartHandler.bind(this);
+
            this.turnSwitcher = this.turnSwitcher.bind(this);
            this.roundHandler = this.roundHandler.bind(this);
-           this.createGame = this.createGame.bind(this);
+
          }
          //TODO: Refactor gameplay and incorporate round scores and game winning/losing conditions
 
@@ -117,7 +117,7 @@ export class Game extends React.Component {
 
          dartHandler = async dart => {
            const { createDart, currentGame, updateCurrentGame } = this.props;
-           let player = currentGame.currentPlayerIndex;
+           let playerIdx = currentGame.currentPlayerIndex;
            console.log(dart);
            //This calculates the score by multiplying any triples or doubles
            let dartscore = dart.sectionHit === null ? 0 : dart.numberHit * (dart.sectionHit === 0 ? 1 : dart.sectionHit);
@@ -132,7 +132,7 @@ export class Game extends React.Component {
              const newDart = await createDart({
                variables: {
                  //TODO get player login worked out and remove this hard-code
-                 playerId: currentGame.players[player].id,
+                 playerId: currentGame.players[playerIdx].id,
                  gameId: currentGame.id,
                  numberHit: parseInt(dart.numberHit),
                  sectionHit: dart.sectionHit
@@ -157,65 +157,8 @@ export class Game extends React.Component {
            }
          };
 
-         createGame = async () => {
-           const { createGame, currentGame, loading } = this.props;
-           let gameMarks = [];
-           let marks = [[],[]];
-           for (let i=20; i>14; i--){
-             gameMarks.push(i)
-           }
-           gameMarks.push("Bull");
-           for (let i = 0; i<gameMarks.length; i++){
-             marks[0].push("0");
-             marks[1].push("0");
-           }
-           try {
-             const newGame = await createGame({
-               variables: {
-                 gameType: "Cricket",
-                 playersIds: this.state.players
-               }
-             });
-             console.log("gameID:" + newGame.data.createGame.id);
-             const { updateCurrentGame } = this.props;
-             //This is where I create the scorecard for Cricket Games it's not working
-             await updateCurrentGame({
-               variables: {
-                 index: "id",
-                 value: newGame.data.createGame.id
-               }
-             });
-             await updateCurrentGame({
-               variables: {
-                 index: "gameMarks",
-                 value: gameMarks
-               }
-             });
-             await updateCurrentGame({
-               variables: {
-                 index: "marks",
-                 value: marks
-               }
-             });
-
-             // console.log("Game Marks " + currentGame.gameMarks)
-           } catch (error) {
-             console.log(error);
-           }
-           if(!loading){console.log(currentGame)}
-         };
-
          render() {
-
-
-           // let testSet1 = { 20: 3, 19: 2};
-           // for (let i in testSet1){
-           //   scoreCard[i] += testSet1[i]
-           // }
-           // const valTest = scoreCard[14];
-           // const test = <Text>{valTest}</Text>;
-           // //!testSet.hasOwnProperty('15') ? <Text>True</Text>: <Text>False</Text>
-           const screen = !this.props.currentGame.id ? <NewGame onPress={this.createGame} /> : <DartEntry onPress={this.dartHandler} style={styles.dartentry} {...this.state} />;
+           const screen = !this.props.currentGame.id ? <NewGame {...this.props} /> : <DartEntry {...this.props} style={styles.dartentry}  />;
            const scoreBoard = this.props.currentGame.id ? <Scoreboard {...this.props} /> : null;
 
            //TODO Create a running scoreboard with all necessary information and proper columns
