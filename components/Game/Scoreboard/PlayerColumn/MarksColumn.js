@@ -28,7 +28,7 @@ export default class MarksColumn extends React.Component {
   };
 
   render(){
-      const {currentGame, playerIdx} = this.props;
+      const {currentGame, game, playerIdx} = this.props;
       let playerMarks = currentGame.marks[playerIdx].map((i, index) => (
           <Row key={index} style={{paddingHorizontal: 3, paddingVertical: 3}}>
             {/*<Text style={styles.scoretext}>{i}</Text>*/}

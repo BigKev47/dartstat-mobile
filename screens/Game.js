@@ -17,6 +17,7 @@ import {DartEntry} from "../components/Game/DartEntry";
 import NewGame from "../components/Game/NewGame";
 import Colors from "../constants/Colors";
 import {GameOver} from "../components/Game/GameOver";
+import gameQuery from "../graphql/gameQuery";
 
 
 
@@ -193,6 +194,11 @@ const styles = StyleSheet.create({
 
 export default compose(
     graphql(createDart, { name: 'createDart' }),
+    graphql(gameQuery, {props: ({data: {game, loading}}) => ({
+        game,
+        loading
+      })
+    }),
     graphql(createGame, {name: 'createGame'}),
     graphql(endTurn, {name: 'endTurn'}),
     graphql(getCurrentGame, {
