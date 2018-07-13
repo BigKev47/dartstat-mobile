@@ -2,7 +2,7 @@ import gql from 'graphql-tag'
 
 export default gql`
     query GameQuery ($id: ID!){
-        Game {
+        Game (id: $id){
             id
             gameType
             players{
@@ -14,8 +14,9 @@ export default gql`
                 player{
                     id
                 }
-                score
+                points
                 marks
             }
+        }
     }
 `

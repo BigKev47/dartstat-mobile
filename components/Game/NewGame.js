@@ -35,7 +35,7 @@ class NewGame extends React.Component {
           gameType: "Cricket",
           homePlayerId: "cjf673owt4whi0104fng14osm",
           awayPlayerId: "cjf677xt84xp50104rig3zrmd",
-          startingScore: 0,
+          startingPoints: 0,
           startingMarks: startingMarks
 
         }

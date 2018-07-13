@@ -5,7 +5,7 @@ export default gql`
     $gameType: String!
     $homePlayerId: ID!
         $awayPlayerId: ID!
-        $startingScore: Int
+        $startingPoints: Int
         $startingMarks: Json
     ) {
         createGame(
@@ -14,11 +14,11 @@ export default gql`
         
             scores: [{
                 playerId: $homePlayerId
-                score: $startingScore
+                points: $startingPoints
                 marks: $startingMarks
             }{
                 playerId: $awayPlayerId
-                score: $startingScore
+                points: $startingPoints
                 marks: $startingMarks
             }]
         ) {
