@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="f98bd5a5-de42-4639-a44f-f224a90cd849" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/components/Game/newGame/queryVariables.js" afterDir="false" />
@@ -24,6 +25,9 @@
       <change beforePath="$PROJECT_DIR$/screens/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
+=======
+    <list default="true" id="f98bd5a5-de42-4639-a44f-f224a90cd849" name="Default" comment="" />
+>>>>>>> Stashed changes
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +49,13 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="createGame.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graphql/createGame.js">
+=======
+      <file leaf-file-name="Scoreboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/Scoreboard.js">
+>>>>>>> Stashed changes
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
               <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
@@ -105,11 +114,19 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="defaultState.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/state/defaultState.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
               <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+=======
+      <file leaf-file-name="createGame.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/graphql/createGame.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -616,7 +633,7 @@
       <workItem from="1523746985710" duration="16189000" />
       <workItem from="1524431090256" duration="17551000" />
       <workItem from="1528814731277" duration="10180000" />
-      <workItem from="1531500767643" duration="4515000" />
+      <workItem from="1531500767643" duration="5445000" />
     </task>
     <task id="LOCAL-00001" summary="Figured out graphql query integration, starting on Apollo-Link-State">
       <created>1524511760641</created>
@@ -653,11 +670,22 @@
       <option name="project" value="LOCAL" />
       <updated>1528822295056</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Got the packager issue fixed, and finished the game query-&gt;scoreboard loop.">
+      <created>1531505872542</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1531505872627</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="312070000" />
+=======
+    <option name="totallyTimeSpent" value="289203000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -669,16 +697,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
     <editor active="true" />
+=======
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+>>>>>>> Stashed changes
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="GraphQL" order="7" weight="0.32821077" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32855567" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32855567" />
+=======
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.5005208" side_tool="true" visible="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="GraphQL" order="7" sideWeight="0.49947917" visible="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3263506" />
@@ -787,7 +825,8 @@
     <MESSAGE value="Got scoreHistory working in scoreColumn. Still needs styling." />
     <MESSAGE value="tinkered with styling" />
     <MESSAGE value="Got basic scorekeeping debugged." />
-    <option name="LAST_COMMIT_MESSAGE" value="Got basic scorekeeping debugged." />
+    <MESSAGE value="Got the packager issue fixed, and finished the game query-&gt;scoreboard loop." />
+    <option name="LAST_COMMIT_MESSAGE" value="Got the packager issue fixed, and finished the game query-&gt;scoreboard loop." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1083,6 +1122,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/graphql/createGame.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1091,6 +1131,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Game/Scoreboard/Scoreboard.js">
+=======
+    <entry file="file://$PROJECT_DIR$/graphql/client/getCurrentGame.js">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
@@ -1148,6 +1191,13 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql/createGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
     </entry>

@@ -3,10 +3,11 @@ import { View, ScrollView, Text, Button, StyleSheet } from 'react-native';
 import {createDart, allUsers, createGame} from "../../graphql";
 import {graphql, compose} from "@expo/react-apollo";
 import NumberGrid from "../NumberGrid";
+import { cricketHandler } from "./dart/dartHandlers";
 
 
 
-export class DartEntry extends React.Component {
+export class Dart extends React.Component {
     static navigationOptions = {
         header: null,
     };
@@ -19,16 +20,10 @@ export class DartEntry extends React.Component {
     }
 
   dartHandler = async dart => {
-    const { createDart, currentGame, updateCurrentGame } = this.props;
-    let playerIdx = currentGame.currentPlayerIndex;
-    console.log(dart);
-    //This calculates the score by multiplying any triples or doubles
-    let dartscore = dart.sectionHit === null ? 0 : dart.numberHit * (dart.sectionHit === 0 ? 1 : dart.sectionHit);
 
-    //Ths updates the current score and dart log
-    let roundscore = currentGame.roundScore + dartscore;
+      cricketHandler(this.props, dart)
 
-    let currentDarts = currentGame.currentDarts.slice(0);
+    let newCurrentDarts = currentDarts.slice(0);
     currentDarts.push(dart);
     //This pushes the dart to the gql backend
     try {
@@ -41,12 +36,7 @@ export class DartEntry extends React.Component {
           sectionHit: dart.sectionHit
         }
       });
-      await updateCurrentGame({
-        variables: {
-          index: "roundScore",
-          value: roundscore
-        }
-      });
+
       await updateCurrentGame({
         variables: {
           index: "currentDarts",

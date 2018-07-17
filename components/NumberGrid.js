@@ -18,19 +18,13 @@ export class NumberGrid extends React.Component {
     }
 
     handleNum = (number) => {
-
-        if (number === "Bull") {
-          this.setState({currentNum: 25})
-        } else {
           if (number === "Miss") {
             this.props.onPress({numberHit: 0, sectionHit: null});
             this.setState({currentNum: ""})
           } else {
-            this.setState({currentNum: parseInt(number)})
+            this.setState({currentNum: number})
           }
-        }
-
-    };
+        };
 
     handleSec = async (sectionHit) => {
         let numberHit = this.state.currentNum;

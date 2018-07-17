@@ -13,7 +13,7 @@ import {
 } from "../graphql";
 import {graphql, compose} from "@expo/react-apollo";
 import Scoreboard from "../components/Game/Scoreboard/Scoreboard";
-import {DartEntry} from "../components/Game/DartEntry";
+import {Dart} from "../components/Game/Dart";
 import NewGame from "../components/Game/NewGame";
 import Colors from "../constants/Colors";
 import {GameOver} from "../components/Game/GameOver";
@@ -160,7 +160,7 @@ export class Game extends React.Component {
 
          render() {
            const { currentGame, loading } = this.props;
-           const screen = !currentGame.id ? <NewGame {...this.props} /> : <DartEntry {...this.props} style={styles.dartentry}  />;
+           const screen = !currentGame.id ? <NewGame {...this.props} /> : <Dart {...this.props} style={styles.dartentry}  />;
            const scoreBoard = currentGame.id ? <Scoreboard {...this.props} id = {currentGame.id} /> : null;
 
 
