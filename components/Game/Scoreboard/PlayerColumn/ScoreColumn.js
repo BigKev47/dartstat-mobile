@@ -15,6 +15,8 @@ export default class ScoreColumn extends React.Component {
   }
   render() {
     const {currentGame, Game, loading, playerIdx} = this.props;
+    console.log("Scorecolumn: ")
+    console.log (this.props)
 
 
 
@@ -32,7 +34,7 @@ export default class ScoreColumn extends React.Component {
                           key={item.index}>{item}</Text>
                 )}
             />
-            <Text style={[styles.scoretext, {textAlign: 'center'}]}>{Game.scores[playerIdx].points}</Text>
+            <Text style={[styles.scoretext, {textAlign: 'center'}]}>{currentGame.scores[playerIdx]}</Text>
       </Col>
     </View>
   }

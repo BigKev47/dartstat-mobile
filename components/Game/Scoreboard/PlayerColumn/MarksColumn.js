@@ -28,8 +28,11 @@ export default class MarksColumn extends React.Component {
   };
 
   render(){
-      const {currentGame, game, playerIdx} = this.props;
-      let playerMarks = currentGame.marks[playerIdx].map((i, index) => (
+      const {currentGame, playerIdx} = this.props;
+    console.log("Markscolumn: ")
+    console.log(this.props)
+      let playerMarks = currentGame.marks[playerIdx];
+      let marksColumn = playerMarks.map((i, index) => (
           <Row key={index} style={{paddingHorizontal: 3, paddingVertical: 3}}>
             {/*<Text style={styles.scoretext}>{i}</Text>*/}
             <Image
@@ -47,7 +50,7 @@ export default class MarksColumn extends React.Component {
 //TODO Figure out the array/object scorecard and iterate over it good
     return <View style={styles.container}>
       <Col>
-        {playerMarks}
+        {marksColumn}
       </Col>
     </View>
   }

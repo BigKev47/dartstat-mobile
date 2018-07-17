@@ -38,7 +38,7 @@ export class Scoreboard extends React.Component {
                       numberOfLines={1}
                       style={[styles.scoretext, styles.scoreheader]}
                   >
-                    {currentGame.players[0].firstName}
+                    {currentGame.playersIds[0]}
                   </Text>
                 </Col>
                 <Col>
@@ -56,7 +56,7 @@ export class Scoreboard extends React.Component {
                       numberOfLines={1}
                       style={[styles.scoretext, styles.scoreheader]}
                   >
-                    {currentGame.players[1].firstName}
+                    {currentGame.playersIds[1]}
                   </Text>
                 </Col>
               </Row>

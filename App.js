@@ -2,15 +2,8 @@ import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import RootNavigation from './navigation/RootNavigation';
 import { AppLoading, Asset, Font } from 'expo';
-
 import {ApolloProvider} from "@expo/react-apollo";
-import { withClientState } from 'apollo-link-state'
-import { ApolloClient } from 'apollo-client'
-import { HttpLink } from 'apollo-link-http'
-import { InMemoryCache } from 'apollo-cache-inmemory'
-import { ApolloLink } from 'apollo-link'
-import gql from "graphql-tag";
-import {resolvers} from "./graphql/client/resolvers";
+import {client} from "./state/";
 
 
 export default class App extends React.Component {
@@ -20,56 +13,7 @@ export default class App extends React.Component {
 
 
     render() {
-        const cache = new InMemoryCache();
 
-        const defaultState = {
-          currentGame: {
-            __typename: 'currentGame',
-            id: "",
-            darts: [],
-            players: [{
-              __typename: 'player',
-              id: "cjf673owt4whi0104fng14osm",
-              firstName: "Kevin",
-              lastName: "Corlett",
-              },
-              {
-              __typename: 'player',
-              id: "cjf676w4x53oz01920blawszb",
-              firstName: "Michael",
-              lastName: "Antry",
-              }
-              ],
-            scores: [0, 0],
-            marks: [[],[]],
-            gameType: "Cricket",
-            gameMarks: [],
-            scoreHistory: [[],[]],
-            currentPlayerIndex: 0,
-            currentDarts: [],
-            roundScore: 0,
-            round: 1,
-            gameActive: false,
-            gameCompleted: false
-            }
-        };
-
-
-        const stateLink = withClientState({
-            cache,
-            defaults: defaultState,
-            resolvers: resolvers
-        });
-
-      const client = new ApolloClient({
-        link: ApolloLink.from([
-          stateLink,
-          new HttpLink({
-                    uri: 'https://api.graph.cool/simple/v1/cjf65iozh1xj701410jqbrlf2'
-                })
-            ]),
-            cache
-        });
 
         if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
             return (

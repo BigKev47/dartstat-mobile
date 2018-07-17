@@ -3,24 +3,11 @@ import gql from 'graphql-tag'
 export default gql`
     mutation createGame(
     $gameType: String!
-    $homePlayerId: ID!
-        $awayPlayerId: ID!
-        $startingPoints: Int
-        $startingMarks: Json
+    $playersIds: [ID!]!
     ) {
         createGame(
             gameType: $gameType
-            playersIds:  [$homePlayerId, $awayPlayerId]
-        
-            scores: [{
-                playerId: $homePlayerId
-                points: $startingPoints
-                marks: $startingMarks
-            }{
-                playerId: $awayPlayerId
-                points: $startingPoints
-                marks: $startingMarks
-            }]
+            playersIds:  $playersIds
         ) {
             id
             gameType

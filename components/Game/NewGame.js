@@ -1,12 +1,14 @@
 import React from "react";
 import { View, StyleSheet, FlatList, Text } from "react-native";
 
-import { createDart, allUsers, createGame } from "../../graphql";
+import { createDart, allUsers, createGame, updateCurrentGame } from "../../graphql";
 import { graphql, compose } from "@expo/react-apollo";
 import Button from "react-native-button";
 import Colors from "../../constants/Colors";
 import { Game } from "../../screens/Game";
 import ModalDropdown from "react-native-modal-dropdown";
+import createCurrentGame from "../../graphql/client/createCurrentGame";
+import {default as variables} from "./newGame/queryVariables";
 
 class NewGame extends React.Component {
   constructor(props) {
@@ -16,51 +18,68 @@ class NewGame extends React.Component {
   }
 
   createGame = async () => {
-    const { createGame, currentGame, loading } = this.props;
-    let startingMarks = '{"20": 0, "19": 0, "18": 0, "17": 0, "16": 0, "15": 0, "Bull": 0}'
-    let gameMarks = [];
-    for (let i = 20; i > 14; i--) {
-      gameMarks.push(i);
-    }
-    gameMarks.push("Bull");
-    //let marks = [[0,-1,-2,-3,-3,-1,0],[-1,-2,-3,-3,-1,0,-3]];
-    let marks = [[], []];
-    for (let i = 0; i < gameMarks.length; i++) {
-      marks[0].push(-3);
-      marks[1].push(-3);
-    }
+    const { createGame, currentGame, updateCurrentGame, createCurrentGame, loading } = this.props;
+    // let startingMarks = '{"20": 0, "19": 0, "18": 0, "17": 0, "16": 0, "15": 0, "Bull": 0}'
+    // let gameMarks = [];
+    // for (let i = 20; i > 14; i--) {
+    //   gameMarks.push(i);
+    // }
+    // gameMarks.push("Bull");
+    // //let marks = [[0,-1,-2,-3,-3,-1,0],[-1,-2,-3,-3,-1,0,-3]];
+    // let marks = [[], []];
+    // for (let i = 0; i < gameMarks.length; i++) {
+    //   marks[0].push(0);
+    //   marks[1].push(0);
+    // }
     try {
       const newGame = await createGame({
         variables: {
           gameType: "Cricket",
-          homePlayerId: "cjf673owt4whi0104fng14osm",
-          awayPlayerId: "cjf677xt84xp50104rig3zrmd",
-          startingPoints: 0,
-          startingMarks: startingMarks
-
+          playersIds: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"]
         }
       });
       console.log("gameID:" + newGame.data.createGame.id);
-      const { updateCurrentGame } = this.props;
+      await createCurrentGame({
+        variables: {
+          id: newGame.data.createGame.id,
+          playersIds: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"],
+          scores: [0,0],
+          gameType: "Cricket",
+          scoreHistory: [[],[]],
+          gameMarks: [20, 19, 18, 17, 16, 15, "Bull"],
+          marks: [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]
+        }
+      });
       //This is where I create the scorecard for Cricket Games it's not working
-      await updateCurrentGame({
-        variables: {
-          index: "id",
-          value: newGame.data.createGame.id
-        }
-      });
-      await updateCurrentGame({
-        variables: {
-          index: "gameMarks",
-          value: gameMarks
-        }
-      });
-      await updateCurrentGame({
-        variables: {
-          index: "marks",
-          value: marks
-        }
-      });
+      // await createCurrentGame({
+      //   variables: {
+      //     id: newGame.data.createGame.id,
+      //     gameType: "Cricket",
+      //     players: [{
+      //       __typename: "player",
+      //       id: "cjf673owt4whi0104fng14osm",
+      //       firstName: "Kevin",
+      //       lastName: "Corlett"
+      //     },{
+      //       __typename: "player",
+      //       id: "cjf676w4x53oz01920blawszb",
+      //       firstName: "Michael",
+      //       lastName: "Antry",
+      //     }],
+      //     scores: [{
+      //       __typename: "score",
+      //       points: 0,
+      //       pointHistory: [],
+      //       marks: '{__typename: "marks", "20": 0, "19": 0, "18": 0, "17": 0, "16": 0, "15": 0, "Bull": 0}'
+      //     },{
+      //       __typename: "score",
+      //       points: 0,
+      //       pointHistory: [],
+      //       marks: '{__typename: "marks", "20": 0, "19": 0, "18": 0, "17": 0, "16": 0, "15": 0, "Bull": 0}'
+      //     }]
+      //
+      //   }
+      // });
 
       // console.log("Game Marks " + currentGame.gameMarks)
     } catch (error) {
@@ -128,6 +147,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default graphql(allUsers, {
-  props: ({ data }) => ({ ...data })
-})(NewGame);
+export default compose(
+  graphql(allUsers, {
+    props: ({ data: {allUsers, loading }}) => ({ allUsers, loading })
+}),
+  graphql(createCurrentGame,
+    {name: 'createCurrentGame'})
+)(NewGame);

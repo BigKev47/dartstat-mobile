@@ -159,15 +159,17 @@ export class Game extends React.Component {
          };
 
          render() {
-           const { currentGame } = this.props;
+           const { currentGame, loading } = this.props;
            const screen = !currentGame.id ? <NewGame {...this.props} /> : <DartEntry {...this.props} style={styles.dartentry}  />;
            const scoreBoard = currentGame.id ? <Scoreboard {...this.props} id = {currentGame.id} /> : null;
 
+
            //TODO Create a running scoreboard with all necessary information and proper columns
-           return <View style={styles.container}>
-               {scoreBoard}
-               {screen}
-             </View>;
+           return (
+             <View style={styles.container}>
+             {scoreBoard}
+             {screen}
+           </View>)
          }
        }
 
