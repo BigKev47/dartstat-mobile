@@ -1,37 +1,31 @@
 export const cricketHandler = async (props, dart)=> {
-  const { currentGame, updateCurrentGame } = this.props;
+  const { currentGame, updateCurrentGame } = props;
   const {sectionHit, numberHit} = dart;
-  let { currentPlayerIdx, currentDarts, gameMarks, marks }  = currentGame;
+  const { currentPlayerIndex, currentDarts, gameMarks, marks }  = currentGame;
 
 
-  console.log(dart);
-
+  console.log(numberHit);
+console.log(gameMarks.includes(numberHit.toString()));
 
   if (gameMarks.includes(numberHit)) {
     let mult = sectionHit === 0 ? 1 : sectionHit;
-    let markIdx = gameMarks.findIndex(numberHit);
+    let markIdx = gameMarks.indexOf(numberHit);
     let newMarks = marks.slice(0);
-    let prevMarkCount = marks[currentPlayerIdx][markIdx];
-    newMarks[currentPlayerIdx][markIdx] = prevMarkCount + mult;
-
-    //This calculates the score by multiplying any triples or doubles
+    console.log(currentPlayerIndex)
+    let playerMarks = newMarks[currentPlayerIndex].slice(0);
+    let prevMarkCount = playerMarks[markIdx];
+    playerMarks[markIdx] = prevMarkCount + mult;
+    newMarks[currentPlayerIndex] = playerMarks;
     try {
       await
       updateCurrentGame({
         variables: {
-          index: "marks"
+          index: "marks",
           value: newMarks
         }
       });
-      await
-      updateCurrentGame({
-        variables: {
-          index: "currentDarts",
-          value: currentDarts
-        }
-      });
       console.log(marks);
-      this.roundHandler(dart);
+
     } catch (err) {
       console.log(err);
 

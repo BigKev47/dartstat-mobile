@@ -15,11 +15,11 @@ export default class MarksColumn extends React.Component {
   }
   markSrc = (value)=> {
     switch (value) {
-      case -3:
+      case 0:
         return null;
-      case -2:
+      case 1:
         return require('../../../../assets/images/OneMark.png');
-      case -1:
+      case 2:
         return require('../../../../assets/images/TwoMark.png');
       default:
         return require('../../../../assets/images/ThreeMark.png');
@@ -29,8 +29,6 @@ export default class MarksColumn extends React.Component {
 
   render(){
       const {currentGame, playerIdx} = this.props;
-    console.log("Markscolumn: ")
-    console.log(this.props)
       let playerMarks = currentGame.marks[playerIdx];
       let marksColumn = playerMarks.map((i, index) => (
           <Row key={index} style={{paddingHorizontal: 3, paddingVertical: 3}}>

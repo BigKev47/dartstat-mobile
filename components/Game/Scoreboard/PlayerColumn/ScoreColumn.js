@@ -15,8 +15,6 @@ export default class ScoreColumn extends React.Component {
   }
   render() {
     const {currentGame, Game, loading, playerIdx} = this.props;
-    console.log("Scorecolumn: ")
-    console.log (this.props)
 
 
 

@@ -46,7 +46,7 @@ class NewGame extends React.Component {
           scores: [0,0],
           gameType: "Cricket",
           scoreHistory: [[],[]],
-          gameMarks: [20, 19, 18, 17, 16, 15, "Bull"],
+          gameMarks: ["20", "19", "18", "17", "16", "15", "Bull"],
           marks: [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]
         }
       });

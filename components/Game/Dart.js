@@ -20,17 +20,20 @@ export class Dart extends React.Component {
     }
 
   dartHandler = async dart => {
+      const { currentGame, createDart, updateCurrentGame } = this.props;
+      const playerIdx = currentGame.currentPlayerIndex;
 
-      cricketHandler(this.props, dart)
 
-    let newCurrentDarts = currentDarts.slice(0);
+
+    let currentDarts = currentGame.currentDarts.slice(0);
     currentDarts.push(dart);
     //This pushes the dart to the gql backend
     try {
+      await cricketHandler(this.props, dart);
       await createDart({
         variables: {
           //TODO get player login worked out and remove this hard-code
-          playerId: currentGame.players[playerIdx].id,
+          playerId: currentGame.playersIds[playerIdx],
           gameId: currentGame.id,
           numberHit: parseInt(dart.numberHit),
           sectionHit: dart.sectionHit
@@ -43,7 +46,7 @@ export class Dart extends React.Component {
           value: currentDarts
         }
       });
-      console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
+      // console.log("roundscore:" + roundscore, "dartscore:" + dartscore);
       this.roundHandler(dart);
     } catch (err) {
       console.log(err);
