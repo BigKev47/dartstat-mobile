@@ -29,9 +29,8 @@ export const roundHandler = async (dart) => {
   let outScore = tempScore - currentGame.roundScore;
   if (outScore < 2) {
     if (outScore === 0 && dart.sectionHit === 2) {
-      console.log("Game Over");
       Alert.alert(
-          'Game Over',
+          'game Over',
           currentGame.players[playerIdx].firstName + ' Wins!',
           [{text: 'View Match Report', onPress: () => console.log('Ask me later pressed')},
             {text: 'Done', onPress: () => resetCurrentGame()},
@@ -88,13 +87,13 @@ export const dartHandler = async () => {
       dart.sectionHit === null ? 0 :
           dart.numberHit * (dart.sectionHit === 0 ? 1 : dart.sectionHit);
 
-  //Ths updates the current score and dart log
+  //Ths updates the current score and dartEntry log
   let roundscore = currentGame.roundScore + dartscore;
 
   let currentDarts = this.state.currentDarts;
   currentDarts.push(dart);
   this.setState({currentDarts: currentDarts});
-  //This pushes the dart to the gql backend
+  //This pushes the dartEntry to the gql backend
   try {
     await createDart({
       variables: {

@@ -7,6 +7,7 @@ const defaultState = {
     scores: [],
     scoreHistory: [],
     marks: [[],[]],
+    tempMarks: [],
     gameMarks: [],
     gameType: "Cricket",
     currentPlayerIndex: 0,

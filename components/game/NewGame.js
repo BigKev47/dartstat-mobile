@@ -32,24 +32,26 @@ class NewGame extends React.Component {
     //   marks[1].push(0);
     // }
     try {
-      const newGame = await createGame({
-        variables: {
-          gameType: "Cricket",
-          playersIds: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"]
-        }
-      });
-      console.log("gameID:" + newGame.data.createGame.id);
+      // Disabled for Dev
+      // const newGame = await createGame({
+      //   variables: {
+      //     gameType: "Cricket",
+      //     playersIds: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"]
+      //   }
+      // });
       await createCurrentGame({
         variables: {
-          id: newGame.data.createGame.id,
-          playersIds: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"],
+          id: "testGame", //newGame.data.createGame.id,
+          playersIds: ["Home", "Away"],
           scores: [0,0],
           gameType: "Cricket",
           scoreHistory: [[],[]],
           gameMarks: ["20", "19", "18", "17", "16", "15", "Bull"],
-          marks: [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]
+          marks: [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+          roundScore: [null, [0,0,0,0,0,0,0]]
         }
       });
+      console.log(currentGame)
       //This is where I create the scorecard for Cricket Games it's not working
       // await createCurrentGame({
       //   variables: {
@@ -81,13 +83,11 @@ class NewGame extends React.Component {
       //   }
       // });
 
-      // console.log("Game Marks " + currentGame.gameMarks)
+      // console.log("game Marks " + currentGame.gameMarks)
     } catch (error) {
       console.log(error);
     }
-    if (!loading) {
-      console.log(currentGame);
-    }
+
   };
 
   render() {

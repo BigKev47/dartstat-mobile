@@ -11,6 +11,7 @@ export default gql`
           roundScore
           scores
           marks
+          tempMarks
           gameType
           gameMarks
           scoreHistory

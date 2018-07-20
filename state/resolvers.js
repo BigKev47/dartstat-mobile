@@ -15,6 +15,7 @@ const resolvers = {
                   id
                   playersIds
                   marks
+                  tempMarks
                   gameMarks
                   scoreHistory
                   scores
@@ -45,15 +46,29 @@ const resolvers = {
     },
 
     endTurn: (_, d, {cache}) => {
-      const query = getCurrentGame;
+      const query = gql`
+          query EndTurn {
+              currentGame @client {
+                  id
+                  marks
+                  tempMarks
+                  scoreHistory
+                  currentPlayerIndex
+                  currentDarts
+                  roundScore
+                  round
+              }
+          }
+      `;
       const previous = cache.readQuery({query});
       const newPlayerIndex = (previous.currentGame.currentPlayerIndex + 1) % 2;
       const newRound = newPlayerIndex === 0 ? previous.currentGame.round + 1 : previous.currentGame.round;
       const roundScore = 0;
-
+      const newMarks = previous.currentGame.tempMarks
       const data = {
         currentGame: {
           ...previous.currentGame,
+          marks: newMarks,
           currentPlayerIndex: newPlayerIndex,
           round: newRound,
           roundScore: roundScore,
@@ -64,7 +79,7 @@ const resolvers = {
       return null
 
     },
-
+///sadgagh
     createCurrentGame: (_, {id, gameType, scores, marks, playersIds, scoreHistory, gameMarks}, {cache}) => {
       const query = gql`
         query CreateCurrentGame {
@@ -72,6 +87,7 @@ const resolvers = {
                 id
                 playersIds
                 marks
+                tempMarks
                 gameMarks
                 scoreHistory
                 scores
@@ -93,13 +109,12 @@ const resolvers = {
           gameType: gameType,
           scores: scores,
           marks: marks,
+          tempMarks: marks,
           scoreHistory: scoreHistory,
           playersIds: playersIds,
           gameMarks: gameMarks
-
-
           },
-      };
+      }; ///asdgasg
       cache.writeData({query, data});
       return null
 

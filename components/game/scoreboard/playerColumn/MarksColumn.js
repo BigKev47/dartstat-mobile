@@ -29,15 +29,22 @@ export default class MarksColumn extends React.Component {
 
   render(){
       const {currentGame, playerIdx} = this.props;
+      let tempMarks = currentGame.tempMarks[playerIdx]
       let playerMarks = currentGame.marks[playerIdx];
       let marksColumn = playerMarks.map((i, index) => (
           <Row key={index} style={{paddingHorizontal: 3, paddingVertical: 3}}>
-            {/*<Text style={styles.scoretext}>{i}</Text>*/}
             <Image
                 style={{flex: 1, height: undefined, width: undefined}}
                 source={this.markSrc(i)}
                 //Does this work?
                 resizeMode="contain"
+            />
+            //TODO figure out how to overlay current progress with old scores.
+            <Image
+              style={{flex: 1, position: 'absolute', height: undefined, width: undefined, opacity: .5}}
+              source={this.markSrc(tempMarks[index])}
+              //Does this work?
+              resizeMode="contain"
             />
           </Row>
       ));
@@ -53,10 +60,6 @@ export default class MarksColumn extends React.Component {
     </View>
   }
 }
-
-
-
-
 
 const styles = StyleSheet.create({
   container: {

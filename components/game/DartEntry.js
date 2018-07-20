@@ -3,9 +3,10 @@ import { View, ScrollView, Text, Button, StyleSheet } from "react-native";
 import { createDart, allUsers, createGame } from "../../graphql";
 import { graphql, compose } from "@expo/react-apollo";
 import NumberGrid from "../NumberGrid";
-import { cricketHandler } from "./dart/dartHandlers";
+import { cricketHandler } from "./dartEntry/dartHandlers";
+import { roundHandler } from "./dartEntry/roundHandler";
 
-export class Dart extends React.Component {
+export class DartEntry extends React.Component {
   static navigationOptions = {
     header: null
   };
@@ -22,18 +23,18 @@ export class Dart extends React.Component {
 
     let currentDarts = currentGame.currentDarts.slice(0);
     currentDarts.push(dart);
-    //This pushes the dart to the gql backend
     try {
       await cricketHandler(this.props, dart);
-      await createDart({
-        variables: {
-          //TODO get player login worked out and remove this hard-code
-          playerId: currentGame.playersIds[playerIdx],
-          gameId: currentGame.id,
-          numberHit: parseInt(dart.numberHit),
-          sectionHit: dart.sectionHit
-        }
-      });
+      //This pushes the dartEntry to the gql backend DISABLED FOR DEV
+      // await createDart({
+      //   variables: {
+      //     //TODO get player login worked out and remove this hard-code
+      //     playerId: currentGame.playersIds[playerIdx],
+      //     gameId: currentGame.id,
+      //     numberHit: parseInt(dart.numberHit),
+      //     sectionHit: dart.sectionHit
+      //   }
+      // });
 
       await updateCurrentGame({
         variables: {
@@ -41,11 +42,12 @@ export class Dart extends React.Component {
           value: currentDarts
         }
       });
-      this.roundHandler(dart);
     } catch (err) {
       console.log(err);
     }
+   await roundHandler(this.props)
   };
+
 
   render() {
     return (
@@ -120,7 +122,6 @@ const styles = StyleSheet.create({
     //flexWrap: 'wrap',
     backgroundColor: "white",
     //justifyContent: 'space-around',
-    marginVertical: 5
   },
 
   dartlog: {

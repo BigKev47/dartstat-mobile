@@ -8,6 +8,7 @@ export default gql`
           scores 
           scoreHistory
           marks
+          tempMarks
           gameMarks
           currentPlayerIndex
           darts

@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, ScrollView, Text, Button, StyleSheet, FlatList} from 'react-native';
-import {createDart, allUsers, createGame, getCurrentGame} from "../../../../graphql/index";
+import {createDart, allUsers, createGame, getCurrentGame} from "../../../graphql/index";
 import {graphql, compose} from "@expo/react-apollo";
 import Grid from "react-native-easy-grid/Components/Grid";
 import Col from "react-native-easy-grid/Components/Col";
 import Row from "react-native-easy-grid/Components/Row";
-import ScoreColumn from "./ScoreColumn";
-import MarksColumn from "./MarksColumn";
+import ScoreColumn from "./playerColumn/ScoreColumn";
+import MarksColumn from "./playerColumn/MarksColumn";
 
 
 
@@ -18,14 +18,15 @@ export default class PlayerColumn extends React.Component {
 
   //this renders each player/team's overall scoring column and aligns it with center.
   render() {
-    const { playerIdx } = this.props;
+    const { playerIdx, currentGame } = this.props;
+    const inactiveStyle = playerIdx !== currentGame.currentPlayerIndex ? {opacity: .5} : null;
     const alignedColumn = ()=> (playerIdx === 0) ?
-        <Col style={{flex: 2, flexDirection: 'row'}}>
+        <Col style={[{flex: 2, flexDirection: 'row', borderColor: '#fff', borderWidth: 1}, inactiveStyle]}>
           <ScoreColumn {...this.props} style={styles.scoretext} />
-          <MarksColumn {...this.props} style={[styles.scoretext, {justifyContent: 'flex-end'}]} />
+          <MarksColumn {...this.props} style={[styles.scoretext, {justifyContent: 'flex-end', }]} />
         </Col>
   :
-        <Col style={{flex: 2, flexDirection: 'row'}}>
+      <Col style={[{flex: 2, flexDirection: 'row', borderColor: '#fff', borderWidth: 1}, inactiveStyle]}>
           <MarksColumn {...this.props} style={[styles.scoretext, {justifyContent: 'flex-start'}]} />
           <ScoreColumn  {...this.props} style={styles.scoretext}/>
         </Col>;
@@ -49,7 +50,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#164c16",
     flexDirection: "column",
-    borderWidth: 1,
     borderColor: "white"
   },
   //TODO: Figure out how to properly scale my text sizes.

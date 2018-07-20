@@ -16,13 +16,11 @@ export default gql`
             playersIds: $playersIds,
             scores: $scores,
             marks: $marks,
+            tempMarks: $marks,
             scoreHistory: $scoreHistory,
             gameMarks: $gameMarks
         ) @client {
             id
-            players {
-                id
-            }
         }
         }
   

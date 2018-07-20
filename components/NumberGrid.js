@@ -31,7 +31,7 @@ export class NumberGrid extends React.Component {
         let dart = {numberHit: numberHit, sectionHit: sectionHit};
         try {
           await this.props.onPress(dart);
-          // await <dartHandler {dart} />;
+          // await <dartHandler {dartEntry} />;
           this.setState( {currentNum: "", currentSec: null});
         }
         catch(error) {console.log(error)}
@@ -104,7 +104,7 @@ export class NumberGrid extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
+    //paddingTop: 20,
     backgroundColor: '#fff',
   },
 
