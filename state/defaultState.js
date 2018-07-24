@@ -5,7 +5,7 @@ const defaultState = {
     darts: [],
     playersIds: [],
     scores: [],
-    scoreHistory: [],
+    scoreHistory: [[],[]],
     marks: [[],[]],
     tempMarks: [],
     gameMarks: [],

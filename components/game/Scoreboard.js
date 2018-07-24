@@ -78,8 +78,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default graphql(gameQuery, {props: ({data: {Game, loading}}) => ({
-    Game,
-    loading
-  })
-})(Scoreboard)
+export default
+  (Scoreboard)

@@ -7,6 +7,7 @@ export default gql`
       round: $round
       roundScore: $roundScore
       currentDarts: $currentDarts
+      scoreHistory: $scoreHistory
       marks: $marks
     ) @client {
       currentPlayerIndex
@@ -14,6 +15,7 @@ export default gql`
       roundScore
       currentDarts
       marks
+      scoreHistory
     }
   }
 `;

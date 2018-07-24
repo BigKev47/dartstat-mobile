@@ -14,7 +14,7 @@ export default class ScoreColumn extends React.Component {
 
   }
   render() {
-    const {currentGame, Game, loading, playerIdx} = this.props;
+    const {currentGame, loading, playerIdx} = this.props;
 
 
 

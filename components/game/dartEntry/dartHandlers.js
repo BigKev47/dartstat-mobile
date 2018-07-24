@@ -8,25 +8,33 @@ export const cricketHandler = async (props, dart) => {
     let markIdx = gameMarks.indexOf(numberHit);
     let newMarks = tempMarks.slice(0);
     let playerMarks = newMarks[currentPlayerIndex].slice(0);
+    let opponentMarks = newMarks[(currentPlayerIndex + 1) % 2];
     let prevMarkCount = playerMarks[markIdx];
     playerMarks[markIdx] = prevMarkCount + mult;
     let tempScore = 0;
-    let scoreAdder = (item, index)=> {
-      if (item >= 3) {
-        let value = gameMarks[index] === "Bull" ? 25 : parseInt(gameMarks[index]);
-        tempScore = tempScore + ((item - 3) * value);
-        console.log(value)
-      }
-}; //asfhh
-    playerMarks.forEach(scoreAdder);
+//     let scoreAdder = (item, index)=> {
+//       if (item >= 3) {
+//         let value = gameMarks[index] === "Bull" ? 25 : parseInt(gameMarks[index]);
+//         tempScore = tempScore + ((item - 3) * value);
+//       }
+// };
+//     //TODO Figure out score/roundScore alogorithm to replace scoreAdder.
+//     playerMarks.forEach(scoreAdder);
     newMarks[currentPlayerIndex] = playerMarks;
-    console.log("Score " + tempScore);
+    let newScores = currentGame.scores.slice();
+    newScores[currentPlayerIndex] = tempScore;
 
     try {
       await updateCurrentGame({
         variables: {
           index: "tempMarks",
           value: newMarks
+        }
+      });
+      await updateCurrentGame({
+        variables: {
+          index: "roundScore",
+          value: tempScore
         }
       });
     } catch (err) {

@@ -23,11 +23,11 @@ export default class PlayerColumn extends React.Component {
     const alignedColumn = ()=> (playerIdx === 0) ?
         <Col style={[{flex: 2, flexDirection: 'row', borderColor: '#fff', borderWidth: 1}, inactiveStyle]}>
           <ScoreColumn {...this.props} style={styles.scoretext} />
-          <MarksColumn {...this.props} style={[styles.scoretext, {justifyContent: 'flex-end', }]} />
+          <MarksColumn {...this.props} style={[styles.scoretext, {justifyContent: 'flex-end', }]}/>
         </Col>
   :
       <Col style={[{flex: 2, flexDirection: 'row', borderColor: '#fff', borderWidth: 1}, inactiveStyle]}>
-          <MarksColumn {...this.props} style={[styles.scoretext, {justifyContent: 'flex-start'}]} />
+          <MarksColumn {...this.props} style={[styles.scoretext, {justifyContent: 'flex-start'}]}/>
           <ScoreColumn  {...this.props} style={styles.scoretext}/>
         </Col>;
 

@@ -45,12 +45,13 @@ const resolvers = {
       return null
     },
 
-    endTurn: (_, d, {cache}) => {
+    endTurn: (_, {marks, currentPlayerIndex, scores, round, roundScore, scoreHistory, currentDarts}, {cache}) => {
       const query = gql`
           query EndTurn {
               currentGame @client {
                   id
                   marks
+                  scores
                   tempMarks
                   scoreHistory
                   currentPlayerIndex
@@ -61,18 +62,25 @@ const resolvers = {
           }
       `;
       const previous = cache.readQuery({query});
-      const newPlayerIndex = (previous.currentGame.currentPlayerIndex + 1) % 2;
-      const newRound = newPlayerIndex === 0 ? previous.currentGame.round + 1 : previous.currentGame.round;
-      const roundScore = 0;
-      const newMarks = previous.currentGame.tempMarks
+      // const newPlayerIndex = (previous.currentGame.currentPlayerIndex + 1) % 2;
+      // const newRound = newPlayerIndex === 0 ? previous.currentGame.round + 1 : previous.currentGame.round;
+      // const roundScore = 0;
+      // const newMarks = previous.currentGame.tempMarks;
+      // let newScoreHistory = previous.currentGame.scoreHistory.slice(0);
+      // let playerScoreHistory = newScoreHistory[previous.currentGame.currentPlayerIndex].slice(0);
+      // let playerScore = currentGame.scores[currentGame.currentPlayerIndex];
+      // playerScoreHistory.push(playerScore);
+      // newScoreHistory[currentGame.currentPlayerIndex] = playerScoreHistory;
+
       const data = {
         currentGame: {
           ...previous.currentGame,
-          marks: newMarks,
-          currentPlayerIndex: newPlayerIndex,
-          round: newRound,
+          marks: marks,
+          currentPlayerIndex: currentPlayerIndex,
+          round: round,
           roundScore: roundScore,
-          currentDarts: []
+          currentDarts: [],
+          scoreHistory: scoreHistory
         }
       };
       cache.writeQuery({query, data});
