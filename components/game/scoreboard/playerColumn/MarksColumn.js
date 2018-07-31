@@ -29,7 +29,7 @@ export default class MarksColumn extends React.Component {
 
   render() {
       const {currentGame, loading, playerIdx} = this.props;
-      let tempMarks = currentGame.tempMarks[playerIdx];
+    let tempMarks = currentGame.tempMarks;
       let playerMarks = currentGame.marks[playerIdx];
     let marksColumn = playerMarks.map((i, index) => (
         <Row key={index} style={{ paddingHorizontal: 3, paddingVertical: 3 }}>

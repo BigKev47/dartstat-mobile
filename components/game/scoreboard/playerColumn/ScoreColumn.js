@@ -14,7 +14,7 @@ export default class ScoreColumn extends React.Component {
 
   }
   render() {
-    const {currentGame, loading, playerIdx} = this.props;
+    const { currentGame: { scoreHistory, scores }, loading, playerIdx } = this.props;
 
 
 
@@ -22,17 +22,16 @@ export default class ScoreColumn extends React.Component {
       <Col style={{flex: 10}}>
 
             <FlatList
-                ref={ref => this.flatList = ref}
-                data={currentGame.scoreHistory[playerIdx]}
-                keyExtractor={item => item}
-                style={{flex: 0, flexGrow: 0}}
-                onContentSizeChange={() => this.flatList.scrollToEnd({animated: false})}
-                renderItem={({item}) => (
-                    <Text style={[styles.scoretext, styles.scorehistory, {textAlign: 'center'}]}
-                          key={item.index}>{item}</Text>
+              ref={ref => this.flatList = ref}
+              data={scoreHistory[playerIdx]}
+              keyExtractor={(item, index) => index}
+              style={{flex: 0, flexGrow: 0}}
+              onContentSizeChange={() => this.flatList.scrollToEnd({animated: false})}
+              renderItem={({item}) => (
+                <Text style={[styles.scoretext, styles.scorehistory, { textAlign: "center" }]}>{item}</Text>
                 )}
             />
-            <Text style={[styles.scoretext, {textAlign: 'center'}]}>{currentGame.scores[playerIdx]}</Text>
+        <Text style={[styles.scoretext, { textAlign: "center" }]}>{scores[playerIdx]}</Text>
       </Col>
     </View>
   }

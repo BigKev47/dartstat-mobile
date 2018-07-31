@@ -1,46 +1,50 @@
 export const cricketHandler = async (props, dart) => {
-  const { currentGame, updateCurrentGame } = props;
+  const { currentGame: { currentPlayerIndex, tempMarks, gameMarks, marks, scores }, updateCurrentGame } = props;
   const { sectionHit, numberHit } = dart;
-  const { currentPlayerIndex, tempMarks, gameMarks, marks } = currentGame;
 
+  let _roundScore = scores[currentPlayerIndex];
+  let _tempMarks = tempMarks.slice();
   if (gameMarks.includes(numberHit)) {
-    let mult = sectionHit === 0 ? 1 : sectionHit;
     let markIdx = gameMarks.indexOf(numberHit);
-    let newMarks = tempMarks.slice(0);
-    let playerMarks = newMarks[currentPlayerIndex].slice(0);
-    let opponentMarks = newMarks[(currentPlayerIndex + 1) % 2];
-    let prevMarkCount = playerMarks[markIdx];
-    playerMarks[markIdx] = prevMarkCount + mult;
-    let tempScore = 0;
-//     let scoreAdder = (item, index)=> {
-//       if (item >= 3) {
-//         let value = gameMarks[index] === "Bull" ? 25 : parseInt(gameMarks[index]);
-//         tempScore = tempScore + ((item - 3) * value);
-//       }
-// };
-//     //TODO Figure out score/roundScore alogorithm to replace scoreAdder.
-//     playerMarks.forEach(scoreAdder);
-    newMarks[currentPlayerIndex] = playerMarks;
-    let newScores = currentGame.scores.slice();
-    newScores[currentPlayerIndex] = tempScore;
+    let opponentMarkCt = marks[(currentPlayerIndex + 1) % 2][markIdx];
+    let prevMarkCt = tempMarks[markIdx];
+    let mult = sectionHit === 0 ? 1 : sectionHit;
 
-    try {
-      await updateCurrentGame({
-        variables: {
-          index: "tempMarks",
-          value: newMarks
-        }
-      });
-      await updateCurrentGame({
-        variables: {
-          index: "roundScore",
-          value: tempScore
-        }
-      });
-    } catch (err) {
-      console.log(err);
+
+    if (opponentMarkCt >= 3 && prevMarkCt >= 3) {
+      return null;
+    }
+
+    else {
+      (opponentMarkCt >= 3 && (prevMarkCt + mult) > 3) ? _tempMarks[markIdx] = 3 :
+        _tempMarks[markIdx] = prevMarkCt + mult;
+      try {
+        await updateCurrentGame({
+          variables: {
+            index: "tempMarks",
+            value: _tempMarks
+          }
+        });
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
+  let tempScore = 0;
+  let scoreAdder = (item, index) => {
+    if (item >= 3) {
+      let value = gameMarks[index] === "Bull" ? 25 : parseInt(gameMarks[index]);
+      tempScore += ((item - 3) * value);
+    }
+  };
+  _tempMarks.forEach(scoreAdder);
+  _roundScore = tempScore;
+  await updateCurrentGame({
+    variables: {
+      index: "roundScore",
+      value: _roundScore
+    }
+  });
 };
 
 

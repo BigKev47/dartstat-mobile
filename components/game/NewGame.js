@@ -20,17 +20,16 @@ class NewGame extends React.Component {
   createGame = async () => {
     const { createGame, currentGame, updateCurrentGame, createCurrentGame, loading } = this.props;
     // let startingMarks = '{"20": 0, "19": 0, "18": 0, "17": 0, "16": 0, "15": 0, "Bull": 0}'
-    // let gameMarks = [];
-    // for (let i = 20; i > 14; i--) {
-    //   gameMarks.push(i);
-    // }
-    // gameMarks.push("Bull");
-    // //let marks = [[0,-1,-2,-3,-3,-1,0],[-1,-2,-3,-3,-1,0,-3]];
-    // let marks = [[], []];
-    // for (let i = 0; i < gameMarks.length; i++) {
-    //   marks[0].push(0);
-    //   marks[1].push(0);
-    // }
+    let gameMarks = [];
+    for (let i = 20; i > 14; i--) {
+      gameMarks.push(i.toString());
+    }
+    gameMarks.push("Bull");
+    let marks = [[], []];
+    for (let i = 0; i < gameMarks.length; i++) {
+      marks[0].push(0);
+      marks[1].push(0);
+    }
     try {
       // Disabled for Dev
       // const newGame = await createGame({
@@ -46,9 +45,9 @@ class NewGame extends React.Component {
           scores: [0,0],
           gameType: "Cricket",
           scoreHistory: [[],[]],
-          gameMarks: ["20", "19", "18", "17", "16", "15", "Bull"],
-          marks: [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
-          roundScore: [null, [0,0,0,0,0,0,0]]
+          gameMarks: gameMarks,
+          marks: marks,
+          roundScore: 0
         }
       });
       console.log(currentGame)

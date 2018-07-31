@@ -45,7 +45,7 @@ const resolvers = {
       return null
     },
 
-    endTurn: (_, {marks, currentPlayerIndex, scores, round, roundScore, scoreHistory, currentDarts}, {cache}) => {
+    endTurn: (_, { marks, currentPlayerIndex, scores, round, roundScore, scoreHistory, currentDarts, tempMarks }, { cache }) => {
       const query = gql`
           query EndTurn {
               currentGame @client {
@@ -75,6 +75,8 @@ const resolvers = {
       const data = {
         currentGame: {
           ...previous.currentGame,
+          scores: scores,
+          tempMarks: tempMarks,
           marks: marks,
           currentPlayerIndex: currentPlayerIndex,
           round: round,
@@ -117,12 +119,12 @@ const resolvers = {
           gameType: gameType,
           scores: scores,
           marks: marks,
-          tempMarks: marks,
+          tempMarks: marks[0],
           scoreHistory: scoreHistory,
           playersIds: playersIds,
           gameMarks: gameMarks
           },
-      }; ///asdgasg
+      };
       cache.writeData({query, data});
       return null
 
