@@ -22,6 +22,8 @@ export class Scoreboard extends React.Component {
       </Row>
     ));
 
+    let markList = currentGame.gameType === "Cricket " ? <Col style={{ flex: 1 }}>{gameMarks}</Col> : null;
+
     if (loading) {
       return (<View style={[styles.scoreboard, { flex: 5, flexDirection: "row" }]}><Text
         style={[styles.scoretext, styles.scoreheader]}>Loading</Text></View>)
@@ -36,7 +38,7 @@ export class Scoreboard extends React.Component {
             <ScoreboardHeader {...this.props}  />
             <Row style={{ flex: 10, flexDirection: 'row', borderWidth: 1, borderColor: '#fff' }}>
               <PlayerColumn {...this.props} playerIdx={0}/>
-              <Col style={{ flex: 1}}>{gameMarks}</Col>
+              {markList}
               <PlayerColumn {...this.props} playerIdx={1} style={{ flex: 2 }}/>
             </Row>
 

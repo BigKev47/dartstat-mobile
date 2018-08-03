@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f98bd5a5-de42-4639-a44f-f224a90cd849" name="Default" comment="Got a working cricket game (minus the gameover)">
+    <list default="true" id="f98bd5a5-de42-4639-a44f-f224a90cd849" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/game/DartEntry.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/game/DartEntry.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/game/NewGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/game/NewGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/game/Scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/game/Scoreboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/game/dartEntry/dartHandlers.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/game/dartEntry/dartHandlers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/game/dartEntry/roundHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/game/dartEntry/roundHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/game/scoreboard/playerColumn/MarksColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/game/scoreboard/playerColumn/MarksColumn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/game/scoreboard/playerColumn/ScoreColumn.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/game/scoreboard/playerColumn/ScoreColumn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/client/endTurn.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/client/endTurn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state/resolvers.js" beforeDir="false" afterPath="$PROJECT_DIR$/state/resolvers.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +19,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dartHandlers.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dartHandlers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/game/dartEntry/dartHandlers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+            <state relative-caret-position="1258">
+              <caret line="74" column="41" lean-forward="true" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameUtils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/game/gameUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="63" column="18" lean-forward="true" selection-start-line="56" selection-start-column="6" selection-end-line="68" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="roundHandler.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/game/dartEntry/roundHandler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -32,8 +52,50 @@
       <file leaf-file-name="DartEntry.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/game/DartEntry.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="498">
+              <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainTabNavigator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/navigation/MainTabNavigator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-255">
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewGame.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/game/NewGame.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="48" column="32" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="defaultState.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/state/defaultState.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MarksColumn.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/game/scoreboard/playerColumn/MarksColumn.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -44,52 +106,8 @@
       <file leaf-file-name="Scoreboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/game/Scoreboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScoreColumn.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/game/scoreboard/playerColumn/ScoreColumn.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="roundHandler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/game/dartEntry/roundHandler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewGame.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/game/NewGame.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createCurrentGame.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphql/client/createCurrentGame.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="updateCurrentGame.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphql/client/updateCurrentGame.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+            <state relative-caret-position="255">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -97,20 +115,11 @@
       <file leaf-file-name="resolvers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/state/resolvers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="78" column="31" lean-forward="true" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+            <state relative-caret-position="277">
+              <caret line="103" column="22" lean-forward="true" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="endTurn.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphql/client/endTurn.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -189,12 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/graphql.config.json" />
-        <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/client.js" />
-        <option value="$PROJECT_DIR$/grahql/addDart.js" />
-        <option value="$PROJECT_DIR$/components/NewDart.js" />
-        <option value="$PROJECT_DIR$/components/NewGame.js" />
         <option value="$PROJECT_DIR$/grahql/createDart.js" />
         <option value="$PROJECT_DIR$/grahql/allPlayers.js" />
         <option value="$PROJECT_DIR$/grahql/index.js" />
@@ -233,13 +236,19 @@
         <option value="$PROJECT_DIR$/components/NumberGrid.js" />
         <option value="$PROJECT_DIR$/graphql/client/resolvers.js" />
         <option value="$PROJECT_DIR$/screens/Game.js" />
-        <option value="$PROJECT_DIR$/components/game/scoreboard/playerColumn/MarksColumn.js" />
-        <option value="$PROJECT_DIR$/components/game/NewGame.js" />
         <option value="$PROJECT_DIR$/components/game/scoreboard/playerColumn/ScoreColumn.js" />
-        <option value="$PROJECT_DIR$/components/game/dartEntry/roundHandler.js" />
-        <option value="$PROJECT_DIR$/state/resolvers.js" />
         <option value="$PROJECT_DIR$/graphql/client/endTurn.js" />
+        <option value="$PROJECT_DIR$/components/game/gameUtils.js" />
+        <option value="$PROJECT_DIR$/graphql/client/updateCurrentGame.js" />
+        <option value="$PROJECT_DIR$/state/resolvers.js" />
+        <option value="$PROJECT_DIR$/components/game/GameOver.js" />
+        <option value="$PROJECT_DIR$/components/game/scoreboard/PlayerColumn.js" />
+        <option value="$PROJECT_DIR$/components/game/scoreboard/playerColumn/MarksColumn.js" />
+        <option value="$PROJECT_DIR$/components/game/Scoreboard.js" />
+        <option value="$PROJECT_DIR$/components/game/NewGame.js" />
+        <option value="$PROJECT_DIR$/components/game/DartEntry.js" />
         <option value="$PROJECT_DIR$/components/game/dartEntry/dartHandlers.js" />
+        <option value="$PROJECT_DIR$/components/game/dartEntry/roundHandler.js" />
       </list>
     </option>
   </component>
@@ -522,11 +531,25 @@
       <option name="project" value="LOCAL" />
       <updated>1528822295056</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Got a working cricket game (minus the gameover)">
+      <created>1533061548167</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1533061548167</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Got simple GameOver working for Cricket">
+      <created>1533317962294</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1533317962294</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294712000" />
+    <option name="totallyTimeSpent" value="306825000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -656,7 +679,9 @@
     <MESSAGE value="tinkered with styling" />
     <MESSAGE value="Got basic scorekeeping debugged." />
     <MESSAGE value="Got a working cricket game (minus the gameover)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got a working cricket game (minus the gameover)" />
+    <MESSAGE value="Got simple GameOver working for Cricket" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got simple GameOver working for Cricket" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -664,8 +689,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client.js" />
-    <entry file="file://$PROJECT_DIR$/index.js" />
     <entry file="file://$PROJECT_DIR$/components/NewDart.js" />
     <entry file="file://$PROJECT_DIR$/components/games/Cricket.ts" />
     <entry file="file://$PROJECT_DIR$/components/NewGame.js" />
@@ -741,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/game/GameOver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphql/createDarts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -799,23 +815,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Game/ScoreColumn.js" />
-    <entry file="file://$PROJECT_DIR$/navigation/RootNavigation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/navigation/MainTabNavigator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphql/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -881,79 +880,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/Game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/game/scoreboard/playerColumn/MarksColumn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/game/gameUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1112">
-          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/state/defaultState.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphql/client/updateCurrentGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphql/client/createCurrentGame.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/game/NewGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/game/scoreboard/playerColumn/ScoreColumn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/state/resolvers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="78" column="31" lean-forward="true" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graphql/client/endTurn.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -962,24 +890,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/game/dartEntry/roundHandler.js">
+    <entry file="file://$PROJECT_DIR$/graphql/client/updateCurrentGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        <state relative-caret-position="323">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/state/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navigation/RootNavigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/game/GameOver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/game/scoreboard/PlayerColumn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/game/scoreboard/playerColumn/ScoreColumn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/Game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="76" column="39" selection-start-line="76" selection-start-column="2" selection-end-line="76" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/game/Scoreboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+        <state relative-caret-position="255">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/state/defaultState.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/state/resolvers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="103" column="22" lean-forward="true" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/game/scoreboard/playerColumn/MarksColumn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/game/NewGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="48" column="32" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navigation/MainTabNavigator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/game/DartEntry.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state relative-caret-position="498">
+          <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -988,8 +1007,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/game/dartEntry/dartHandlers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        <state relative-caret-position="1258">
+          <caret line="74" column="41" lean-forward="true" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/game/gameUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="63" column="18" lean-forward="true" selection-start-line="56" selection-start-column="6" selection-end-line="68" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/game/dartEntry/roundHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
         </state>
       </provider>
     </entry>

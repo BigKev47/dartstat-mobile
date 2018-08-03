@@ -28,28 +28,30 @@ export default class MarksColumn extends React.Component {
   };
 
   render() {
-      const {currentGame, loading, playerIdx} = this.props;
-    let tempMarks = currentGame.tempMarks;
+    const { currentGame, loading, playerIdx } = this.props;
+    if (currentGame.gameType !== "Cricket") {
+      return null;
+    } else {
+      let tempMarks = currentGame.tempMarks;
       let playerMarks = currentGame.marks[playerIdx];
-    let marksColumn = playerMarks.map((i, index) => (
+      let marksColumn = playerMarks.map((i, index) => (
         <Row key={index} style={{ paddingHorizontal: 3, paddingVertical: 3 }}>
           <Image
-            style={{flex: 1, height: undefined, width: undefined }}
+            style={{ flex: 1, height: undefined, width: undefined }}
             source={this.markSrc(i)}
             resizeMode="contain"
-/>
+          />
         </Row>
       ));
 
 
-
-
 //TODO Figure out the array/object scorecard and iterate over it good
-    return <View style={styles.container}>
-      <Col>
-        {marksColumn}
-      </Col>
-    </View>
+      return <View style={styles.container}>
+        <Col>
+          {marksColumn}
+        </Col>
+      </View>;
+    }
   }
 }
 

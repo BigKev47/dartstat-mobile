@@ -1,27 +1,35 @@
 import { Alert } from "react-native";
 
 export const roundHandler = async (props) => {
-  const { endTurn, currentGame: { currentDarts, currentPlayerIndex, scores, scoreHistory, round, marks, tempMarks, roundScore } } = props;
+  const { endTurn, currentGame: { currentDarts, currentPlayerIndex, scores, scoreHistory, round, roundScore, gameType } } = props;
   if (currentDarts.length === 3) {
-    console.log("Darts: " + currentDarts + " Marks: " + marks + "tempMarks" + tempMarks + "Scores" + scores);
     try {
-
       const newPlayerIndex = (currentPlayerIndex + 1) % 2;
+      let _marks = [];
+      let _tempMarks = [];
       const _round =
         newPlayerIndex === 0 ? round + 1 : round;
       let _scoreHistory = scoreHistory.slice(0);
       let playerScoreHistory = _scoreHistory[currentPlayerIndex].slice(0);
       let playerScore = scores[currentPlayerIndex];
       let _scores = scores.slice();
-      if (playerScore !== roundScore) {
-        playerScoreHistory.push(playerScore);
-        _scores[currentPlayerIndex] = roundScore;
-      }
       _scoreHistory[currentPlayerIndex] = playerScoreHistory;
 
-      let _marks = marks.slice();
-      _marks[currentPlayerIndex] = tempMarks;
-
+      //Scoring procedure for Cricket
+      if (gameType === "Cricket") {
+        const { marks, tempMarks } = props;
+        if (playerScore !== roundScore) {
+          playerScoreHistory.push(playerScore);
+          _scores[currentPlayerIndex] = roundScore;
+        }
+        _marks = marks.slice();
+        _marks[currentPlayerIndex] = tempMarks;
+        _tempMarks = marks[newPlayerIndex];
+        //Scoring procedure for 501
+      } else if (gameType === "501") {
+        console.log("playerScore:" + playerScore);
+        _scores[currentPlayerIndex] = playerScore - roundScore;
+      }
       await endTurn({
         variables: {
           //TODO get player login worked out and remove this hard-code
@@ -30,7 +38,7 @@ export const roundHandler = async (props) => {
           roundScore: 0,
           currentDarts: [],
           marks: _marks,
-          tempMarks: marks[newPlayerIndex],
+          tempMarks: _tempMarks,
           scoreHistory: _scoreHistory,
           scores: _scores
 

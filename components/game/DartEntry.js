@@ -3,7 +3,7 @@ import { View, ScrollView, Text, Button, StyleSheet } from "react-native";
 import { createDart, allUsers, createGame } from "../../graphql";
 import { graphql, compose } from "@expo/react-apollo";
 import NumberGrid from "../NumberGrid";
-import { cricketHandler } from "./dartEntry/dartHandlers";
+import { cricketHandler, ohOneHandler } from "./dartEntry/dartHandlers";
 import { roundHandler } from "./dartEntry/roundHandler";
 import { gameOver } from "./GameOver";
 
@@ -18,14 +18,24 @@ export class DartEntry extends React.Component {
     this.dartHandler = this.dartHandler.bind(this);
   }
 
+
   dartHandler = async dart => {
     const { currentGame, createDart, updateCurrentGame } = this.props;
     const playerIdx = currentGame.currentPlayerIndex;
 
     let currentDarts = currentGame.currentDarts.slice(0);
     currentDarts.push(dart);
+
     try {
-      await cricketHandler(this.props, dart);
+      switch (currentGame.gameType) {
+        case "Cricket":
+          await cricketHandler(this.props, dart);
+          break;
+        case "501":
+          await ohOneHandler(this.props, dart);
+          break;
+      }
+
       //This pushes the dartEntry to the gql backend DISABLED FOR DEV
       // await createDart({
       //   variables: {

@@ -1,5 +1,6 @@
 import { gameOver } from "../GameOver";
 
+
 export const cricketHandler = async (props, dart) => {
   const { currentGame: { currentPlayerIndex, tempMarks, gameMarks, marks, scores }, updateCurrentGame, resetCurrentGame } = props;
   const { sectionHit, numberHit } = dart;
@@ -58,10 +59,28 @@ export const cricketHandler = async (props, dart) => {
 };
 
 
-const ohOne = (props, dart) => {
+export const ohOneHandler = async (props, dart) => {
+  const { sectionHit, numberHit } = dart;
+  console.log(dart);
+  const { currentGame: { currentPlayerIndex, scores, roundScore }, updateCurrentGame, resetCurrentGame } = props;
   let mult = sectionHit === 0 ? 1 : sectionHit;
   let dartscore =
     dart.sectionHit === null
       ? 0
-      : dart.numberHit * (dart.sectionHit === 0 ? 1 : dart.sectionHit);
+      : numberHit * (sectionHit === 0 ? 1 : sectionHit);
+
+  let _roundScore = roundScore + dartscore;
+  let tempScore = scores[currentPlayerIndex];
+  let outScore = tempScore - _roundScore;
+  if (outScore < 2) {
+    if (outScore === 0 && dart.sectionHit === 2) {
+      gameOver(currentPlayerIndex, resetCurrentGame);
+    }
+  }
+  await updateCurrentGame({
+    variables: {
+      index: "roundScore",
+      value: _roundScore
+    }
+  });
 };

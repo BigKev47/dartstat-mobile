@@ -19,17 +19,16 @@ class NewGame extends React.Component {
 
   createGame = async () => {
     const { createGame, currentGame, updateCurrentGame, createCurrentGame, loading } = this.props;
-    // let startingMarks = '{"20": 0, "19": 0, "18": 0, "17": 0, "16": 0, "15": 0, "Bull": 0}'
-    let gameMarks = [];
-    for (let i = 20; i > 14; i--) {
-      gameMarks.push(i.toString());
-    }
-    gameMarks.push("Bull");
-    let marks = [[], []];
-    for (let i = 0; i < gameMarks.length; i++) {
-      marks[0].push(0);
-      marks[1].push(0);
-    }
+    // let gameMarks = [];
+    // for (let i = 20; i > 14; i--) {
+    //   gameMarks.push(i.toString());
+    // }
+    // gameMarks.push("Bull");
+    // let marks = [[], []];
+    // for (let i = 0; i < gameMarks.length; i++) {
+    //   marks[0].push(0);
+    //   marks[1].push(0);
+    // }
     try {
       // Disabled for Dev
       // const newGame = await createGame({
@@ -38,12 +37,15 @@ class NewGame extends React.Component {
       //     playersIds: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"]
       //   }
       // });
+      let gameMarks = [];
+      let marks = [[], []];
+
       await createCurrentGame({
         variables: {
           id: "testGame", //newGame.data.createGame.id,
           playersIds: ["Home", "Away"],
-          scores: [0,0],
-          gameType: "Cricket",
+          scores: [501, 501],
+          gameType: "501",
           scoreHistory: [[],[]],
           gameMarks: gameMarks,
           marks: marks,
