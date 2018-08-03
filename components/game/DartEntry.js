@@ -5,6 +5,7 @@ import { graphql, compose } from "@expo/react-apollo";
 import NumberGrid from "../NumberGrid";
 import { cricketHandler } from "./dartEntry/dartHandlers";
 import { roundHandler } from "./dartEntry/roundHandler";
+import { gameOver } from "./GameOver";
 
 export class DartEntry extends React.Component {
   static navigationOptions = {

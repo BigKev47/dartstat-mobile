@@ -3,6 +3,7 @@ import { Alert } from "react-native";
 export const roundHandler = async (props) => {
   const { endTurn, currentGame: { currentDarts, currentPlayerIndex, scores, scoreHistory, round, marks, tempMarks, roundScore } } = props;
   if (currentDarts.length === 3) {
+    console.log("Darts: " + currentDarts + " Marks: " + marks + "tempMarks" + tempMarks + "Scores" + scores);
     try {
 
       const newPlayerIndex = (currentPlayerIndex + 1) % 2;

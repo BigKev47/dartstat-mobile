@@ -25,6 +25,7 @@ const resolvers = {
                   roundScore
                   round
                   gameType
+                  gameCompleted
                   gameActive
               }
           }
@@ -108,6 +109,7 @@ const resolvers = {
                 round
                 gameType
                 gameActive
+                gameCompleted
             }
         }
     `;

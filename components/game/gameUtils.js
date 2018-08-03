@@ -12,7 +12,6 @@ const turnSwitcher = async () => {
     const newRound = newPlayerIndex === 0 ? currentGame.round + 1:currentGame.round;
     await endTurn({
       variables: {
-        //TODO get player login worked out and remove this hard-code
         round: newRound,
         currentPlayerIndex: newPlayerIndex,
         roundScore: 0
@@ -30,7 +29,7 @@ export const roundHandler = async (dart) => {
   if (outScore < 2) {
     if (outScore === 0 && dart.sectionHit === 2) {
       Alert.alert(
-          'game Over',
+        "Game Over",
           currentGame.players[playerIdx].firstName + ' Wins!',
           [{text: 'View Match Report', onPress: () => console.log('Ask me later pressed')},
             {text: 'Done', onPress: () => resetCurrentGame()},
@@ -97,7 +96,6 @@ export const dartHandler = async () => {
   try {
     await createDart({
       variables: {
-        //TODO get player login worked out and remove this hard-code
         playerId: currentGame.players[player].id,
         gameId: currentGame.id,
         numberHit: parseInt(dart.numberHit),
