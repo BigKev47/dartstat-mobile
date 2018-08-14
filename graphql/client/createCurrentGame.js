@@ -9,6 +9,7 @@ export default gql`
         $scoreHistory: [[Int]],
         $marks: [[Int]],
         $gameMarks: [String]
+    $tempMarks: [Int]
     ) {
         createCurrentGame(
             id: $id,
@@ -16,7 +17,7 @@ export default gql`
             playersIds: $playersIds,
             scores: $scores,
             marks: $marks,
-            tempMarks: $marks,
+            tempMarks: $tempMarks,
             scoreHistory: $scoreHistory,
             gameMarks: $gameMarks
         ) @client {

@@ -14,21 +14,27 @@ class NewGame extends React.Component {
   constructor(props) {
     super(props);
 
-    this.createGame = this.createGame.bind(this);
+
+    this.state = { menu: null };
   }
 
-  createGame = async () => {
+  handleClick = () => {
+    this.setState({ menu: "gameType" });
+  };
+
+  createCricket = async () => {
     const { createGame, currentGame, updateCurrentGame, createCurrentGame, loading } = this.props;
-    // let gameMarks = [];
-    // for (let i = 20; i > 14; i--) {
-    //   gameMarks.push(i.toString());
-    // }
-    // gameMarks.push("Bull");
-    // let marks = [[], []];
-    // for (let i = 0; i < gameMarks.length; i++) {
-    //   marks[0].push(0);
-    //   marks[1].push(0);
-    // }
+    let gameMarks = [];
+    for (let i = 20; i > 14; i--) {
+      gameMarks.push(i.toString());
+    }
+    gameMarks.push("Bull");
+    let marks = [[], []];
+    for (let i = 0; i < gameMarks.length; i++) {
+      marks[0].push(0);
+      marks[1].push(0);
+    }
+    let tempMarks = marks[0];
     try {
       // Disabled for Dev
       // const newGame = await createGame({
@@ -37,54 +43,50 @@ class NewGame extends React.Component {
       //     playersIds: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"]
       //   }
       // });
-      let gameMarks = [];
-      let marks = [[], []];
+      await createCurrentGame({
+        variables: {
+          id: "testGame", //newGame.data.createGame.id,
+          playersIds: ["Home", "Away"],
+          scores: [0, 0],
+          gameType: "Cricket",
+          scoreHistory: [[],[]],
+          gameMarks: gameMarks,
+          marks: marks,
+          tempMarks: tempMarks,
+          roundScore: 0
+        }
+      });
+      console.log(currentGame)
+    } catch (error) {
+      console.log(error);
+    }
 
+  };
+
+  createOhOne = async () => {
+    const { createGame, currentGame, createCurrentGame, loading } = this.props;
+    try {
+      // Disabled for Dev
+      // const newGame = await createGame({
+      //   variables: {
+      //     gameType: "Cricket",
+      //     playersIds: ["cjf673owt4whi0104fng14osm", "cjf677xt84xp50104rig3zrmd"]
+      //   }
+      // });
       await createCurrentGame({
         variables: {
           id: "testGame", //newGame.data.createGame.id,
           playersIds: ["Home", "Away"],
           scores: [501, 501],
           gameType: "501",
-          scoreHistory: [[],[]],
-          gameMarks: gameMarks,
-          marks: marks,
-          roundScore: 0
+          scoreHistory: [[], []],
+          roundScore: 0,
+          gameMarks: [],
+          marks: [[], []],
+          tempMarks: []
         }
       });
-      console.log(currentGame)
-      //This is where I create the scorecard for Cricket Games it's not working
-      // await createCurrentGame({
-      //   variables: {
-      //     id: newGame.data.createGame.id,
-      //     gameType: "Cricket",
-      //     players: [{
-      //       __typename: "player",
-      //       id: "cjf673owt4whi0104fng14osm",
-      //       firstName: "Kevin",
-      //       lastName: "Corlett"
-      //     },{
-      //       __typename: "player",
-      //       id: "cjf676w4x53oz01920blawszb",
-      //       firstName: "Michael",
-      //       lastName: "Antry",
-      //     }],
-      //     scores: [{
-      //       __typename: "score",
-      //       points: 0,
-      //       pointHistory: [],
-      //       marks: '{__typename: "marks", "20": 0, "19": 0, "18": 0, "17": 0, "16": 0, "15": 0, "Bull": 0}'
-      //     },{
-      //       __typename: "score",
-      //       points: 0,
-      //       pointHistory: [],
-      //       marks: '{__typename: "marks", "20": 0, "19": 0, "18": 0, "17": 0, "16": 0, "15": 0, "Bull": 0}'
-      //     }]
-      //
-      //   }
-      // });
-
-      // console.log("game Marks " + currentGame.gameMarks)
+      console.log(currentGame);
     } catch (error) {
       console.log(error);
     }
@@ -94,27 +96,36 @@ class NewGame extends React.Component {
   render() {
     const { allUsers, loading } = this.props;
     if (loading) return null;
+    let menu;
 
-    //TODO Create a running scoreboard with all necessary information and proper columns
-    return (
-      <View style={styles.container}>
+    if (this.state.menu === null) {
+      menu = <Button
+        onPress={this.handleClick}
+        style={styles.button}
+        containerStyle={styles.buttoncontainer}
+      >New Game
+      </Button>;
+    } else if (this.state.menu === "gameType") {
+      menu = <View style={styles.container}>
         <Button
-          onPress={this.createGame}
+          onPress={this.createOhOne}
           style={styles.button}
           containerStyle={styles.buttoncontainer}
-        >
-          New Game
+        >501
         </Button>
-        {/*<FlatList*/}
-        {/*style={{flex: 1}}*/}
-        {/*data={allUsers}*/}
-        {/*renderItem={({ item }) => (*/}
-        {/*<Text style={{color: "white"}}>{item.firstName} {item.lastName}</Text>*/}
-        {/*)}*/}
-        {/*keyExtractor={item => item.id}/>*/}
 
-        {/*<ModalDropdown options={ playerNames }>*/}
-        {/*</ModalDropdown>*/}
+        <Button
+          onPress={this.createCricket}
+          style={styles.button}
+          containerStyle={styles.buttoncontainer}
+        >Cricket
+        </Button>
+      </View>;
+    }
+
+    return (
+      <View style={styles.container}>
+        {menu}
       </View>
     );
   }

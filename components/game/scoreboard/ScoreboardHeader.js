@@ -25,7 +25,7 @@ export class ScoreboardHeader extends React.Component {
             numberOfLines={1}
             style={styles.gameInfo}
           >
-            Cricket
+            {currentGame.gameType}
           </Text>
         </Col>
         <PlayerInfo currentGame={currentGame}  playerIdx={1} />

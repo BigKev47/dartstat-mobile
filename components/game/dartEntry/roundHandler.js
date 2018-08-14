@@ -1,23 +1,22 @@
 import { Alert } from "react-native";
 
 export const roundHandler = async (props) => {
-  const { endTurn, currentGame: { currentDarts, currentPlayerIndex, scores, scoreHistory, round, roundScore, gameType } } = props;
-  if (currentDarts.length === 3) {
+  const { endTurn, loading, currentGame: { currentDarts, currentPlayerIndex, scores, scoreHistory, round, roundScore, gameType, marks, tempMarks } } = props;
+  if (currentDarts.length === 3 && !loading) {
     try {
       const newPlayerIndex = (currentPlayerIndex + 1) % 2;
       let _marks = [];
       let _tempMarks = [];
       const _round =
         newPlayerIndex === 0 ? round + 1 : round;
-      let _scoreHistory = scoreHistory.slice(0);
-      let playerScoreHistory = _scoreHistory[currentPlayerIndex].slice(0);
+      let _scoreHistory = scoreHistory.slice();
+      let playerScoreHistory = _scoreHistory[currentPlayerIndex].slice();
       let playerScore = scores[currentPlayerIndex];
       let _scores = scores.slice();
       _scoreHistory[currentPlayerIndex] = playerScoreHistory;
 
       //Scoring procedure for Cricket
       if (gameType === "Cricket") {
-        const { marks, tempMarks } = props;
         if (playerScore !== roundScore) {
           playerScoreHistory.push(playerScore);
           _scores[currentPlayerIndex] = roundScore;

@@ -91,7 +91,7 @@ const resolvers = {
 
     },
 ///sadgagh
-    createCurrentGame: (_, {id, gameType, scores, marks, playersIds, scoreHistory, gameMarks}, {cache}) => {
+    createCurrentGame: (_, { id, gameType, scores, marks, playersIds, scoreHistory, gameMarks, tempMarks }, { cache }) => {
       const query = gql`
         query CreateCurrentGame {
             currentGame @client {
@@ -121,7 +121,7 @@ const resolvers = {
           gameType: gameType,
           scores: scores,
           marks: marks,
-          tempMarks: marks[0],
+          tempMarks: tempMarks,
           scoreHistory: scoreHistory,
           playersIds: playersIds,
           gameMarks: gameMarks
