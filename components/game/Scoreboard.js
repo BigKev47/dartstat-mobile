@@ -22,7 +22,7 @@ export class Scoreboard extends React.Component {
       </Row>
     ));
 
-    let markList = currentGame.gameType === "Cricket " ? <Col style={{ flex: 1 }}>{gameMarks}</Col> : null;
+    let markList = currentGame.gameType === "Cricket" ? <Col style={{ flex: 1 }}>{gameMarks}</Col> : null;
 
     if (loading) {
       return (<View style={[styles.scoreboard, { flex: 5, flexDirection: "row" }]}><Text
