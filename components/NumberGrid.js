@@ -18,32 +18,27 @@ export class NumberGrid extends React.Component {
     }
 
     handleNum = (number) => {
-
-        if (number === "Bull") {
-          this.setState({currentNum: 25})
-        } else {
           if (number === "Miss") {
             this.props.onPress({numberHit: 0, sectionHit: null});
             this.setState({currentNum: ""})
           } else {
-            this.setState({currentNum: parseInt(number)})
+            this.setState({currentNum: number})
           }
-        }
-
-    };
+        };
 
     handleSec = async (sectionHit) => {
         let numberHit = this.state.currentNum;
         let dart = {numberHit: numberHit, sectionHit: sectionHit};
         try {
           await this.props.onPress(dart);
-          // await <dartHandler {dart} />;
+          // await <dartHandler {dartEntry} />;
           this.setState( {currentNum: "", currentSec: null});
         }
         catch(error) {console.log(error)}
     };
 //TODO Find a way to make these grids with some sort of map/iterator function to cut down on code length
   render(){
+
     if (!this.state.currentNum) {
       return <Grid>
         <Row>
@@ -109,7 +104,7 @@ export class NumberGrid extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
+    //paddingTop: 20,
     backgroundColor: '#fff',
   },
 
