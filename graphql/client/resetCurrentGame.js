@@ -3,20 +3,23 @@ import gql from 'graphql-tag'
 export default gql`
   mutation {
     resetCurrentGame @client {
-        id
-        players {
-            id
-            firstName
-            lastName
+          id
+          darts
+          players{
+              id
+              firstName
+              lastName
+          }
+          currentPlayerIndex
+          currentDarts
+          roundScore
+          scores
+          marks
+          gameType
+          gameMarks
+          scoreHistory
+          round
+          gameActive
         }
-        scores
-        scoreHistory
-        currentPlayerIndex
-        darts
-        currentDarts
-        roundScore
-        round
-        gameActive
-    }
   }
 `

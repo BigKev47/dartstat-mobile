@@ -1,6 +1,5 @@
 export { default as resetCurrentGame } from './client/resetCurrentGame'
 export { default as getCurrentGame } from './client/getCurrentGame'
-export { default as updateGame } from './updateGame'
 export { default as updateCurrentGame } from './client/updateCurrentGame'
 export { default as endTurn} from './client/endTurn'
 export { default as createGame } from './createGame'

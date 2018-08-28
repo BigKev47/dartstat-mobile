@@ -2,21 +2,21 @@ import gql from 'graphql-tag'
 
 export default gql`
   query {
-    currentGame @client {
-        id
-        darts
-        players{
-            id
-            firstName
-            lastName
-        }
-        currentPlayerIndex
-        currentDarts
-        roundScore
-        scores
-        scoreHistory
-        round
-        gameActive
-    }
+      currentGame @client {
+          id
+          playersIds
+          scores 
+          scoreHistory
+          marks
+          tempMarks
+          gameMarks
+          currentPlayerIndex
+          darts
+          currentDarts
+          roundScore
+          round
+          gameType
+          gameActive
+      }
   }
 `
