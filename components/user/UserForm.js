@@ -5,20 +5,38 @@ import { Form, Item, Input, Label } from "native-base";
 export default class UserForm extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    firstName: "",
+    lastName: ""
   };
 
   submitForm = () => {
-    const { email, password } = this.state;
+    const { email, password, firstName, lastName } = this.state;
     this.props.onSubmit({
       email,
-      password
+      password,
+      firstName,
+      lastName
     });
   };
 
   render() {
     return (
       <Form>
+        <Item floatingLabel>
+          <Label>First Name</Label>
+          <Input
+            value={this.state.firstName}
+            onChangeText={firstName => this.setState({ firstName })}
+          />
+        </Item>
+        <Item floatingLabel>
+          <Label>Last Name</Label>
+          <Input
+            value={this.state.lastName}
+            onChangeText={lastName => this.setState({ lastName })}
+          />
+        </Item>
         <Item floatingLabel>
           <Label>Email</Label>
           <Input

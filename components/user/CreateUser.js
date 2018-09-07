@@ -7,10 +7,10 @@ import UserForm from "./UserForm";
 import { signIn } from "../../loginUtils";
 
 class CreateUser extends Component {
-  createUser = async ({ email, password }) => {
+  createUser = async ({ email, password, firstName, lastName }) => {
     try {
       const user = await this.props.createUser({
-        variables: { email, password }
+        variables: { email, password, firstName, lastName }
       });
       const signin = await this.props.signinUser({
         variables: { email, password }
@@ -33,8 +33,10 @@ class CreateUser extends Component {
 }
 
 const createUser = gql`
-  mutation createUser($email: String!, $password: String!) {
+    mutation createUser($email: String!, $password: String!, $firstName: String!, $lastName: String!) {
     createUser(
+        firstName: $firstName
+        lastName: $lastName
       authProvider: { email: { email: $email, password: $password } }
     ) {
       id

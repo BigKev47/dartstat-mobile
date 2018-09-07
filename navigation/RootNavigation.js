@@ -1,15 +1,18 @@
 import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
+import { graphql, withApollo } from "@expo/react-apollo";
 
 import MainTabNavigator from './MainTabNavigator';
 import Game from "../screens/Game";
+import Login from "../components/user/Login";
+import userQuery from "../graphql/userQuery";
 // import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 const RootStackNavigator = StackNavigator(
   {
     Main: {
-      screen: Game,
+      screen: withApollo(Game)
     },
   },
   {
@@ -21,19 +24,17 @@ const RootStackNavigator = StackNavigator(
   }
 );
 
-export default class RootNavigator extends React.Component {
-    // componentDidMount() {
-    //   this._notificationSubscription = this._registerForPushNotifications();
-    // }
-    //
-    // componentWillUnmount() {
-    //   this._notificationSubscription && this._notificationSubscription.remove();
-    // }
+const NavWrapper = ({ loading, user }) => {
+  if (loading) return null;
+  if (!user) return <Login/>;
+  return <RootStackNavigator screenProps={{ user }}/>;
+};
 
-    render() {
-        return <RootStackNavigator/>;
-    }
-}
+export default graphql(userQuery, {
+  props: ({ data }) => ({ ...data })
+})(NavWrapper);
+
+
 
   // _registerForPushNotifications() {
     // Send our push token over to our backend so we can receive notifications
