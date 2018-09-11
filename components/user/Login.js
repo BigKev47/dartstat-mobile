@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { withApollo } from "@expo/react-apollo";
-
+import Button from "react-native-button";
 import CreateUser from "./CreateUser";
 import LoginUser from "./LoginUser";
+import Colors from "../../constants/Colors";
 
 class Login extends Component {
   state = {
@@ -19,13 +20,14 @@ class Login extends Component {
           <LoginUser {...this.props} />
         )}
         <Button
+          style={styles.button}
+          containerStyle={styles.buttoncontainer}
           onPress={() =>
             this.setState({
               register: !this.state.register
             })
           }
-          title={this.state.register ? "Login" : "Register"}
-        />
+        >{this.state.register ? "Login" : "Register"}</Button>
       </View>
     );
   }
@@ -34,7 +36,28 @@ class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center"
+    backgroundColor: Colors.scoreBoard,
+    alignContent: "center",
+    justifyContent: "center",
+    padding: 15
+  },
+  button: {
+    color: "white",
+    alignContent: "center",
+    fontSize: 30,
+    fontFamily: "sketchy",
+    fontWeight: "400"
+  },
+
+  buttoncontainer: {
+
+    marginHorizontal: 5,
+    marginVertical: 5,
+    padding: 10,
+    overflow: "hidden",
+    borderRadius: 6,
+    justifyContent: "center",
+    backgroundColor: Colors.scoreBoard
   }
 });
 

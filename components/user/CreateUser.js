@@ -25,7 +25,13 @@ class CreateUser extends Component {
   render() {
     return (
       <View>
-        <Text>Register</Text>
+        <Text style={{
+          marginHorizontal: 5,
+          color: "white",
+          fontSize: 30,
+          fontWeight: "400",
+          fontFamily: "sketchy"
+        }}>Register</Text>
         <UserForm onSubmit={this.createUser} type="Register" />
       </View>
     );

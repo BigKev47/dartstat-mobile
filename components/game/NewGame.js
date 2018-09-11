@@ -2,13 +2,15 @@ import React from "react";
 import { View, StyleSheet, FlatList, Text } from "react-native";
 
 import { createDart, allUsers, createGame, updateCurrentGame } from "../../graphql";
-import { graphql, compose } from "@expo/react-apollo";
+import { graphql, compose, withApollo } from "@expo/react-apollo";
 import Button from "react-native-button";
 import Colors from "../../constants/Colors";
 import { Game } from "../../screens/Game";
 import ModalDropdown from "react-native-modal-dropdown";
 import createCurrentGame from "../../graphql/client/createCurrentGame";
 import {default as variables} from "./newGame/queryVariables";
+import { signOut } from "../../loginUtils";
+import { client } from "../../state";
 
 class NewGame extends React.Component {
   constructor(props) {
@@ -93,18 +95,33 @@ class NewGame extends React.Component {
 
   };
 
+  logOut = () => {
+    signOut();
+    client.resetStore();
+  };
+
   render() {
     const { allUsers, loading } = this.props;
     if (loading) return null;
     let menu;
 
     if (this.state.menu === null) {
-      menu = <Button
+      menu = <View style={styles.container}>
+        <Button
         onPress={this.handleClick}
         style={styles.button}
         containerStyle={styles.buttoncontainer}
       >New Game
-      </Button>;
+        </Button>
+
+        <Button
+          onPress={this.logOut}
+          style={[styles.button, { fontSize: 25 }]}
+          containerStyle={styles.buttoncontainer}
+        >Log Out
+        </Button>
+      </View>
+      ;
     } else if (this.state.menu === "gameType") {
       menu = <View style={styles.container}>
         <Button
@@ -124,7 +141,7 @@ class NewGame extends React.Component {
     }
 
     return (
-      <View style={styles.container}>
+      <View style={{ flex: 1 }}>
         {menu}
       </View>
     );
@@ -161,8 +178,8 @@ const styles = StyleSheet.create({
 
 export default compose(
   graphql(allUsers, {
-    props: ({ data: {allUsers, loading }}) => ({ allUsers, loading })
-}),
+    props: ({ data }) => ({ ...data })
+  }),
   graphql(createCurrentGame,
     {name: 'createCurrentGame'})
 )(NewGame);

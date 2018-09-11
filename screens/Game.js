@@ -32,6 +32,9 @@ export class Game extends React.Component {
 
   render() {
     const { currentGame, loading } = this.props;
+    if (loading) {
+      return null;
+    }
     const screen = !currentGame.id ? (
       <NewGame {...this.props} />
     ) : (

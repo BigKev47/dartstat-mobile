@@ -22,7 +22,7 @@ class LoginUser extends Component {
   render() {
     return (
       <View>
-        <Text>Login</Text>
+        <Text style={{ color: "white", fontSize: 30, fontWeight: "400", fontFamily: "sketchy" }}>Login</Text>
         <UserForm onSubmit={this.loginUser} type="Login" />
       </View>
     );

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Text, View, Button } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
+import Button from "react-native-button";
 import { Form, Item, Input, Label } from "native-base";
+import Colors from "../../constants/Colors";
 
 export default class UserForm extends Component {
   state = {
@@ -21,23 +23,33 @@ export default class UserForm extends Component {
   };
 
   render() {
+    const firstName = this.props.type !== "Login" ?
+      <Item style={styles.input} floatingLabel>
+        <Label>First Name</Label>
+        <Input
+          value={this.state.firstName}
+          onChangeText={firstName => this.setState({ firstName })}
+        />
+      </Item>
+      :
+      null;
+    const lastName = this.props.type !== "Login" ?
+      < Item style={styles.input} floatingLabel>
+        < Label> Last Name </Label>
+        <Input
+          value={this.state.lastName}
+          onChangeText={lastName => this.setState({ lastName })}
+        />
+      </Item>
+      :
+      null;
+
+
     return (
       <Form>
-        <Item floatingLabel>
-          <Label>First Name</Label>
-          <Input
-            value={this.state.firstName}
-            onChangeText={firstName => this.setState({ firstName })}
-          />
-        </Item>
-        <Item floatingLabel>
-          <Label>Last Name</Label>
-          <Input
-            value={this.state.lastName}
-            onChangeText={lastName => this.setState({ lastName })}
-          />
-        </Item>
-        <Item floatingLabel>
+        {firstName}
+        {lastName}
+        <Item style={styles.input} floatingLabel>
           <Label>Email</Label>
           <Input
             keyboardType="email-address"
@@ -45,7 +57,7 @@ export default class UserForm extends Component {
             onChangeText={email => this.setState({ email })}
           />
         </Item>
-        <Item floatingLabel>
+        <Item style={styles.input} floatingLabel>
           <Label>Password</Label>
           <Input
             secureTextEntry
@@ -53,8 +65,42 @@ export default class UserForm extends Component {
             onChangeText={password => this.setState({ password })}
           />
         </Item>
-        <Button title={this.props.type} onPress={this.submitForm} />
+        <Button style={styles.button}
+                containerStyle={styles.buttoncontainer}
+                onPress={this.submitForm}>{this.props.type}</Button>
       </Form>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // backgroundColor: Colors.scoreBoard,
+    alignContent: "center",
+    paddingHorizontal: 20
+  },
+  input: {
+    backgroundColor: "white"
+  },
+  label: {
+    color: "grey"
+  },
+  button: {
+    color: "white",
+    alignContent: "center",
+    fontSize: 40,
+    fontFamily: "sketchy",
+    fontWeight: "400"
+  },
+
+  buttoncontainer: {
+    marginHorizontal: 5,
+    marginVertical: 5,
+    padding: 10,
+    overflow: "hidden",
+    borderRadius: 6,
+    justifyContent: "center"
+    // backgroundColor: Colors.scoreBoard
+  }
+});

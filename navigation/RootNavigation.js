@@ -24,14 +24,18 @@ const RootStackNavigator = StackNavigator(
   }
 );
 
-const NavWrapper = ({ loading, user }) => {
+const NavWrapper = ({ loading, user, client }) => {
   if (loading) return null;
   if (!user) return <Login/>;
   return <RootStackNavigator screenProps={{ user }}/>;
 };
 
 export default graphql(userQuery, {
-  props: ({ data }) => ({ ...data })
+  props: ({ data: { loading, user }, client }) => ({
+    loading,
+    user,
+    resetOnLogout: async () => client.resetStore()
+  })
 })(NavWrapper);
 
 
