@@ -23,34 +23,33 @@ export default class UserForm extends Component {
   };
 
   render() {
-    const firstName = this.props.type !== "Login" ?
-      <Item style={styles.input} floatingLabel>
-        <Label>First Name</Label>
-        <Input
-          value={this.state.firstName}
-          onChangeText={firstName => this.setState({ firstName })}
-        />
-      </Item>
-      :
-      null;
-    const lastName = this.props.type !== "Login" ?
-      < Item style={styles.input} floatingLabel>
-        < Label> Last Name </Label>
-        <Input
-          value={this.state.lastName}
-          onChangeText={lastName => this.setState({ lastName })}
-        />
-      </Item>
-      :
-      null;
-
+    const firstName =
+      this.props.type !== "Login" ? (
+        <Item style={styles.input} floatingLabel>
+          <Label>First Name</Label>
+          <Input
+            value={this.state.firstName}
+            onChangeText={firstName => this.setState({ firstName })}
+          />
+        </Item>
+      ) : null;
+    const lastName =
+      this.props.type !== "Login" ? (
+        <Item style={styles.input} floatingLabel>
+          <Label> Last Name </Label>
+          <Input
+            value={this.state.lastName}
+            onChangeText={lastName => this.setState({ lastName })}
+          />
+        </Item>
+      ) : null;
 
     return (
       <Form>
         {firstName}
         {lastName}
         <Item style={styles.input} floatingLabel>
-          <Label>Email</Label>
+          <Label style={styles.label}>Email</Label>
           <Input
             keyboardType="email-address"
             value={this.state.email}
@@ -65,9 +64,13 @@ export default class UserForm extends Component {
             onChangeText={password => this.setState({ password })}
           />
         </Item>
-        <Button style={styles.button}
-                containerStyle={styles.buttoncontainer}
-                onPress={this.submitForm}>{this.props.type}</Button>
+        <Button
+          style={styles.button}
+          containerStyle={styles.buttoncontainer}
+          onPress={this.submitForm}
+        >
+          {this.props.type}
+        </Button>
       </Form>
     );
   }
@@ -81,10 +84,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   input: {
-    backgroundColor: "white"
+    flex: -1,
+    backgroundColor: "white",
+    borderWidth: 2,
+    borderRadius: 15,
+    alignContent: "center",
+    justifyContent: "center",
+    padding: 10
+
   },
   label: {
-    color: "grey"
+
+
+    right: 10
   },
   button: {
     color: "white",

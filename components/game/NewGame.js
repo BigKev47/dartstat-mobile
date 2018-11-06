@@ -1,21 +1,25 @@
 import React from "react";
 import { View, StyleSheet, FlatList, Text } from "react-native";
 
-import { createDart, allUsers, createGame, updateCurrentGame } from "../../graphql";
+import {
+  createDart,
+  allUsers,
+  createGame,
+  updateCurrentGame
+} from "../../graphql";
 import { graphql, compose, withApollo } from "@expo/react-apollo";
 import Button from "react-native-button";
 import Colors from "../../constants/Colors";
 import { Game } from "../../screens/Game";
 import ModalDropdown from "react-native-modal-dropdown";
 import createCurrentGame from "../../graphql/client/createCurrentGame";
-import {default as variables} from "./newGame/queryVariables";
+import { default as variables } from "./newGame/queryVariables";
 import { signOut } from "../../loginUtils";
 import { client } from "../../state";
 
 class NewGame extends React.Component {
   constructor(props) {
     super(props);
-
 
     this.state = { menu: null };
   }
@@ -25,7 +29,13 @@ class NewGame extends React.Component {
   };
 
   createCricket = async () => {
-    const { createGame, currentGame, updateCurrentGame, createCurrentGame, loading } = this.props;
+    const {
+      createGame,
+      currentGame,
+      updateCurrentGame,
+      createCurrentGame,
+      loading
+    } = this.props;
     let gameMarks = [];
     for (let i = 20; i > 14; i--) {
       gameMarks.push(i.toString());
@@ -51,18 +61,17 @@ class NewGame extends React.Component {
           playersIds: ["Home", "Away"],
           scores: [0, 0],
           gameType: "Cricket",
-          scoreHistory: [[],[]],
+          scoreHistory: [[], []],
           gameMarks: gameMarks,
           marks: marks,
           tempMarks: tempMarks,
           roundScore: 0
         }
       });
-      console.log(currentGame)
+      console.log(currentGame);
     } catch (error) {
       console.log(error);
     }
-
   };
 
   createOhOne = async () => {
@@ -92,7 +101,6 @@ class NewGame extends React.Component {
     } catch (error) {
       console.log(error);
     }
-
   };
 
   logOut = () => {
@@ -106,45 +114,48 @@ class NewGame extends React.Component {
     let menu;
 
     if (this.state.menu === null) {
-      menu = <View style={styles.container}>
-        <Button
-        onPress={this.handleClick}
-        style={styles.button}
-        containerStyle={styles.buttoncontainer}
-      >New Game
-        </Button>
+      menu = (
+        <View style={styles.container}>
+          <Button
+            onPress={this.handleClick}
+            style={styles.button}
+            containerStyle={styles.buttoncontainer}
+          >
+            New Game
+          </Button>
 
-        <Button
-          onPress={this.logOut}
-          style={[styles.button, { fontSize: 25 }]}
-          containerStyle={styles.buttoncontainer}
-        >Log Out
-        </Button>
-      </View>
-      ;
+          <Button
+            onPress={this.logOut}
+            style={[styles.button, { fontSize: 25 }]}
+            containerStyle={styles.buttoncontainer}
+          >
+            Log Out
+          </Button>
+        </View>
+      );
     } else if (this.state.menu === "gameType") {
-      menu = <View style={styles.container}>
-        <Button
-          onPress={this.createOhOne}
-          style={styles.button}
-          containerStyle={styles.buttoncontainer}
-        >501
-        </Button>
+      menu = (
+        <View style={styles.container}>
+          <Button
+            onPress={this.createOhOne}
+            style={styles.button}
+            containerStyle={styles.buttoncontainer}
+          >
+            501
+          </Button>
 
-        <Button
-          onPress={this.createCricket}
-          style={styles.button}
-          containerStyle={styles.buttoncontainer}
-        >Cricket
-        </Button>
-      </View>;
+          <Button
+            onPress={this.createCricket}
+            style={styles.button}
+            containerStyle={styles.buttoncontainer}
+          >
+            Cricket
+          </Button>
+        </View>
+      );
     }
 
-    return (
-      <View style={{ flex: 1 }}>
-        {menu}
-      </View>
-    );
+    return <View style={{ flex: 1 }}>{menu}</View>;
   }
 }
 
@@ -180,6 +191,5 @@ export default compose(
   graphql(allUsers, {
     props: ({ data }) => ({ ...data })
   }),
-  graphql(createCurrentGame,
-    {name: 'createCurrentGame'})
+  graphql(createCurrentGame, { name: "createCurrentGame" })
 )(NewGame);
