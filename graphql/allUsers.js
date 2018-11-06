@@ -4,8 +4,9 @@ export default gql`
     query allUsers {
         allUsers{
             id
-            firstName
-            lastName
+            #            TODO: merge in player type
+            #            firstName
+            #            lastName
         }
         
     }
