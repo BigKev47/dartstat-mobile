@@ -1,0 +1,104 @@
+type File @model {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  updatedAt: DateTime!
+  url: String! @isUnique
+}
+
+type User @model {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  auth0UserId: String @isUnique
+  email: String @isUnique
+  password: String
+  player: Player @relation(name: "PlayerUser")
+  scores: [Score!]! @relation(name: "PlayerScores")
+}
+
+type Player @model {
+  id: ID! @isUnique
+  user: User @relation(name: "PlayerUser")
+  firstName: String!
+  lastName: String
+  nickname: String!
+  updatedAt: DateTime!
+  games: [Game!]! @relation(name: "PlayerGames")
+  darts: [Dart!]! @relation(name: "PlayerDarts")
+  matches: [Match!]! @relation(name: "PlayerMatches")
+  teams: [Team!]! @relation(name: "TeamPlayers")
+  teamsCaptained: [Team!]! @relation(name: "PlayerTeams")
+  gamesWon: [Game!]! @relation(name: "PlayerGameWins")
+  matchesWon: [Match!]! @relation(name: "PlayerMatchWins")
+}
+
+type Team @model {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  nickname: String
+  league: String
+  captain: Player! @relation(name: "PlayerTeams")
+  players: [Player!]! @relation(name: "TeamPlayers")
+  matches: [Match!]! @relation(name: "TeamMatches")
+  gamesWon: [Game!]! @relation(name: "TeamGameWins")
+  matchesWon: [Match!]! @relation(name: "TeamMatchWins")
+  setsWon: [Set!]! @relation(name: "TeamSets")
+}
+
+type Set @model {
+  id: ID! @isUnique
+  match: Match! @relation(name: "MatchSets")
+  gameType: String
+  games: [Game!]! @relation(name: "SetGames")
+  legs: Int!
+  winningTeam: Team @relation(name: "TeamSets")
+}
+
+type Match @model {
+  id: ID! @isUnique
+  league: String
+  scheduledDate: DateTime
+  players: [Player!]! @relation(name: "PlayerMatches")
+  teams: [Team!]! @relation(name: "TeamMatches")
+  matchType: String!
+  sets: [Set!]! @relation(name: "MatchSets")
+  completed: Boolean @defaultValue(value: false)
+  winningPlayers: [Player!]! @relation(name: "PlayerMatchWins")
+  winningTeam: Team @relation(name: "TeamMatchWins")
+  createdAt: DateTime!
+}
+
+type Game @model {
+  id: ID! @isUnique
+  set: Set @relation(name: "SetGames")
+  players: [Player!]! @relation(name: "PlayerGames")
+  gameType: String!
+  darts: [Dart!]! @relation(name: "GameDarts")
+  scores: [Score!]! @relation(name: "GameScores")
+  completed: Boolean @defaultValue(value: false)
+  winningPlayers: [Player!]! @relation(name: "PlayerGameWins")
+  winningTeam: Team @relation(name: "TeamGameWins")
+  createdAt: DateTime!
+}
+
+type Score @model {
+  id: ID! @isUnique
+  player: User! @relation(name: "PlayerScores")
+  game: Game! @relation(name: "GameScores")
+  points: Int
+  marks: Json
+}
+
+type Dart @model {
+  id: ID! @isUnique
+  player: Player! @relation(name: "PlayerDarts")
+  game: Game @relation(name: "GameDarts")
+  numberHit: Int
+  sectionHit: Int
+  miss: Boolean
+  slop: Boolean
+  createdAt: DateTime!
+}
